@@ -41,8 +41,8 @@ final class TimerViewModel {
         }
     }
     
-    init(every interval: TimeInterval, settings: TimerSettings, showing: Binding<Bool>) {
-        self._timer = StateObject(wrappedValue: IntervalTimer(every: interval))
+    init(settings: TimerSettings, showing: Binding<Bool>) {
+        self._timer = StateObject(wrappedValue: IntervalTimer(every: settings.interval))
         self.settings = settings
         self._showing = showing
     }
