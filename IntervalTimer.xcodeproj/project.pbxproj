@@ -1,0 +1,615 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F02BCEC32601EDF0000E56B9 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02BCEC22601EDF0000E56B9 /* Sound.swift */; };
+		F02BCEC42601EDF0000E56B9 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02BCEC22601EDF0000E56B9 /* Sound.swift */; };
+		F08E2BAB2610CF6800C897D4 /* CircularProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BA92610CF6800C897D4 /* CircularProgressViewStyle.swift */; };
+		F08E2BAC2610CF6800C897D4 /* CircularProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BA92610CF6800C897D4 /* CircularProgressViewStyle.swift */; };
+		F08E2BAD2610CF6800C897D4 /* RoundedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BAA2610CF6800C897D4 /* RoundedButtonStyle.swift */; };
+		F08E2BAE2610CF6800C897D4 /* RoundedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BAA2610CF6800C897D4 /* RoundedButtonStyle.swift */; };
+		F08E2BB42610D01900C897D4 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BB32610D01900C897D4 /* TimerViewModel.swift */; };
+		F08E2BB52610D01900C897D4 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BB32610D01900C897D4 /* TimerViewModel.swift */; };
+		F094138E260DE18C007E75C9 /* ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F0B0491B2601F371000E8392 /* ding.mp3 */; };
+		F0B0491D2601F371000E8392 /* ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F0B0491B2601F371000E8392 /* ding.mp3 */; };
+		F0B049282601F4E8000E8392 /* Sound.swift.gyb in Resources */ = {isa = PBXBuildFile; fileRef = F0B049272601F4E8000E8392 /* Sound.swift.gyb */; };
+		F0B049292601F4E8000E8392 /* Sound.swift.gyb in Resources */ = {isa = PBXBuildFile; fileRef = F0B049272601F4E8000E8392 /* Sound.swift.gyb */; };
+		F0E90F6225A5A44D0017EE68 /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E90F6125A5A44D0017EE68 /* IntervalTimer.swift */; };
+		F0E90F6325A5A44D0017EE68 /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E90F6125A5A44D0017EE68 /* IntervalTimer.swift */; };
+		F0E90F8625A5BD220017EE68 /* meditationBell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F0E90F8525A5BD220017EE68 /* meditationBell.mp3 */; };
+		F0E90F8725A5BD220017EE68 /* meditationBell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F0E90F8525A5BD220017EE68 /* meditationBell.mp3 */; };
+		F0E90F8F25A5BF650017EE68 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E90F8E25A5BF650017EE68 /* SettingsView.swift */; };
+		F0E90F9025A5BF650017EE68 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E90F8E25A5BF650017EE68 /* SettingsView.swift */; };
+		F0E90F9625A73AFD0017EE68 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E90F9525A73AFD0017EE68 /* AppView.swift */; };
+		F0E90F9725A73AFD0017EE68 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E90F9525A73AFD0017EE68 /* AppView.swift */; };
+		F0E90F9B25A745250017EE68 /* TimerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E90F9A25A745250017EE68 /* TimerSettings.swift */; };
+		F0E90F9C25A745250017EE68 /* TimerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E90F9A25A745250017EE68 /* TimerSettings.swift */; };
+		F0ECF66025A8CC46005B1235 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ECF65F25A8CC46005B1235 /* Environment.swift */; };
+		F0ECF66125A8CC46005B1235 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ECF65F25A8CC46005B1235 /* Environment.swift */; };
+		F0F6BEC32599D59D00C07D68 /* IntervalTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F6BEB02599D59A00C07D68 /* IntervalTimerApp.swift */; };
+		F0F6BEC42599D59D00C07D68 /* IntervalTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F6BEB02599D59A00C07D68 /* IntervalTimerApp.swift */; };
+		F0F6BEC52599D59D00C07D68 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F6BEB12599D59A00C07D68 /* TimerView.swift */; };
+		F0F6BEC62599D59D00C07D68 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F6BEB12599D59A00C07D68 /* TimerView.swift */; };
+		F0F6BEC72599D59D00C07D68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0F6BEB22599D59D00C07D68 /* Assets.xcassets */; };
+		F0F6BEC82599D59D00C07D68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0F6BEB22599D59D00C07D68 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F02BCEC22601EDF0000E56B9 /* Sound.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; name = Sound.swift; path = ../Sound.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		F08E2BA92610CF6800C897D4 /* CircularProgressViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressViewStyle.swift; sourceTree = "<group>"; };
+		F08E2BAA2610CF6800C897D4 /* RoundedButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButtonStyle.swift; sourceTree = "<group>"; };
+		F08E2BB32610D01900C897D4 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		F0B0491B2601F371000E8392 /* ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ding.mp3; sourceTree = "<group>"; };
+		F0B049272601F4E8000E8392 /* Sound.swift.gyb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sound.swift.gyb; sourceTree = "<group>"; };
+		F0E90F6125A5A44D0017EE68 /* IntervalTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimer.swift; sourceTree = "<group>"; };
+		F0E90F8525A5BD220017EE68 /* meditationBell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meditationBell.mp3; sourceTree = "<group>"; };
+		F0E90F8E25A5BF650017EE68 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F0E90F9525A73AFD0017EE68 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		F0E90F9A25A745250017EE68 /* TimerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSettings.swift; sourceTree = "<group>"; };
+		F0ECF65F25A8CC46005B1235 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = Shared/Environment.swift; sourceTree = SOURCE_ROOT; };
+		F0F6BEB02599D59A00C07D68 /* IntervalTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimerApp.swift; sourceTree = "<group>"; };
+		F0F6BEB12599D59A00C07D68 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		F0F6BEB22599D59D00C07D68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F0F6BEB72599D59D00C07D68 /* IntervalTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntervalTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0F6BEBA2599D59D00C07D68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0F6BEBF2599D59D00C07D68 /* IntervalTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntervalTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0F6BEC12599D59D00C07D68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0F6BEC22599D59D00C07D68 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F0F6BEB42599D59D00C07D68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0F6BEBC2599D59D00C07D68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F08E2BB12610CF8400C897D4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F08E2BB32610D01900C897D4 /* TimerViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F08E2BB22610CFA400C897D4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F0E90F9525A73AFD0017EE68 /* AppView.swift */,
+				F0F6BEB12599D59A00C07D68 /* TimerView.swift */,
+				F0E90F8E25A5BF650017EE68 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F0B0492F2601F5D9000E8392 /* Autogenerated */ = {
+			isa = PBXGroup;
+			children = (
+				F02BCEC22601EDF0000E56B9 /* Sound.swift */,
+			);
+			path = Autogenerated;
+			sourceTree = "<group>";
+		};
+		F0E5ED7F2610CED600082D42 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				F08E2BA92610CF6800C897D4 /* CircularProgressViewStyle.swift */,
+				F08E2BAA2610CF6800C897D4 /* RoundedButtonStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		F0E90F6025A5A42A0017EE68 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F0B049272601F4E8000E8392 /* Sound.swift.gyb */,
+				F0E90F6125A5A44D0017EE68 /* IntervalTimer.swift */,
+				F0E90F9A25A745250017EE68 /* TimerSettings.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F0E90F6D25A5ACC30017EE68 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F0ECF65F25A8CC46005B1235 /* Environment.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F0E90F7125A5AD0E0017EE68 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F0B0491B2601F371000E8392 /* ding.mp3 */,
+				F0E90F8525A5BD220017EE68 /* meditationBell.mp3 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F0F6BEAA2599D59A00C07D68 = {
+			isa = PBXGroup;
+			children = (
+				F0F6BEAF2599D59A00C07D68 /* Shared */,
+				F0F6BEB92599D59D00C07D68 /* iOS */,
+				F0F6BEC02599D59D00C07D68 /* macOS */,
+				F0F6BEB82599D59D00C07D68 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F0F6BEAF2599D59A00C07D68 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				F0B0492F2601F5D9000E8392 /* Autogenerated */,
+				F0E5ED7F2610CED600082D42 /* Styles */,
+				F0E90F6D25A5ACC30017EE68 /* Extensions */,
+				F0E90F6025A5A42A0017EE68 /* Models */,
+				F08E2BB12610CF8400C897D4 /* ViewModels */,
+				F08E2BB22610CFA400C897D4 /* Views */,
+				F0F6BEB02599D59A00C07D68 /* IntervalTimerApp.swift */,
+				F0E90F7125A5AD0E0017EE68 /* Resources */,
+				F0F6BEB22599D59D00C07D68 /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		F0F6BEB82599D59D00C07D68 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0F6BEB72599D59D00C07D68 /* IntervalTimer.app */,
+				F0F6BEBF2599D59D00C07D68 /* IntervalTimer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F0F6BEB92599D59D00C07D68 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F0F6BEBA2599D59D00C07D68 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		F0F6BEC02599D59D00C07D68 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				F0F6BEC12599D59D00C07D68 /* Info.plist */,
+				F0F6BEC22599D59D00C07D68 /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F0F6BEB62599D59D00C07D68 /* IntervalTimer (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0F6BECB2599D59D00C07D68 /* Build configuration list for PBXNativeTarget "IntervalTimer (iOS)" */;
+			buildPhases = (
+				F0941393260DEEF8007E75C9 /* ShellScript */,
+				F0F6BEB32599D59D00C07D68 /* Sources */,
+				F0F6BEB42599D59D00C07D68 /* Frameworks */,
+				F0F6BEB52599D59D00C07D68 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "IntervalTimer (iOS)";
+			productName = "IntervalTimer (iOS)";
+			productReference = F0F6BEB72599D59D00C07D68 /* IntervalTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F0F6BEBE2599D59D00C07D68 /* IntervalTimer (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0F6BECE2599D59D00C07D68 /* Build configuration list for PBXNativeTarget "IntervalTimer (macOS)" */;
+			buildPhases = (
+				F06A42DB2603B4EA00A53EC8 /* ShellScript */,
+				F0F6BEBB2599D59D00C07D68 /* Sources */,
+				F0F6BEBC2599D59D00C07D68 /* Frameworks */,
+				F0F6BEBD2599D59D00C07D68 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "IntervalTimer (macOS)";
+			productName = "IntervalTimer (macOS)";
+			productReference = F0F6BEBF2599D59D00C07D68 /* IntervalTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F0F6BEAB2599D59A00C07D68 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					F0F6BEB62599D59D00C07D68 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					F0F6BEBE2599D59D00C07D68 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = F0F6BEAE2599D59A00C07D68 /* Build configuration list for PBXProject "IntervalTimer" */;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F0F6BEAA2599D59A00C07D68;
+			productRefGroup = F0F6BEB82599D59D00C07D68 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F0F6BEB62599D59D00C07D68 /* IntervalTimer (iOS) */,
+				F0F6BEBE2599D59D00C07D68 /* IntervalTimer (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F0F6BEB52599D59D00C07D68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0E90F8625A5BD220017EE68 /* meditationBell.mp3 in Resources */,
+				F094138E260DE18C007E75C9 /* ding.mp3 in Resources */,
+				F0F6BEC72599D59D00C07D68 /* Assets.xcassets in Resources */,
+				F0B049282601F4E8000E8392 /* Sound.swift.gyb in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0F6BEBD2599D59D00C07D68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0B0491D2601F371000E8392 /* ding.mp3 in Resources */,
+				F0E90F8725A5BD220017EE68 /* meditationBell.mp3 in Resources */,
+				F0F6BEC82599D59D00C07D68 /* Assets.xcassets in Resources */,
+				F0B049292601F4E8000E8392 /* Sound.swift.gyb in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F06A42DB2603B4EA00A53EC8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "find . -name '*.gyb' |                                               \\\n    while read file; do                                              \\\n        gyb --line-directive '' -o \"${file%.gyb}\" \"$file\"; \\\n    done\n";
+		};
+		F0941393260DEEF8007E75C9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#find . -name '*.gyb' |                                               \\\n#    while read file; do                                              \\\n#        gyb --line-directive '' -o \"${file%.gyb}\" \"$file\"; \\\n#    done\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F0F6BEB32599D59D00C07D68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0E90F9B25A745250017EE68 /* TimerSettings.swift in Sources */,
+				F02BCEC32601EDF0000E56B9 /* Sound.swift in Sources */,
+				F0E90F8F25A5BF650017EE68 /* SettingsView.swift in Sources */,
+				F0E90F6225A5A44D0017EE68 /* IntervalTimer.swift in Sources */,
+				F0F6BEC52599D59D00C07D68 /* TimerView.swift in Sources */,
+				F08E2BAD2610CF6800C897D4 /* RoundedButtonStyle.swift in Sources */,
+				F08E2BAB2610CF6800C897D4 /* CircularProgressViewStyle.swift in Sources */,
+				F0E90F9625A73AFD0017EE68 /* AppView.swift in Sources */,
+				F08E2BB42610D01900C897D4 /* TimerViewModel.swift in Sources */,
+				F0F6BEC32599D59D00C07D68 /* IntervalTimerApp.swift in Sources */,
+				F0ECF66025A8CC46005B1235 /* Environment.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0F6BEBB2599D59D00C07D68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0E90F9C25A745250017EE68 /* TimerSettings.swift in Sources */,
+				F02BCEC42601EDF0000E56B9 /* Sound.swift in Sources */,
+				F0E90F9025A5BF650017EE68 /* SettingsView.swift in Sources */,
+				F0F6BEC62599D59D00C07D68 /* TimerView.swift in Sources */,
+				F0F6BEC42599D59D00C07D68 /* IntervalTimerApp.swift in Sources */,
+				F08E2BAE2610CF6800C897D4 /* RoundedButtonStyle.swift in Sources */,
+				F0E90F6325A5A44D0017EE68 /* IntervalTimer.swift in Sources */,
+				F08E2BAC2610CF6800C897D4 /* CircularProgressViewStyle.swift in Sources */,
+				F08E2BB52610D01900C897D4 /* TimerViewModel.swift in Sources */,
+				F0E90F9725A73AFD0017EE68 /* AppView.swift in Sources */,
+				F0ECF66125A8CC46005B1235 /* Environment.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F0F6BEC92599D59D00C07D68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F0F6BECA2599D59D00C07D68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		F0F6BECC2599D59D00C07D68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N8L9QFQ89M;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ostaphnatenko.apps.IntervalTimer;
+				PRODUCT_NAME = IntervalTimer;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F0F6BECD2599D59D00C07D68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N8L9QFQ89M;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ostaphnatenko.apps.IntervalTimer;
+				PRODUCT_NAME = IntervalTimer;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F0F6BECF2599D59D00C07D68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = N8L9QFQ89M;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ostaphnatenko.apps.IntervalTimer;
+				PRODUCT_NAME = IntervalTimer;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F0F6BED02599D59D00C07D68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = N8L9QFQ89M;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ostaphnatenko.apps.IntervalTimer;
+				PRODUCT_NAME = IntervalTimer;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F0F6BEAE2599D59A00C07D68 /* Build configuration list for PBXProject "IntervalTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0F6BEC92599D59D00C07D68 /* Debug */,
+				F0F6BECA2599D59D00C07D68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0F6BECB2599D59D00C07D68 /* Build configuration list for PBXNativeTarget "IntervalTimer (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0F6BECC2599D59D00C07D68 /* Debug */,
+				F0F6BECD2599D59D00C07D68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0F6BECE2599D59D00C07D68 /* Build configuration list for PBXNativeTarget "IntervalTimer (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0F6BECF2599D59D00C07D68 /* Debug */,
+				F0F6BED02599D59D00C07D68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F0F6BEAB2599D59A00C07D68 /* Project object */;
+}
