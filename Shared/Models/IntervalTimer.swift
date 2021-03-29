@@ -19,7 +19,6 @@ final class IntervalTimer: ObservableObject {
     private var timeInterval: Timer?
     private var refreshInterval: Timer?
     
-    // MARK: - Start / Stop methods
     func startCycle() {
         timeRemaining = refreshTime
         timeInterval = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [unowned self] timer in
@@ -45,7 +44,6 @@ final class IntervalTimer: ObservableObject {
         isRunning = false
     }
     
-    // MARK: - Init / Deinit
     init(every interval: TimeInterval) {
         refreshTime = interval
         timeRemaining = interval

@@ -15,7 +15,7 @@ struct AppView: View {
         TabView {
             NavigationView {
                 if timerShowing {
-                    TimerView()
+                    TimerView(viewModel: TimerViewModel(settings: settings, showing: $timerShowing))
                 }
                 else {
                     SettingsView()

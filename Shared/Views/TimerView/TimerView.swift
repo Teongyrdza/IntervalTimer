@@ -9,59 +9,38 @@ import SwiftUI
 import AVFoundation
 
 struct TimerView: View {
-    @StateObject var timer = IntervalTimer(every: 15)
-    @EnvironmentObject var settings: TimerSettings
-    @Environment(\.timerShowing) var isShowing: Binding<Bool>
-    
-    var player: AVPlayer { settings.sound.player }
-    
-    var secondsRemaining: Int {
-        Int(timer.timeRemaining) % 60
-    }
-    
-    var secondsRemainingMetric: String {
-        secondsRemaining == 1 ? "second" : "seconds"
-    }
-    
-    var minutesRemaining: Int {
-        Int(timer.timeRemaining) / 60
-    }
-    
-    var minutesRemainingMetric: String {
-        minutesRemaining == 1 ? "minute" : "minutes"
-    }
+    @StateObject var viewModel: TimerViewModel
     
     var body: some View {
         VStack {
             ZStack {
-                ProgressView(value: timer.timeRemaining, total: timer.refreshTime)
+                ProgressView(value: viewModel.timeRemaining)
                     .progressViewStyle(CircularProgressViewStyle(thickness: 30))
                 
-                if timer.timeRemaining < 60 {
-                    Text("Alarm in \(secondsRemaining) \(secondsRemainingMetric)")
-                }
-                else {
-                    Text("Alarm in \(minutesRemaining) \(minutesRemainingMetric) \(secondsRemaining) \(secondsRemainingMetric)")
-                }
+                Text(viewModel.alarmText)
             }
             
             HStack {
-                Button(!timer.isRunning ? "Start" : "Stop") {
-                    if timer.isRunning {
-                        timer.stopCycle()
+                Group {
+                    if viewModel.state == .stopped {
+                        Button("Start") {
+                            viewModel.state = .running
+                        }
+                        .accentColor(.green)
                     }
                     else {
-                        timer.startCycle()
+                        Button("Stop") {
+                            viewModel.state = .stopped
+                        }
+                        .accentColor(.init("AccentColor"))
                     }
                 }
                 .frame(width: 75)
-                .accentColor(timer.isRunning ? .init("AccentColor") : .green)
                 
                 Spacer()
                 
                 Button("Cancel") {
-                    timer.stopCycle()
-                    isShowing.wrappedValue = false
+                    viewModel.state = .hidden
                 }
                 .frame(width: 75)
                 .accentColor(.gray)
@@ -73,17 +52,7 @@ struct TimerView: View {
         }
         .padding(.horizontal)
         .navigationTitle("Interval Timer")
-        .onAppear {
-            timer.refreshTime = settings.interval
-            timer.startCycle()
-        }
-        .onDisappear {
-            timer.stopCycle()
-        }
-        .onReceive(timer.intervalPassed) { _ in
-            player.seek(to: .zero)
-            player.play()
-        }
+        .onAppear { viewModel.state = .running }
     }
 }
 
@@ -91,9 +60,8 @@ struct TimerView: View {
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            TimerView()
+            TimerView(viewModel: TimerViewModel(settings: TimerSettings(), showing: .constant(true)))
         }
-        .environmentObject(TimerSettings())
     }
 }
 #endif
