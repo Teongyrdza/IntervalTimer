@@ -11,8 +11,10 @@ import Combine
 
 final class TimerViewModel: ObservableObject {
     // MARK: - Private
-    var timer: IntervalTimer
-    @ObservedObject var settings: TimerSettings
+    var timerSubsription: AnyCancellable!
+    var intervalPassedSubscription: AnyCancellable!
+    let timer: IntervalTimer
+    let settings: TimerSettings
     @Binding var showing: Bool
     
     var secondsRemaining: Int {
@@ -34,12 +36,14 @@ final class TimerViewModel: ObservableObject {
     // MARK: - Public
     @Published var state: State {
         willSet {
-            print("TimerViewModel exiting \(state) state")
-            state.exit(self)
+            if newValue != state {
+                state.exit(self)
+            }
         }
         didSet {
-            print("TimerViewModel entering \(state) state")
-            state.enter(self)
+            if state != oldValue {
+                state.enter(self)
+            }
         }
     }
     
@@ -59,11 +63,11 @@ final class TimerViewModel: ObservableObject {
         self._showing = showing
         self.state = .hidden
         
-        self.timer.objectWillChange.sink { _ in
+        self.timerSubsription = self.timer.objectWillChange.sink { _ in
             self.objectWillChange.send()
         }
         
-        self.timer.intervalPassed.sink {
+        self.intervalPassedSubscription = self.timer.intervalPassed.sink {
             settings.sound.player.seek(to: .zero)
             settings.sound.player.play()
         }
@@ -81,7 +85,7 @@ extension TimerViewModel {
         static let running = Running()
         static let stopped = Stopped()
         static let hidden = Hidden()
-        
+         
         class Running: State {
             override var description: String { "running" }
             

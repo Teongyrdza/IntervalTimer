@@ -11,11 +11,13 @@ struct AppView: View {
     @StateObject var settings = TimerSettings()
     @State var timerShowing = false
     
+    var viewModelFactory: ViewModelFactory { ViewModelFactory(timerSettings: settings) }
+    
     var body: some View {
         TabView {
             NavigationView {
                 if timerShowing {
-                    TimerView(viewModel: TimerViewModel(settings: settings, showing: $timerShowing))
+                    TimerView(viewModel: viewModelFactory.makeTimerViewModel(showing: $timerShowing))
                 }
                 else {
                     SettingsView()
