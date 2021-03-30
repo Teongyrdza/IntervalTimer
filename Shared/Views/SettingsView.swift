@@ -8,64 +8,9 @@
 import SwiftUI
 import AVFoundation
 
-struct SoundPicker: View {
-    @Binding var selection: Sound
-    @State private var isPlaying = false
-    
-    private var player: AVPlayer {
-        selection.player
-    }
-    
-    var body: some View {
-        List {
-            ForEach(Sound.allCases, id: \.self) { sound in
-                Text(sound.description)
-                    .onTapGesture {
-                        // Stop previous sound, if playing
-                        if isPlaying {
-                            isPlaying = false
-                            player.pause()
-                        }
-                        
-                        if selection != sound || !isPlaying {
-                            selection = sound
-                            isPlaying = true
-                            player.seek(to: .zero)
-                            player.play()
-                        }
-                    }
-            }
-        }
-        .listStyle(GroupedListStyle())
-    }
-}
-
 struct SettingsView: View {
     @EnvironmentObject var settings: TimerSettings
     @Environment(\.timerShowing) var timerShowing
-    
-    func metric(forSeconds seconds: Int) -> String {
-        return seconds == 1 ? "second" : "seconds"
-    }
-    
-    func metric(forMinutes minutes: Int) -> String {
-        return minutes == 1 ? "minute" : "minutes"
-    }
-    
-    func label(for time: Int) -> String {
-        if time < 60 {
-            return "\(time) \(metric(forSeconds: time))"
-        }
-        else {
-            let minutes = time / 60
-            let seconds = time % 60
-            
-            return String(
-                format: "%d %@ %02d %@",
-                minutes, metric(forMinutes: minutes), seconds, metric(forSeconds: seconds)
-            )
-        }
-    }
     
     var body: some View {
         ScrollView {
@@ -78,12 +23,7 @@ struct SettingsView: View {
                         .font(.system(size: 30))
                         .padding(.horizontal)
                     
-                    Picker("", selection: $settings.interval) {
-                        ForEach(0..<181) { time in
-                            Text(label(for: time)).tag(TimeInterval(time    ))
-                        }
-                    }
-                    .pickerStyle(WheelPickerStyle())
+                    TimePicker(selection: $settings.interval, in: 1..<181)
                 }
                 
                 Button("Start") {
