@@ -11,6 +11,7 @@ import SwiftUI
 struct TimePicker: View {
     @Binding var selection: TimeInterval
     let range: Range<Int>
+    let label: String
     
     func metric(forSeconds seconds: Int) -> String {
         return seconds == 1 ? "second" : "seconds"
@@ -36,7 +37,7 @@ struct TimePicker: View {
     }
     
     var body: some View {
-        Picker("", selection: $selection) {
+        Picker(label, selection: $selection) {
             ForEach(range) { time in
                 Text(label(for: time)).tag(TimeInterval(time))
             }
@@ -44,7 +45,8 @@ struct TimePicker: View {
         .pickerStyle(WheelPickerStyle())
     }
     
-    init(selection: Binding<TimeInterval>, in range: Range<Int>) {
+    init(_ label: String, selection: Binding<TimeInterval>, in range: Range<Int>) {
+        self.label = label
         self._selection = selection
         self.range = range
     }
@@ -55,7 +57,7 @@ struct TimePicker_Previews: PreviewProvider {
     @State static var selection: TimeInterval = 45
     
     static var previews: some View {
-        TimePicker(selection: $selection, in: 1..<181)
+        TimePicker("Time Interval", selection: $selection, in: 1..<181)
     }
 }
 #endif

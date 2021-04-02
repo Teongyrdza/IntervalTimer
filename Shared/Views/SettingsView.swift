@@ -21,9 +21,22 @@ struct SettingsView: View {
                     
                     Text("Time interval")
                         .font(.system(size: 30))
-                        .padding(.horizontal)
                     
-                    TimePicker(selection: $settings.interval, in: 1..<181)
+                    TimePicker("Time Interval", selection: $settings.interval, in: 1..<181)
+                    
+                    GroupBox {
+                        HStack {
+                            Text("When interval ends")
+                            
+                            Spacer()
+                            
+                            NavigationLink(destination: SoundPicker(selection: $settings.sound)) {
+                                Text(settings.sound.description)
+                                    .opacity(0.5)
+                                    .foregroundColor(.gray)
+                            }
+                        }
+                    }
                 }
                 
                 Button("Start") {
@@ -33,22 +46,6 @@ struct SettingsView: View {
                 .frame(width: 150, height: 50)
                 .accentColor(.green)
                 .padding(.top)
-                
-                GroupBox {
-                    HStack {
-                        Text("When interval ends")
-                        
-                        Spacer()
-                        
-                        NavigationLink(destination: SoundPicker(selection: $settings.sound)) {
-                            Text(settings.sound.description)
-                                .opacity(0.5)
-                                .foregroundColor(.gray)
-                        }
-                    }
-                }
-                .padding(.top)
-                .padding(.horizontal)
             }
             
         }
