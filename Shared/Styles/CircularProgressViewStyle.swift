@@ -7,14 +7,15 @@
 
 import SwiftUI
 
-struct Ring: Shape {
+struct Ring: InsettableShape {
     let startAngle: Angle
     let endAngle: Angle
     let clockwise: Bool
     let thickness: CGFloat
+    var insets: CGFloat = 0
     
     func path(in rect: CGRect) -> Path {
-        let h = min(rect.height, rect.width)
+        let h = min(rect.height, rect.width) - insets
         let c = CGPoint(x: rect.midX, y: rect.midY)
         
         var path = Path()
@@ -27,7 +28,17 @@ struct Ring: Shape {
             clockwise: clockwise
         )
         
-        return path.strokedPath(.init(lineWidth: thickness, lineCap: .round, lineJoin: .round))
+        return path//.strokedPath(.init(lineWidth: thickness, lineCap: .round, lineJoin: .round))
+    }
+    
+    func inset(by amount: CGFloat) -> some InsettableShape {
+        return Ring(
+            startAngle: startAngle,
+            endAngle: endAngle,
+            clockwise: clockwise,
+            thickness: thickness,
+            insets: amount
+        )
     }
 }
 
@@ -44,12 +55,21 @@ struct CircularProgressViewStyle: ProgressViewStyle {
             ZStack {
                 // Background circle
                 Ring(startAngle: .degrees(0), endAngle: .degrees(360), clockwise: false, thickness: thickness)
-                    .fill(Color.backgroundColor)
+                    .strokeBorder(
+                        Color.backgroundColor,
+                        style: .init(lineWidth: thickness, lineCap: .round, lineJoin: .round),
+                        antialiased: true
+                    )
                 
                 // Progress ring
                 Ring(startAngle: .degrees(0), endAngle: .degrees(360 * (configuration.fractionCompleted ?? 0)), clockwise: false, thickness: thickness)
-                    .fill(Color.accentColor)
+                    .strokeBorder(
+                        Color.accentColor,
+                        style: .init(lineWidth: thickness, lineCap: .round, lineJoin: .round),
+                        antialiased: true
+                    )
             }
+            
             
             Spacer()
         }
