@@ -10,26 +10,28 @@ import Combine
 import SwiftUI
 
 final class IntervalTimer: ObservableObject {
+    typealias Frequency = TimeInterval
+    
     @Published var refreshTime: TimeInterval
     @Published var timeRemaining: TimeInterval
     @Published var isRunning = false
     
     var intervalPassed = PassthroughSubject<Void, Never>()
+    let frequency: TimeInterval
     
     private var timeInterval: Timer?
     private var refreshInterval: Timer?
     
     func startCycle() {
         timeRemaining = refreshTime
-        timeInterval = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [unowned self] timer in
-            if timeRemaining > 0 {
-                timeRemaining -= 1
+        timeInterval = Timer.scheduledTimer(withTimeInterval: frequency, repeats: true) { [unowned self] timer in
+            if timeRemaining - frequency >= 0 {
+                timeRemaining -= frequency
             }
-        }
-        
-        refreshInterval = Timer.scheduledTimer(withTimeInterval: refreshTime, repeats: true) { [unowned self] timer in
-            timeRemaining = refreshTime
-            intervalPassed.send()
+            else {
+                timeRemaining = refreshTime
+                intervalPassed.send()
+            }
         }
         
         isRunning = true
@@ -44,12 +46,17 @@ final class IntervalTimer: ObservableObject {
         isRunning = false
     }
     
-    init(every interval: TimeInterval) {
+    init(every interval: TimeInterval, frequency: Frequency) {
         refreshTime = interval
         timeRemaining = interval
+        self.frequency = frequency
     }
     
     deinit {
         stopCycle()
     }
+}
+
+extension IntervalTimer.Frequency {
+    static let `default`: Self = 1 / 60
 }

@@ -58,7 +58,8 @@ final class TimerViewModel: ObservableObject {
     }
     
     init(settings: TimerSettings, showing: Binding<Bool>) {
-        self.timer = IntervalTimer(every: settings.interval)
+        let adj: IntervalTimer.Frequency = (settings.interval - 1) / 1440
+        self.timer = IntervalTimer(every: settings.interval, frequency: .default + adj)
         self.settings = settings
         self._showing = showing
         self.state = .hidden
@@ -71,6 +72,8 @@ final class TimerViewModel: ObservableObject {
             settings.sound.player.seek(to: .zero)
             settings.sound.player.play()
         }
+        
+        //print("Timer frequency is \(timer.frequency)")
     }
 }
 
