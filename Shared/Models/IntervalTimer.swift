@@ -19,17 +19,34 @@ final class IntervalTimer: ObservableObject {
     var intervalPassed = PassthroughSubject<Void, Never>()
     let frequency: TimeInterval
     
-    private var timeInterval: Timer?
-    private var refreshInterval: Timer?
+    private var timer: Timer?
+    private var lastUpdateTime: TimeInterval?
+    
+    private func updateTime(and ratio: inout Double) {
+        let now = Date().timeIntervalSince1970
+        
+        if lastUpdateTime == nil {
+            ratio = 1
+        }
+        else {
+            let timePassed = now - lastUpdateTime!
+            ratio = timePassed / frequency
+        }
+        
+        lastUpdateTime = now
+    }
     
     func startCycle() {
         timeRemaining = refreshTime
-        timeInterval = Timer.scheduledTimer(withTimeInterval: frequency, repeats: true) { [unowned self] timer in
+        timer = Timer.scheduledTimer(withTimeInterval: frequency, repeats: true) { [unowned self] timer in
             if timeRemaining - frequency >= 0 {
-                timeRemaining -= frequency
+                var ratio = 1.0
+                updateTime(and: &ratio)
+                timeRemaining -= ratio * frequency
             }
             else {
                 timeRemaining = refreshTime
+                lastUpdateTime = nil
                 intervalPassed.send()
             }
         }
@@ -38,10 +55,8 @@ final class IntervalTimer: ObservableObject {
     }
     
     func stopCycle() {
-        timeInterval?.invalidate()
-        refreshInterval?.invalidate()
-        timeInterval = nil
-        refreshInterval = nil
+        timer?.invalidate()
+        timer = nil
         
         isRunning = false
     }

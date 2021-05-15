@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F0207E9E264275C400D727BA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0207E9D264275C400D727BA /* String.swift */; };
 		F0207E9F264275C400D727BA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0207E9D264275C400D727BA /* String.swift */; };
+		F0207ED42645286500D727BA /* ConditionalModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0207ED32645286500D727BA /* ConditionalModifier.swift */; };
+		F0207ED52645286500D727BA /* ConditionalModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0207ED32645286500D727BA /* ConditionalModifier.swift */; };
 		F02BCEC32601EDF0000E56B9 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02BCEC22601EDF0000E56B9 /* Sound.swift */; };
 		F02BCEC42601EDF0000E56B9 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02BCEC22601EDF0000E56B9 /* Sound.swift */; };
 		F08E2BAB2610CF6800C897D4 /* CircularProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BA92610CF6800C897D4 /* CircularProgressViewStyle.swift */; };
@@ -59,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		F0207E9D264275C400D727BA /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		F0207ED32645286500D727BA /* ConditionalModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConditionalModifier.swift; path = Shared/Extensions/ConditionalModifier.swift; sourceTree = SOURCE_ROOT; };
 		F02BCEC22601EDF0000E56B9 /* Sound.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; name = Sound.swift; path = ../Sound.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F08E2BA92610CF6800C897D4 /* CircularProgressViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressViewStyle.swift; sourceTree = "<group>"; };
 		F08E2BAA2610CF6800C897D4 /* RoundedButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButtonStyle.swift; sourceTree = "<group>"; };
@@ -161,6 +164,7 @@
 		F0E90F6D25A5ACC30017EE68 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F0207ED32645286500D727BA /* ConditionalModifier.swift */,
 				F0ECF65F25A8CC46005B1235 /* Environment.swift */,
 				F0207E9D264275C400D727BA /* String.swift */,
 			);
@@ -419,6 +423,7 @@
 				F08E2BFB261308E900C897D4 /* TimePicker.swift in Sources */,
 				F0E90F8F25A5BF650017EE68 /* SettingsView.swift in Sources */,
 				F0E90F6225A5A44D0017EE68 /* IntervalTimer.swift in Sources */,
+				F0207ED42645286500D727BA /* ConditionalModifier.swift in Sources */,
 				F0F6BEC52599D59D00C07D68 /* TimerView.swift in Sources */,
 				F08E2BAD2610CF6800C897D4 /* RoundedButtonStyle.swift in Sources */,
 				F08E2BAB2610CF6800C897D4 /* CircularProgressViewStyle.swift in Sources */,
@@ -441,6 +446,7 @@
 				F08E2BFC261308E900C897D4 /* TimePicker.swift in Sources */,
 				F0E90F9025A5BF650017EE68 /* SettingsView.swift in Sources */,
 				F0F6BEC62599D59D00C07D68 /* TimerView.swift in Sources */,
+				F0207ED52645286500D727BA /* ConditionalModifier.swift in Sources */,
 				F0F6BEC42599D59D00C07D68 /* IntervalTimerApp.swift in Sources */,
 				F08E2BAE2610CF6800C897D4 /* RoundedButtonStyle.swift in Sources */,
 				F0E90F6325A5A44D0017EE68 /* IntervalTimer.swift in Sources */,
