@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import StarUI
 import AVFoundation
 
 struct TimerView: View {

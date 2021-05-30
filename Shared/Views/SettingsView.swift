@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import StarUI
 import AVFoundation
 
 struct SettingsView: View {
     @EnvironmentObject var settings: TimerSettings
     @Environment(\.timerShowing) var timerShowing
+    let showBorders = false
     
     var body: some View {
         ScrollView {
@@ -21,8 +23,10 @@ struct SettingsView: View {
                     
                     Text("Time interval")
                         .font(.system(size: 30))
+                        .border(Color.gray, if: showBorders)
                     
                     TimePicker("Time Interval", selection: $settings.interval, in: 1..<181)
+                        .border(Color.green, if: showBorders)
                     
                     GroupBox {
                         HStack {
@@ -37,6 +41,7 @@ struct SettingsView: View {
                             }
                         }
                     }
+                    .border(Color.yellow, if: showBorders)
                 }
                 
                 Button("Start") {

@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "StarUI",
+        "repositoryURL": "https://github.com/Teongyrdza/StarUI.git",
+        "state": {
+          "branch": "main",
+          "revision": "531f1d90288cef74069de33894f0d3eca686be09",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

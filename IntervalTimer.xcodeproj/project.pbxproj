@@ -9,14 +9,9 @@
 /* Begin PBXBuildFile section */
 		F0207E9E264275C400D727BA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0207E9D264275C400D727BA /* String.swift */; };
 		F0207E9F264275C400D727BA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0207E9D264275C400D727BA /* String.swift */; };
-		F0207ED42645286500D727BA /* ConditionalModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0207ED32645286500D727BA /* ConditionalModifier.swift */; };
-		F0207ED52645286500D727BA /* ConditionalModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0207ED32645286500D727BA /* ConditionalModifier.swift */; };
 		F02BCEC32601EDF0000E56B9 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02BCEC22601EDF0000E56B9 /* Sound.swift */; };
 		F02BCEC42601EDF0000E56B9 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02BCEC22601EDF0000E56B9 /* Sound.swift */; };
-		F08E2BAB2610CF6800C897D4 /* CircularProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BA92610CF6800C897D4 /* CircularProgressViewStyle.swift */; };
-		F08E2BAC2610CF6800C897D4 /* CircularProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BA92610CF6800C897D4 /* CircularProgressViewStyle.swift */; };
-		F08E2BAD2610CF6800C897D4 /* RoundedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BAA2610CF6800C897D4 /* RoundedButtonStyle.swift */; };
-		F08E2BAE2610CF6800C897D4 /* RoundedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BAA2610CF6800C897D4 /* RoundedButtonStyle.swift */; };
+		F03236A22663AA340079376E /* StarUI in Frameworks */ = {isa = PBXBuildFile; productRef = F03236A12663AA340079376E /* StarUI */; };
 		F08E2BB42610D01900C897D4 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BB32610D01900C897D4 /* TimerViewModel.swift */; };
 		F08E2BB52610D01900C897D4 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BB32610D01900C897D4 /* TimerViewModel.swift */; };
 		F08E2BBB2610D4CD00C897D4 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BBA2610D4CD00C897D4 /* ViewModelFactory.swift */; };
@@ -29,6 +24,7 @@
 		F0B0491D2601F371000E8392 /* ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F0B0491B2601F371000E8392 /* ding.mp3 */; };
 		F0B049282601F4E8000E8392 /* Sound.swift.gyb in Resources */ = {isa = PBXBuildFile; fileRef = F0B049272601F4E8000E8392 /* Sound.swift.gyb */; };
 		F0B049292601F4E8000E8392 /* Sound.swift.gyb in Resources */ = {isa = PBXBuildFile; fileRef = F0B049272601F4E8000E8392 /* Sound.swift.gyb */; };
+		F0E087192663A49E0094BAA1 /* StarUI in Frameworks */ = {isa = PBXBuildFile; productRef = F0E087182663A49E0094BAA1 /* StarUI */; };
 		F0E90F6225A5A44D0017EE68 /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E90F6125A5A44D0017EE68 /* IntervalTimer.swift */; };
 		F0E90F6325A5A44D0017EE68 /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E90F6125A5A44D0017EE68 /* IntervalTimer.swift */; };
 		F0E90F8625A5BD220017EE68 /* meditationBell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F0E90F8525A5BD220017EE68 /* meditationBell.mp3 */; };
@@ -61,10 +57,7 @@
 
 /* Begin PBXFileReference section */
 		F0207E9D264275C400D727BA /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		F0207ED32645286500D727BA /* ConditionalModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConditionalModifier.swift; path = Shared/Extensions/ConditionalModifier.swift; sourceTree = SOURCE_ROOT; };
 		F02BCEC22601EDF0000E56B9 /* Sound.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; name = Sound.swift; path = ../Sound.swift; sourceTree = "<group>"; wrapsLines = 0; };
-		F08E2BA92610CF6800C897D4 /* CircularProgressViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressViewStyle.swift; sourceTree = "<group>"; };
-		F08E2BAA2610CF6800C897D4 /* RoundedButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButtonStyle.swift; sourceTree = "<group>"; };
 		F08E2BB32610D01900C897D4 /* TimerViewModel.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F08E2BBA2610D4CD00C897D4 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewModelFactory.swift; path = Shared/ViewModelFactory.swift; sourceTree = SOURCE_ROOT; };
 		F08E2BDB2612345100C897D4 /* IntervalTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntervalTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0E087192663A49E0094BAA1 /* StarUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,12 +101,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F03236A22663AA340079376E /* StarUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F03236A02663AA340079376E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F08E2BB22610CFA400C897D4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,15 +144,6 @@
 			path = Autogenerated;
 			sourceTree = "<group>";
 		};
-		F0E5ED7F2610CED600082D42 /* Styles */ = {
-			isa = PBXGroup;
-			children = (
-				F08E2BA92610CF6800C897D4 /* CircularProgressViewStyle.swift */,
-				F08E2BAA2610CF6800C897D4 /* RoundedButtonStyle.swift */,
-			);
-			path = Styles;
-			sourceTree = "<group>";
-		};
 		F0E90F6025A5A42A0017EE68 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,7 +157,6 @@
 		F0E90F6D25A5ACC30017EE68 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F0207ED32645286500D727BA /* ConditionalModifier.swift */,
 				F0ECF65F25A8CC46005B1235 /* Environment.swift */,
 				F0207E9D264275C400D727BA /* String.swift */,
 			);
@@ -187,6 +179,7 @@
 				F0F6BEB92599D59D00C07D68 /* iOS */,
 				F0F6BEC02599D59D00C07D68 /* macOS */,
 				F0F6BEB82599D59D00C07D68 /* Products */,
+				F03236A02663AA340079376E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,7 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				F0B0492F2601F5D9000E8392 /* Autogenerated */,
-				F0E5ED7F2610CED600082D42 /* Styles */,
 				F0E90F6D25A5ACC30017EE68 /* Extensions */,
 				F0E90F6025A5A42A0017EE68 /* Models */,
 				F08E2BB22610CFA400C897D4 /* Views */,
@@ -269,6 +261,7 @@
 			);
 			name = "IntervalTimer (iOS)";
 			packageProductDependencies = (
+				F0E087182663A49E0094BAA1 /* StarUI */,
 			);
 			productName = "IntervalTimer (iOS)";
 			productReference = F0F6BEB72599D59D00C07D68 /* IntervalTimer.app */;
@@ -288,6 +281,9 @@
 			dependencies = (
 			);
 			name = "IntervalTimer (macOS)";
+			packageProductDependencies = (
+				F03236A12663AA340079376E /* StarUI */,
+			);
 			productName = "IntervalTimer (macOS)";
 			productReference = F0F6BEBF2599D59D00C07D68 /* IntervalTimer.app */;
 			productType = "com.apple.product-type.application";
@@ -323,6 +319,7 @@
 			);
 			mainGroup = F0F6BEAA2599D59A00C07D68;
 			packageReferences = (
+				F0E087172663A49D0094BAA1 /* XCRemoteSwiftPackageReference "StarUI" */,
 			);
 			productRefGroup = F0F6BEB82599D59D00C07D68 /* Products */;
 			projectDirPath = "";
@@ -423,10 +420,7 @@
 				F08E2BFB261308E900C897D4 /* TimePicker.swift in Sources */,
 				F0E90F8F25A5BF650017EE68 /* SettingsView.swift in Sources */,
 				F0E90F6225A5A44D0017EE68 /* IntervalTimer.swift in Sources */,
-				F0207ED42645286500D727BA /* ConditionalModifier.swift in Sources */,
 				F0F6BEC52599D59D00C07D68 /* TimerView.swift in Sources */,
-				F08E2BAD2610CF6800C897D4 /* RoundedButtonStyle.swift in Sources */,
-				F08E2BAB2610CF6800C897D4 /* CircularProgressViewStyle.swift in Sources */,
 				F0E90F9625A73AFD0017EE68 /* AppView.swift in Sources */,
 				F08E2BB42610D01900C897D4 /* TimerViewModel.swift in Sources */,
 				F08E2BBB2610D4CD00C897D4 /* ViewModelFactory.swift in Sources */,
@@ -446,11 +440,8 @@
 				F08E2BFC261308E900C897D4 /* TimePicker.swift in Sources */,
 				F0E90F9025A5BF650017EE68 /* SettingsView.swift in Sources */,
 				F0F6BEC62599D59D00C07D68 /* TimerView.swift in Sources */,
-				F0207ED52645286500D727BA /* ConditionalModifier.swift in Sources */,
 				F0F6BEC42599D59D00C07D68 /* IntervalTimerApp.swift in Sources */,
-				F08E2BAE2610CF6800C897D4 /* RoundedButtonStyle.swift in Sources */,
 				F0E90F6325A5A44D0017EE68 /* IntervalTimer.swift in Sources */,
-				F08E2BAC2610CF6800C897D4 /* CircularProgressViewStyle.swift in Sources */,
 				F08E2BB52610D01900C897D4 /* TimerViewModel.swift in Sources */,
 				F08E2BBC2610D4CD00C897D4 /* ViewModelFactory.swift in Sources */,
 				F08E2BF6261307F900C897D4 /* SoundPicker.swift in Sources */,
@@ -760,6 +751,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F0E087172663A49D0094BAA1 /* XCRemoteSwiftPackageReference "StarUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Teongyrdza/StarUI.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F03236A12663AA340079376E /* StarUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F0E087172663A49D0094BAA1 /* XCRemoteSwiftPackageReference "StarUI" */;
+			productName = StarUI;
+		};
+		F0E087182663A49E0094BAA1 /* StarUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F0E087172663A49D0094BAA1 /* XCRemoteSwiftPackageReference "StarUI" */;
+			productName = StarUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F0F6BEAB2599D59A00C07D68 /* Project object */;
 }
