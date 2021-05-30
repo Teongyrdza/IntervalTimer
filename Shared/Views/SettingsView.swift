@@ -25,7 +25,7 @@ struct SettingsView: View {
                         .font(.system(size: 30))
                         .border(Color.gray, if: showBorders)
                     
-                    TimePicker("Time Interval", selection: $settings.interval, in: 1..<181)
+                    SingleRowTimePicker(selection: $settings.interval, in: 1..<181)
                         .border(Color.green, if: showBorders)
                     
                     GroupBox {
