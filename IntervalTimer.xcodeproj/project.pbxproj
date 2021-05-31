@@ -56,6 +56,7 @@
 /* Begin PBXFileReference section */
 		F0207E9D264275C400D727BA /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F02BCEC22601EDF0000E56B9 /* Sound.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; name = Sound.swift; path = ../Sound.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		F03236B82664EAF00079376E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Shared/Views/TimerView/README.md; sourceTree = "<group>"; };
 		F08E2BB32610D01900C897D4 /* TimerViewModel.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F08E2BBA2610D4CD00C897D4 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewModelFactory.swift; path = Shared/ViewModelFactory.swift; sourceTree = SOURCE_ROOT; };
 		F08E2BDB2612345100C897D4 /* IntervalTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntervalTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +172,7 @@
 		F0F6BEAA2599D59A00C07D68 = {
 			isa = PBXGroup;
 			children = (
+				F03236B82664EAF00079376E /* README.md */,
 				F0F6BEAF2599D59A00C07D68 /* Shared */,
 				F0F6BEB92599D59D00C07D68 /* iOS */,
 				F0F6BEC02599D59D00C07D68 /* macOS */,
