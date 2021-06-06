@@ -8,31 +8,35 @@
 import AVFoundation
 
 extension AVPlayer {
-    static let meditationPlayer: AVPlayer = {
-        guard let url = Bundle.main.url(forResource: "meditationBell", withExtension: "mp3") else { fatalError("Failed to find sound file.") }
-        return AVPlayer(url: url)
-    }()
+    convenience init(named name: String, withExtension `extension`: String = "mp3") {
+        guard let url = Bundle.main.url(forResource: name, withExtension: `extension`) else { fatalError("Failed to find sound file.") }
+        self.init(url: url)
+    }
     
-    static let dingPlayer: AVPlayer = {
-        guard let url = Bundle.main.url(forResource: "ding", withExtension: "mp3") else { fatalError("Failed to find sound file.") }
-        return AVPlayer(url: url)
-    }()
+    static let meditationPlayer = AVPlayer(named: "meditationBell")
+    
+    static let dingPlayer = AVPlayer(named: "ding")
 }
 
-enum Sound: String, CaseIterable, CustomStringConvertible {
-    case ding = "Ding"
-    case meditationBell = "Meditation Bell"
+struct Sound: Hashable, Identifiable, CustomStringConvertible {
+    let id = UUID()
+    let name: String
+    let description: String
+    let player: AVPlayer
     
-    var description: String {
-        self.rawValue
+    static func == (lhs: Sound, rhs: Sound) -> Bool {
+        lhs.name == rhs.name && lhs.description == rhs.description
     }
     
-    var player: AVPlayer {
-        switch self {
-            case .ding:
-                return .dingPlayer
-            case .meditationBell:
-                return .meditationPlayer
-        }
+    init(named name: String, description: String) {
+        self.name = name
+        self.description = description
+        
+        player = .init(named: name)
     }
 }
+
+let sounds = [
+    Sound(named: "ding", description: "Ding"),
+    Sound(named: "meditationBell", description: "Meditation Bell")
+]

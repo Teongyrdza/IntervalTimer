@@ -11,5 +11,5 @@ import Combine
 
 final class TimerSettings: ObservableObject {
     @Published var interval: TimeInterval = 30
-    @Published var sound: Sound = .meditationBell
+    @Published var sound: Sound = sounds[1]
 }

@@ -10,30 +10,33 @@ import AVFoundation
 
 struct SoundPicker: View {
     @Binding var selection: Sound
-    @State private var isPlaying = false
+    @State var playing = false
     
-    private var player: AVPlayer {
+    var player: AVPlayer {
         selection.player
     }
     
     var body: some View {
         List {
-            ForEach(Sound.allCases, id: \.self) { sound in
+            ForEach(sounds) { sound in
                 Text(sound.description)
                     .onTapGesture {
                         // Stop previous sound, if playing
-                        if isPlaying {
-                            isPlaying = false
+                        if playing {
+                            playing = false
                             player.pause()
                         }
                         
-                        if selection != sound || !isPlaying {
+                        if selection != sound || !playing {
                             selection = sound
-                            isPlaying = true
+                            playing = true
                             player.seek(to: .zero)
                             player.play()
                         }
                     }
+                    .if(selection == sound)
+                    .listRowBackground(Color.accentColor)
+                    .endif()
             }
         }
         .listStyle(GroupedListStyle())
@@ -42,7 +45,7 @@ struct SoundPicker: View {
 
 #if DEBUG
 struct SoundPicker_Previews: PreviewProvider {
-    @State static var sound: Sound = .meditationBell
+    @State static var sound: Sound = sounds[0]
     
     static var previews: some View {
         SoundPicker(selection: $sound)
