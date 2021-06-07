@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		F0207E9E264275C400D727BA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0207E9D264275C400D727BA /* String.swift */; };
 		F0207E9F264275C400D727BA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0207E9D264275C400D727BA /* String.swift */; };
-		F02BCEC32601EDF0000E56B9 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02BCEC22601EDF0000E56B9 /* Sound.swift */; };
-		F02BCEC42601EDF0000E56B9 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02BCEC22601EDF0000E56B9 /* Sound.swift */; };
 		F03236A22663AA340079376E /* StarUI in Frameworks */ = {isa = PBXBuildFile; productRef = F03236A12663AA340079376E /* StarUI */; };
+		F0323731266DED210079376E /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0323730266DED210079376E /* Sound.swift */; };
+		F0323732266DED210079376E /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0323730266DED210079376E /* Sound.swift */; };
 		F08E2BB42610D01900C897D4 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BB32610D01900C897D4 /* TimerViewModel.swift */; };
 		F08E2BB52610D01900C897D4 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BB32610D01900C897D4 /* TimerViewModel.swift */; };
 		F08E2BBB2610D4CD00C897D4 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BBA2610D4CD00C897D4 /* ViewModelFactory.swift */; };
@@ -53,8 +53,8 @@
 
 /* Begin PBXFileReference section */
 		F0207E9D264275C400D727BA /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		F02BCEC22601EDF0000E56B9 /* Sound.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; name = Sound.swift; path = ../Sound.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F03236B82664EAF00079376E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Shared/Views/TimerView/README.md; sourceTree = "<group>"; };
+		F0323730266DED210079376E /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		F08E2BB32610D01900C897D4 /* TimerViewModel.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F08E2BBA2610D4CD00C897D4 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewModelFactory.swift; path = Shared/ViewModelFactory.swift; sourceTree = SOURCE_ROOT; };
 		F08E2BDB2612345100C897D4 /* IntervalTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntervalTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,7 +133,7 @@
 		F0E90F6025A5A42A0017EE68 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F02BCEC22601EDF0000E56B9 /* Sound.swift */,
+				F0323730266DED210079376E /* Sound.swift */,
 				F0E90F6125A5A44D0017EE68 /* IntervalTimer.swift */,
 				F0E90F9A25A745250017EE68 /* TimerSettings.swift */,
 			);
@@ -358,8 +358,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0323731266DED210079376E /* Sound.swift in Sources */,
 				F0E90F9B25A745250017EE68 /* TimerSettings.swift in Sources */,
-				F02BCEC32601EDF0000E56B9 /* Sound.swift in Sources */,
 				F0E90F8F25A5BF650017EE68 /* SettingsView.swift in Sources */,
 				F0E90F6225A5A44D0017EE68 /* IntervalTimer.swift in Sources */,
 				F0F6BEC52599D59D00C07D68 /* TimerView.swift in Sources */,
@@ -377,8 +377,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0323732266DED210079376E /* Sound.swift in Sources */,
 				F0E90F9C25A745250017EE68 /* TimerSettings.swift in Sources */,
-				F02BCEC42601EDF0000E56B9 /* Sound.swift in Sources */,
 				F0E90F9025A5BF650017EE68 /* SettingsView.swift in Sources */,
 				F0F6BEC62599D59D00C07D68 /* TimerView.swift in Sources */,
 				F0F6BEC42599D59D00C07D68 /* IntervalTimerApp.swift in Sources */,
