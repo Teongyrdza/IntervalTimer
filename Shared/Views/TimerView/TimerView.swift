@@ -46,7 +46,7 @@ struct TimerView: View {
                 .frame(width: 75)
                 .accentColor(.gray)
             }
-            .buttonStyle(RoundedButtonStyle(lineWidth: 7.5, cornerRadius: 10))
+            .buttonStyle(RoundedCornersButtonStyle(lineWidth: 7.5, cornerRadius: 10))
             .frame(height: 50)
             .padding(.bottom)
             .padding(.horizontal)

@@ -47,7 +47,7 @@ struct SettingsView: View {
                 Button("Start") {
                     timerShowing.wrappedValue = true
                 }
-                .buttonStyle(RoundedButtonStyle(lineWidth: 7.5, cornerRadius: 10))
+                .buttonStyle(RoundedCornersButtonStyle(lineWidth: 7.5, cornerRadius: 10))
                 .frame(width: 150, height: 50)
                 .accentColor(.green)
                 .padding(.top)

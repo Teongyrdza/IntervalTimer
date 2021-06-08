@@ -14,6 +14,8 @@
 		F0323732266DED210079376E /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0323730266DED210079376E /* Sound.swift */; };
 		F0323734266DEE090079376E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F0323733266DEE080079376E /* README.md */; };
 		F0323735266DEE090079376E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F0323733266DEE080079376E /* README.md */; };
+		F0323737266DF7430079376E /* silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F0323736266DF7430079376E /* silence.mp3 */; };
+		F0323738266DF7430079376E /* silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F0323736266DF7430079376E /* silence.mp3 */; };
 		F08E2BB42610D01900C897D4 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BB32610D01900C897D4 /* TimerViewModel.swift */; };
 		F08E2BB52610D01900C897D4 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BB32610D01900C897D4 /* TimerViewModel.swift */; };
 		F08E2BBB2610D4CD00C897D4 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BBA2610D4CD00C897D4 /* ViewModelFactory.swift */; };
@@ -57,6 +59,7 @@
 		F0207E9D264275C400D727BA /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F0323730266DED210079376E /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		F0323733266DEE080079376E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F0323736266DF7430079376E /* silence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = silence.mp3; sourceTree = "<group>"; };
 		F08E2BB32610D01900C897D4 /* TimerViewModel.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F08E2BBA2610D4CD00C897D4 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewModelFactory.swift; path = Shared/ViewModelFactory.swift; sourceTree = SOURCE_ROOT; };
 		F08E2BDB2612345100C897D4 /* IntervalTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntervalTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +159,7 @@
 			children = (
 				F0B0491B2601F371000E8392 /* ding.mp3 */,
 				F0E90F8525A5BD220017EE68 /* meditationBell.mp3 */,
+				F0323736266DF7430079376E /* silence.mp3 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -330,6 +334,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0323737266DF7430079376E /* silence.mp3 in Resources */,
 				F0E90F8625A5BD220017EE68 /* meditationBell.mp3 in Resources */,
 				F094138E260DE18C007E75C9 /* ding.mp3 in Resources */,
 				F0323734266DEE090079376E /* README.md in Resources */,
@@ -341,6 +346,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0323738266DF7430079376E /* silence.mp3 in Resources */,
 				F0B0491D2601F371000E8392 /* ding.mp3 in Resources */,
 				F0E90F8725A5BD220017EE68 /* meditationBell.mp3 in Resources */,
 				F0323735266DEE090079376E /* README.md in Resources */,
