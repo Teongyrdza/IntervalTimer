@@ -12,29 +12,29 @@ import OrderedCollections
 
 class HistoryStore: ObservableObject {
     @Published var histories = [History]()
-    @Published var policies = OrderedDictionary<UUID, HistoryPolicy>()
-    @Published var policyId = HistoryPolicy.default.id
+    @Published var policies = OrderedDictionary<UUID, Task>()
+    @Published var policyId = Task.default.id
     
-    var policyArray: [HistoryPolicy] {
+    var policyArray: [Task] {
         Array(policies.values)
     }
     
-    var currentPolicy: HistoryPolicy {
+    var currentPolicy: Task {
         policy(for: policyId)
     }
     
-    func policy(for id: UUID) -> HistoryPolicy {
+    func policy(for id: UUID) -> Task {
         policies[id] ?? .default
     }
     
-    func binding(for policy: HistoryPolicy) -> Binding<HistoryPolicy> {
+    func binding(for policy: Task) -> Binding<Task> {
         .init(
             get: { self.policy(for: policy.id) },
             set: { [self] in policies[policy.id] = $0 }
         )
     }
     
-    func insert(policy: HistoryPolicy) {
+    func insert(policy: Task) {
         policies[policy.id] = policy
     }
     

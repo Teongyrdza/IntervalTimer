@@ -1,5 +1,5 @@
 //
-//  PolicyPicker.swift
+//  TaskPicker.swift
 //  IntervalTimer
 //
 //  Created by Ostap on 26.08.2021.
@@ -8,18 +8,18 @@
 import SwiftUI
 import Foundation
 
-struct PolicyPicker: View {
-    @ObservedObject var store = HistoryStore()
+struct TaskPicker: View {
+    @ObservedObject var store = TaskStore()
     @Binding var selection: UUID
     
     var body: some View {
         List {
-            ForEach(store.policyArray) { policy in
-                Text(policy.name)
+            ForEach(store.tasks.toArray()) { task in
+                Text(task.name)
                     .onTapGesture {
-                        selection = policy.id
+                        selection = task.id
                     }
-                    .if(selection == policy.id)
+                    .if(selection == task.id)
                     .listRowBackground(Color.accentColor)
                     .endif()
             }
@@ -28,10 +28,10 @@ struct PolicyPicker: View {
     }
 }
 
-struct PolicyPicker_Previews: PreviewProvider {
-    @State static var id = HistoryPolicy.default.id
+struct TaskPicker_Previews: PreviewProvider {
+    @State static var id = Task.default.id
     
     static var previews: some View {
-        PolicyPicker(selection: $id)
+        TaskPicker(selection: $id)
     }
 }

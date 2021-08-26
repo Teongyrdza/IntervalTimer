@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct AppView: View {
-    @ObservedObject var historyStore: HistoryStore
     @StateObject var settings = TimerSettings()
+    @ObservedObject var historyStore = HistoryStore()
+    @ObservedObject var taskStore = TaskStore()
     @State var timerShowing = false
     
     var viewModelFactory: ViewModelFactory {
-        ViewModelFactory(timerSettings: settings, historyStore: historyStore)
+        ViewModelFactory(
+            timerSettings: settings, historyStore: historyStore, taskStore: taskStore
+        )
     }
     
     var body: some View {
@@ -25,7 +28,7 @@ struct AppView: View {
                     )
                 }
                 else {
-                    SettingsView(settings: settings, historyStore: historyStore)
+                    SettingsView(settings: settings, taskStore: taskStore)
                 }
             }
             .environment(\.timerShowing, $timerShowing)
@@ -43,7 +46,7 @@ struct AppView: View {
             }
             
             NavigationView {
-                PolicyView(historyStore: historyStore)
+                TasksView(taskStore: taskStore)
             }
             .tabItem {
                 Image(systemName: "list.bullet")
@@ -57,7 +60,7 @@ struct AppView: View {
 #if DEBUG
 struct AppView_Previews: PreviewProvider {
     static var previews: some View {
-        AppView(historyStore: .init())
+        AppView()
     }
 }
 #endif

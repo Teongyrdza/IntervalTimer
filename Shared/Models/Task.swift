@@ -1,5 +1,5 @@
 //
-//  HistoryPolicy.swift
+//  Task.swift
 //  IntervalTimer
 //
 //  Created by Ostap on 26.08.2021.
@@ -7,8 +7,7 @@
 
 import Foundation
 
-/// A policy that describes how history will be recorded
-struct HistoryPolicy: Hashable, Codable, Identifiable {
+struct Task: Hashable, Codable, Identifiable {
     static let `default` = Self("Default", record: false)
     
     var id = UUID()

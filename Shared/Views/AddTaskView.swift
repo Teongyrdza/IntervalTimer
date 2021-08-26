@@ -1,5 +1,5 @@
 //
-//  AddPolicyView.swift
+//  AddTaskView.swift
 //  IntervalTimer
 //
 //  Created by Ostap on 26.08.2021.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct AddPolicyView: View {
+struct AddTaskView: View {
     @Binding var isPresented: Bool
-    @ObservedObject var historyStore = HistoryStore()
+    @ObservedObject var taskStore = TaskStore()
     @State var name = ""
     @State var record = true
     
@@ -31,7 +31,7 @@ struct AddPolicyView: View {
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Done") {
-                        historyStore.insert(policy: .init(name, record: record))
+                        taskStore.insert(task: .init(name, record: record))
                         isPresented = false
                     }
                 }
@@ -41,8 +41,8 @@ struct AddPolicyView: View {
     }
 }
 
-struct AddPolicyView_Previews: PreviewProvider {
+struct AddTaskView_Previews: PreviewProvider {
     static var previews: some View {
-        AddPolicyView(isPresented: .constant(true))
+        AddTaskView(isPresented: .constant(true))
     }
 }

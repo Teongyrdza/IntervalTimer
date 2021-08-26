@@ -15,6 +15,8 @@ final class TimerViewModel: ObservableObject {
     
     let settings: TimerSettings
     let historyStore: HistoryStore
+    let taskStore: TaskStore
+    
     @Binding var showing: Bool
     
     let timer: IntervalTimer
@@ -29,9 +31,9 @@ final class TimerViewModel: ObservableObject {
     }
     
     func recordHistory() {
-        let policy = historyStore.currentPolicy
-        if policy.record {
-            historyStore.histories.append(.init(name: policy.name, cycles: cycles, duration: timePassed))
+        let task = taskStore.currentTask
+        if task.record {
+            historyStore.histories.append(.init(name: task.name, cycles: cycles, duration: timePassed))
         }
     }
     
@@ -54,11 +56,12 @@ final class TimerViewModel: ObservableObject {
         "Alarm in \(timer.timeRemaining.formatted())"
     }
     
-    init(settings: TimerSettings = .init(), historyStore: HistoryStore = .init(), showing: Binding<Bool>) {
+    init(settings: TimerSettings = .init(), historyStore: HistoryStore = .init(), taskStore: TaskStore = .init(), showing: Binding<Bool>) {
         let adj: IntervalTimer.Frequency = (settings.interval - 1) / 1440
         self.timer = IntervalTimer(every: settings.interval, frequency: .default + adj)
         self.settings = settings
         self.historyStore = historyStore
+        self.taskStore = taskStore
         self._showing = showing
         self.state = .hidden
         

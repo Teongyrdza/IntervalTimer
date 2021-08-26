@@ -11,7 +11,7 @@ import AVFoundation
 
 struct SettingsView: View {
     @ObservedObject var settings = TimerSettings()
-    @ObservedObject var historyStore = HistoryStore()
+    @ObservedObject var taskStore = TaskStore()
     @Environment(\.timerShowing) var timerShowing
     
     var body: some View {
@@ -47,12 +47,12 @@ struct SettingsView: View {
                             Spacer()
                             
                             NavigationLink(
-                                destination: PolicyPicker(
-                                    store: historyStore,
-                                    selection: $historyStore.policyId
+                                destination: TaskPicker(
+                                    store: taskStore,
+                                    selection: $taskStore.currentTaskId
                                 )
                             ) {
-                                Text(historyStore.currentPolicy.name)
+                                Text(taskStore.currentTask.name)
                                     .opacity(0.5)
                                     .foregroundColor(.gray)
                             }
