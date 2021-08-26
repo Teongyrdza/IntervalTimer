@@ -9,33 +9,11 @@ import SwiftUI
 
 @main
 struct IntervalTimerApp: App {
+    @StateObject var historyStore = HistoryStore()
+    
     var body: some Scene {
         WindowGroup {
-            AppView()
+            AppView(historyStore: historyStore)
         }
     }
-    
-    // MARK: - Background execution
-    /*
-    #if os(iOS)
-    private var backgroundTask: UIBackgroundTaskIdentifier = .invalid
-    
-    mutating func endBackgroundTask() {
-        if backgroundTask != .invalid {
-            UIApplication.shared.endBackgroundTask(backgroundTask)
-            backgroundTask = .invalid
-        }
-    }
-    
-    mutating func moveToBackground() {
-        backgroundTask = UIApplication.shared.beginBackgroundTask { [self] in
-            endBackgroundTask()
-        }
-    }
-    
-    mutating func enterForeground() {
-        endBackgroundTask()
-    }
-    #endif
-    */
 }

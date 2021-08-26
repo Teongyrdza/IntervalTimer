@@ -61,7 +61,7 @@ struct TimerView: View {
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            TimerView(viewModel: TimerViewModel(settings: TimerSettings(), showing: .constant(true)))
+            TimerView(viewModel: .init(showing: .constant(true)))
         }
     }
 }

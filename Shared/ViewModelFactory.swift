@@ -9,12 +9,14 @@ import SwiftUI
 
 final class ViewModelFactory {
     private let timerSettings: TimerSettings
+    private let historyStore: HistoryStore
     
     func makeTimerViewModel(showing: Binding<Bool>) -> TimerViewModel {
-        return TimerViewModel(settings: timerSettings, showing: showing)
+        return TimerViewModel(settings: timerSettings, historyStore: historyStore, showing: showing)
     }
     
-    init(timerSettings: TimerSettings) {
+    init(timerSettings: TimerSettings, historyStore: HistoryStore = .init()) {
         self.timerSettings = timerSettings
+        self.historyStore = historyStore
     }
 }

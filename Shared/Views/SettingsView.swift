@@ -10,7 +10,7 @@ import StarUI
 import AVFoundation
 
 struct SettingsView: View {
-    @EnvironmentObject var settings: TimerSettings
+    @ObservedObject var settings = TimerSettings()
     @Environment(\.timerShowing) var timerShowing
     let showBorders = false
     

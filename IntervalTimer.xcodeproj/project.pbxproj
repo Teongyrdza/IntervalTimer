@@ -14,8 +14,16 @@
 		F0323732266DED210079376E /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0323730266DED210079376E /* Sound.swift */; };
 		F0323734266DEE090079376E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F0323733266DEE080079376E /* README.md */; };
 		F0323735266DEE090079376E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F0323733266DEE080079376E /* README.md */; };
-		F0323737266DF7430079376E /* silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F0323736266DF7430079376E /* silence.mp3 */; };
-		F0323738266DF7430079376E /* silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F0323736266DF7430079376E /* silence.mp3 */; };
+		F06AB6D526D5544D00753F64 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB6D426D5544D00753F64 /* History.swift */; };
+		F06AB6D626D5544D00753F64 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB6D426D5544D00753F64 /* History.swift */; };
+		F06AB6D826D62A0A00753F64 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB6D726D62A0A00753F64 /* HistoryView.swift */; };
+		F06AB6D926D62A0A00753F64 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB6D726D62A0A00753F64 /* HistoryView.swift */; };
+		F06AB6DB26D62DBE00753F64 /* HistoryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB6DA26D62DBE00753F64 /* HistoryDetail.swift */; };
+		F06AB6DC26D62DBE00753F64 /* HistoryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB6DA26D62DBE00753F64 /* HistoryDetail.swift */; };
+		F06AB6DE26D6552300753F64 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB6DD26D6552300753F64 /* TimeFormatter.swift */; };
+		F06AB6DF26D6552300753F64 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB6DD26D6552300753F64 /* TimeFormatter.swift */; };
+		F06AB6E126D658D300753F64 /* HistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB6E026D658D300753F64 /* HistoryStore.swift */; };
+		F06AB6E226D658D300753F64 /* HistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB6E026D658D300753F64 /* HistoryStore.swift */; };
 		F08E2BB42610D01900C897D4 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BB32610D01900C897D4 /* TimerViewModel.swift */; };
 		F08E2BB52610D01900C897D4 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BB32610D01900C897D4 /* TimerViewModel.swift */; };
 		F08E2BBB2610D4CD00C897D4 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BBA2610D4CD00C897D4 /* ViewModelFactory.swift */; };
@@ -59,7 +67,11 @@
 		F0207E9D264275C400D727BA /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F0323730266DED210079376E /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		F0323733266DEE080079376E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		F0323736266DF7430079376E /* silence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = silence.mp3; sourceTree = "<group>"; };
+		F06AB6D426D5544D00753F64 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		F06AB6D726D62A0A00753F64 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		F06AB6DA26D62DBE00753F64 /* HistoryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetail.swift; sourceTree = "<group>"; };
+		F06AB6DD26D6552300753F64 /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
+		F06AB6E026D658D300753F64 /* HistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStore.swift; sourceTree = "<group>"; };
 		F08E2BB32610D01900C897D4 /* TimerViewModel.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F08E2BBA2610D4CD00C897D4 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewModelFactory.swift; path = Shared/ViewModelFactory.swift; sourceTree = SOURCE_ROOT; };
 		F08E2BDB2612345100C897D4 /* IntervalTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntervalTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +134,8 @@
 				F0E90F9525A73AFD0017EE68 /* AppView.swift */,
 				F0E90F8E25A5BF650017EE68 /* SettingsView.swift */,
 				F08E2BF4261307F900C897D4 /* SoundPicker.swift */,
+				F06AB6D726D62A0A00753F64 /* HistoryView.swift */,
+				F06AB6DA26D62DBE00753F64 /* HistoryDetail.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -141,6 +155,8 @@
 				F0323730266DED210079376E /* Sound.swift */,
 				F0E90F6125A5A44D0017EE68 /* IntervalTimer.swift */,
 				F0E90F9A25A745250017EE68 /* TimerSettings.swift */,
+				F06AB6D426D5544D00753F64 /* History.swift */,
+				F06AB6E026D658D300753F64 /* HistoryStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -150,6 +166,7 @@
 			children = (
 				F0ECF65F25A8CC46005B1235 /* Environment.swift */,
 				F0207E9D264275C400D727BA /* String.swift */,
+				F06AB6DD26D6552300753F64 /* TimeFormatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -159,7 +176,6 @@
 			children = (
 				F0B0491B2601F371000E8392 /* ding.mp3 */,
 				F0E90F8525A5BD220017EE68 /* meditationBell.mp3 */,
-				F0323736266DF7430079376E /* silence.mp3 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -334,7 +350,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0323737266DF7430079376E /* silence.mp3 in Resources */,
 				F0E90F8625A5BD220017EE68 /* meditationBell.mp3 in Resources */,
 				F094138E260DE18C007E75C9 /* ding.mp3 in Resources */,
 				F0323734266DEE090079376E /* README.md in Resources */,
@@ -346,7 +361,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0323738266DF7430079376E /* silence.mp3 in Resources */,
 				F0B0491D2601F371000E8392 /* ding.mp3 in Resources */,
 				F0E90F8725A5BD220017EE68 /* meditationBell.mp3 in Resources */,
 				F0323735266DEE090079376E /* README.md in Resources */,
@@ -369,17 +383,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0323731266DED210079376E /* Sound.swift in Sources */,
+				F06AB6DE26D6552300753F64 /* TimeFormatter.swift in Sources */,
 				F0E90F9B25A745250017EE68 /* TimerSettings.swift in Sources */,
 				F0E90F8F25A5BF650017EE68 /* SettingsView.swift in Sources */,
 				F0E90F6225A5A44D0017EE68 /* IntervalTimer.swift in Sources */,
 				F0F6BEC52599D59D00C07D68 /* TimerView.swift in Sources */,
 				F0E90F9625A73AFD0017EE68 /* AppView.swift in Sources */,
 				F08E2BB42610D01900C897D4 /* TimerViewModel.swift in Sources */,
+				F06AB6E126D658D300753F64 /* HistoryStore.swift in Sources */,
+				F06AB6D826D62A0A00753F64 /* HistoryView.swift in Sources */,
 				F08E2BBB2610D4CD00C897D4 /* ViewModelFactory.swift in Sources */,
 				F08E2BF5261307F900C897D4 /* SoundPicker.swift in Sources */,
 				F0207E9E264275C400D727BA /* String.swift in Sources */,
+				F06AB6D526D5544D00753F64 /* History.swift in Sources */,
 				F0F6BEC32599D59D00C07D68 /* IntervalTimerApp.swift in Sources */,
 				F0ECF66025A8CC46005B1235 /* Environment.swift in Sources */,
+				F06AB6DB26D62DBE00753F64 /* HistoryDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,17 +407,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0323732266DED210079376E /* Sound.swift in Sources */,
+				F06AB6DF26D6552300753F64 /* TimeFormatter.swift in Sources */,
 				F0E90F9C25A745250017EE68 /* TimerSettings.swift in Sources */,
 				F0E90F9025A5BF650017EE68 /* SettingsView.swift in Sources */,
 				F0F6BEC62599D59D00C07D68 /* TimerView.swift in Sources */,
 				F0F6BEC42599D59D00C07D68 /* IntervalTimerApp.swift in Sources */,
 				F0E90F6325A5A44D0017EE68 /* IntervalTimer.swift in Sources */,
 				F08E2BB52610D01900C897D4 /* TimerViewModel.swift in Sources */,
+				F06AB6E226D658D300753F64 /* HistoryStore.swift in Sources */,
+				F06AB6D926D62A0A00753F64 /* HistoryView.swift in Sources */,
 				F08E2BBC2610D4CD00C897D4 /* ViewModelFactory.swift in Sources */,
 				F08E2BF6261307F900C897D4 /* SoundPicker.swift in Sources */,
 				F0207E9F264275C400D727BA /* String.swift in Sources */,
+				F06AB6D626D5544D00753F64 /* History.swift in Sources */,
 				F0E90F9725A73AFD0017EE68 /* AppView.swift in Sources */,
 				F0ECF66125A8CC46005B1235 /* Environment.swift in Sources */,
+				F06AB6DC26D62DBE00753F64 /* HistoryDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

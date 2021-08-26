@@ -8,22 +8,26 @@
 import SwiftUI
 
 struct AppView: View {
+    @ObservedObject var historyStore: HistoryStore
     @StateObject var settings = TimerSettings()
     @State var timerShowing = false
     
-    var viewModelFactory: ViewModelFactory { ViewModelFactory(timerSettings: settings) }
+    var viewModelFactory: ViewModelFactory {
+        ViewModelFactory(timerSettings: settings, historyStore: historyStore)
+    }
     
     var body: some View {
         TabView {
             NavigationView {
                 if timerShowing {
-                    TimerView(viewModel: viewModelFactory.makeTimerViewModel(showing: $timerShowing))
+                    TimerView(
+                        viewModel: viewModelFactory.makeTimerViewModel(showing: $timerShowing)
+                    )
                 }
                 else {
-                    SettingsView()
+                    SettingsView(settings: settings)
                 }
             }
-            .environmentObject(settings)
             .environment(\.timerShowing, $timerShowing)
             .tabItem {
                 Image(systemName: "timer")
@@ -31,7 +35,7 @@ struct AppView: View {
             }
             
             NavigationView {
-                Text("History")
+                HistoryView(store: historyStore)
             }
             .tabItem {
                 Image(systemName: "books.vertical")
@@ -45,7 +49,7 @@ struct AppView: View {
 #if DEBUG
 struct AppView_Previews: PreviewProvider {
     static var previews: some View {
-        AppView()
+        AppView(historyStore: .init())
     }
 }
 #endif

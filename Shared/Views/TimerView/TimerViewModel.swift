@@ -11,26 +11,25 @@ import Combine
 
 final class TimerViewModel: ObservableObject {
     // MARK: - Private
-    var timerSubsription: AnyCancellable!
-    var intervalPassedSubscription: AnyCancellable!
-    let timer: IntervalTimer
+    private var cancellables = Set<AnyCancellable>()
+    
     let settings: TimerSettings
+    let historyStore: HistoryStore
     @Binding var showing: Bool
     
-    var secondsRemaining: Int {
-        Int(timer.timeRemaining) % 60
+    let timer: IntervalTimer
+    var appeared = false
+    var cycles = 0
+    var timePassed = 0.0
+    var lastUpdateTime = 0.0
+    
+    func startTimer() {
+        timer.startCycle()
+        lastUpdateTime = timer.lastUpdateTime
     }
     
-    var secondsRemainingMetric: String {
-        secondsRemaining == 1 ? "second" : "seconds"
-    }
-    
-    var minutesRemaining: Int {
-        Int(timer.timeRemaining) / 60
-    }
-    
-    var minutesRemainingMetric: String {
-        minutesRemaining == 1 ? "minute" : "minutes"
+    func recordHistory() {
+        historyStore.histories.append(.init(name: "History", cycles: cycles, duration: timePassed))
     }
     
     // MARK: - Public
@@ -49,31 +48,32 @@ final class TimerViewModel: ObservableObject {
     
     var timeRemaining: CGFloat { CGFloat(timer.timeRemaining / timer.refreshTime) }
     var alarmText: String {
-        if timer.timeRemaining < 60 {
-            return "Alarm in \(secondsRemaining) \(secondsRemainingMetric)"
-        }
-        else {
-            return "Alarm in \(minutesRemaining) \(minutesRemainingMetric) \(secondsRemaining) \(secondsRemainingMetric)"
-        }
+        "Alarm in \(timer.timeRemaining.formatted())"
     }
     
-    init(settings: TimerSettings, showing: Binding<Bool>) {
+    init(settings: TimerSettings = .init(), historyStore: HistoryStore = .init(), showing: Binding<Bool>) {
         let adj: IntervalTimer.Frequency = (settings.interval - 1) / 1440
         self.timer = IntervalTimer(every: settings.interval, frequency: .default + adj)
         self.settings = settings
+        self.historyStore = historyStore
         self._showing = showing
         self.state = .hidden
         
-        self.timerSubsription = self.timer.objectWillChange.sink { _ in
-            self.objectWillChange.send()
-        }
+        timer.objectWillChange
+            .sink { [self] _ in
+                objectWillChange.send()
+                timePassed += timer.lastUpdateTime - lastUpdateTime
+                lastUpdateTime = timer.lastUpdateTime
+            }
+            .store(in: &cancellables)
         
-        self.intervalPassedSubscription = self.timer.intervalPassed.sink {
-            settings.sound.player.seek(to: .zero)
-            settings.sound.player.play()
-        }
-        
-        //print("Timer frequency is \(timer.frequency)")
+        timer.intervalPassed
+            .sink { [self] in
+                cycles += 1
+                settings.sound.player.seek(to: .zero)
+                settings.sound.player.play()
+            }
+            .store(in: &cancellables)
     }
 }
 
@@ -93,7 +93,7 @@ extension TimerViewModel {
             override var description: String { "running" }
             
             override func enter(_ viewModel: TimerViewModel) {
-                viewModel.timer.startCycle()
+                viewModel.startTimer()
             }
             
             override func exit(_ viewModel: TimerViewModel) {
@@ -109,11 +109,15 @@ extension TimerViewModel {
             override var description: String { "hidden" }
             
             override func enter(_ viewModel: TimerViewModel) {
+                if viewModel.appeared {
+                    viewModel.recordHistory()
+                }
                 viewModel.showing = false
             }
             
             override func exit(_ viewModel: TimerViewModel) {
                 viewModel.showing = true
+                viewModel.appeared = true
             }
         }
     }

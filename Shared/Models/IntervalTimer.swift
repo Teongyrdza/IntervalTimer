@@ -14,51 +14,46 @@ final class IntervalTimer: ObservableObject {
     
     @Published var refreshTime: TimeInterval
     @Published var timeRemaining: TimeInterval
-    @Published var isRunning = false
     
     var intervalPassed = PassthroughSubject<Void, Never>()
     let frequency: TimeInterval
+    var lastUpdateTime = 0.0
     
     private var timer: Timer?
-    private var lastUpdateTime: TimeInterval?
+    private var newCycle = true
     
-    private func updateTime(and ratio: inout Double) {
-        let now = Date().timeIntervalSince1970
-        
-        if lastUpdateTime == nil {
-            ratio = 1
+    private func ratio(now: TimeInterval) -> TimeInterval {
+        if newCycle {
+            newCycle = false
+            return 1
         }
         else {
-            let timePassed = now - lastUpdateTime!
-            ratio = timePassed / frequency
+            let timePassed = now - lastUpdateTime
+            return timePassed / frequency
         }
-        
-        lastUpdateTime = now
     }
     
     func startCycle() {
         timeRemaining = refreshTime
-        timer = Timer.scheduledTimer(withTimeInterval: frequency, repeats: true) { [unowned self] timer in
+        lastUpdateTime = Date().timeIntervalSince1970
+        timer = Timer.scheduledTimer(withTimeInterval: frequency, repeats: true) { [self] timer in
             if timeRemaining - frequency >= 0 {
-                var ratio = 1.0
-                updateTime(and: &ratio)
+                let now = Date().timeIntervalSince1970
+                let ratio = ratio(now: now)
+                lastUpdateTime = now
                 timeRemaining -= ratio * frequency
             }
             else {
                 timeRemaining = refreshTime
-                lastUpdateTime = nil
+                newCycle = true
                 intervalPassed.send()
             }
         }
-        
-        isRunning = true
     }
     
     func stopCycle() {
         timer?.invalidate()
         timer = nil
-        
-        isRunning = false
     }
     
     init(every interval: TimeInterval, frequency: Frequency) {
