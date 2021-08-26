@@ -11,8 +11,8 @@ import AVFoundation
 
 struct SettingsView: View {
     @ObservedObject var settings = TimerSettings()
+    @ObservedObject var historyStore = HistoryStore()
     @Environment(\.timerShowing) var timerShowing
-    let showBorders = false
     
     var body: some View {
         ScrollView {
@@ -23,10 +23,8 @@ struct SettingsView: View {
                     
                     Text("Time interval")
                         .font(.system(size: 30))
-                        .border(Color.gray, if: showBorders)
                     
                     SingleRowTimePicker(selection: $settings.interval, in: 1..<181)
-                        .border(Color.green, if: showBorders)
                     
                     GroupBox {
                         HStack {
@@ -41,7 +39,25 @@ struct SettingsView: View {
                             }
                         }
                     }
-                    .border(Color.yellow, if: showBorders)
+                    
+                    GroupBox {
+                        HStack {
+                            Text("Task")
+                            
+                            Spacer()
+                            
+                            NavigationLink(
+                                destination: PolicyPicker(
+                                    store: historyStore,
+                                    selection: $historyStore.policyId
+                                )
+                            ) {
+                                Text(historyStore.currentPolicy.name)
+                                    .opacity(0.5)
+                                    .foregroundColor(.gray)
+                            }
+                        }
+                    }
                 }
                 
                 Button("Start") {

@@ -29,7 +29,10 @@ final class TimerViewModel: ObservableObject {
     }
     
     func recordHistory() {
-        historyStore.histories.append(.init(name: "History", cycles: cycles, duration: timePassed))
+        let policy = historyStore.currentPolicy
+        if policy.record {
+            historyStore.histories.append(.init(name: policy.name, cycles: cycles, duration: timePassed))
+        }
     }
     
     // MARK: - Public

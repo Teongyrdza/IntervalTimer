@@ -25,7 +25,7 @@ struct AppView: View {
                     )
                 }
                 else {
-                    SettingsView(settings: settings)
+                    SettingsView(settings: settings, historyStore: historyStore)
                 }
             }
             .environment(\.timerShowing, $timerShowing)
@@ -40,6 +40,14 @@ struct AppView: View {
             .tabItem {
                 Image(systemName: "books.vertical")
                 Text("History")
+            }
+            
+            NavigationView {
+                PolicyView(historyStore: historyStore)
+            }
+            .tabItem {
+                Image(systemName: "list.bullet")
+                Text("Tasks")
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())

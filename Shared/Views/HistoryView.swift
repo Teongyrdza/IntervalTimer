@@ -11,24 +11,35 @@ struct HistoryView: View {
     @ObservedObject var store: HistoryStore
     
     var body: some View {
-        List {
-            ForEach(store.histories.reversed()) { history in
-                NavigationLink(destination: HistoryDetail(history: history)) {
-                    VStack(alignment: .leading) {
-                        Text(history.name)
-                            .fontWeight(.bold)
-                        
-                        Spacer()
-                        
-                        Text(history.dateString)
+        Group {
+            if store.histories.isEmpty {
+                Text("The history is empty")
+                    .foregroundColor(.gray)
+            }
+            else {
+                List {
+                    ForEach(store.histories.reversed()) { history in
+                        NavigationLink(destination: HistoryDetail(history: history)) {
+                            VStack(alignment: .leading) {
+                                Text(history.name)
+                                    .fontWeight(.bold)
+                                
+                                Spacer()
+                                
+                                Text(history.dateString)
+                            }
+                        }
+                    }
+                    .onDelete { indices in
+                        // Remove from the start, because indices are reversed
+                        for index in indices {
+                            store.histories.remove(at: store.histories.count - 1 - index)
+                        }
                     }
                 }
-            }
-            .onDelete { indices in
-                store.histories.remove(atOffsets: indices)
+                .listStyle(InsetGroupedListStyle())
             }
         }
-        .listStyle(InsetGroupedListStyle())
         .navigationTitle("History")
     }
 }
