@@ -24,6 +24,7 @@ final class TimerViewModel: ObservableObject {
     var cycles = 0
     var timePassed = 0.0
     var lastUpdateTime = 0.0
+    var paused = false
     
     func startTimer() {
         timer.startCycle()
@@ -37,7 +38,7 @@ final class TimerViewModel: ObservableObject {
         }
     }
     
-    // MARK: - Public
+    // MARK: - View properties
     @Published var state: State {
         willSet {
             if newValue != state {
@@ -54,6 +55,18 @@ final class TimerViewModel: ObservableObject {
     var timeRemaining: CGFloat { CGFloat(timer.timeRemaining / timer.refreshTime) }
     var alarmText: String {
         "Alarm in \(timer.timeRemaining.formatted())"
+    }
+    
+    var leftButtonColor = Color.accentColor
+    var leftButtonText = ""
+    
+    // MARK: - Event handlers
+    func leftButtonTapped() {
+        state = paused ? .running : .stopped
+    }
+    
+    func rightButtonTapped() {
+        state = .hidden
     }
     
     init(settings: TimerSettings = .init(), historyStore: HistoryStore = .init(), taskStore: TaskStore = .init(), showing: Binding<Bool>) {
@@ -99,6 +112,9 @@ extension TimerViewModel {
             override var description: String { "running" }
             
             override func enter(_ viewModel: TimerViewModel) {
+                viewModel.leftButtonColor = .init("AccentColor")
+                viewModel.leftButtonText = "Pause"
+                
                 viewModel.startTimer()
             }
             
@@ -109,6 +125,17 @@ extension TimerViewModel {
         
         class Stopped: State {
             override var description: String { "stopped" }
+            
+            override func enter(_ viewModel: TimerViewModel) {
+                viewModel.leftButtonColor = .green
+                viewModel.leftButtonText = "Resume"
+                
+                viewModel.paused = true
+            }
+            
+            override func exit(_ viewModel: TimerViewModel) {
+                viewModel.paused = false
+            }
         }
         
         class Hidden: State {

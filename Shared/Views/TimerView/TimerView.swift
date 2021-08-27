@@ -22,26 +22,16 @@ struct TimerView: View {
             }
             
             HStack {
-                Group {
-                    if viewModel.state == .stopped {
-                        Button("Start") {
-                            viewModel.state = .running
-                        }
-                        .accentColor(.green)
-                    }
-                    else {
-                        Button("Stop") {
-                            viewModel.state = .stopped
-                        }
-                        .accentColor(.init("AccentColor"))
-                    }
+                Button(viewModel.leftButtonText) {
+                    viewModel.leftButtonTapped()
                 }
                 .frame(width: 75)
+                .accentColor(viewModel.leftButtonColor)
                 
                 Spacer()
                 
                 Button("Cancel") {
-                    viewModel.state = .hidden
+                    viewModel.rightButtonTapped()
                 }
                 .frame(width: 75)
                 .accentColor(.gray)
