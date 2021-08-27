@@ -16,9 +16,10 @@ struct SettingsView: View {
     
     var taskIdBinding: Binding<UUID> {
         .init(
-            get: { settings.currentTask.id },
+            get: { settings.currentTaskId },
             set: { newId in
-                settings.currentTask = taskStore.task(for: newId)
+                settings.currentTaskId = newId
+                settings.currentTaskInterval = taskStore.task(for: newId).interval
             }
         )
     }
@@ -61,7 +62,7 @@ struct SettingsView: View {
                                     selection: taskIdBinding
                                 )
                             ) {
-                                Text(settings.currentTask.name)
+                                Text(taskStore.task(for: settings.currentTaskId).name)
                                     .opacity(0.5)
                                     .foregroundColor(.gray)
                             }

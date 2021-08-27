@@ -32,7 +32,7 @@ final class TimerViewModel: ObservableObject {
     }
     
     func recordHistory() {
-        let task = settings.currentTask
+        let task = taskStore.task(for: settings.currentTaskId)
         if task.record {
             historyStore.histories.append(.init(name: task.name, cycles: cycles, duration: timePassed))
         }
