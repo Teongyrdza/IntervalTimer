@@ -7,12 +7,21 @@
 
 import SwiftUI
 import StarUI
-import AVFoundation
+import Foundation
 
 struct SettingsView: View {
     @ObservedObject var settings = TimerSettings()
     @ObservedObject var taskStore = TaskStore()
     @Environment(\.timerShowing) var timerShowing
+    
+    var taskIdBinding: Binding<UUID> {
+        .init(
+            get: { settings.currentTask.id },
+            set: { newId in
+                settings.currentTask = taskStore.task(for: newId)
+            }
+        )
+    }
     
     var body: some View {
         ScrollView {
@@ -49,10 +58,10 @@ struct SettingsView: View {
                             NavigationLink(
                                 destination: TaskPicker(
                                     store: taskStore,
-                                    selection: $taskStore.currentTaskId
+                                    selection: taskIdBinding
                                 )
                             ) {
-                                Text(taskStore.currentTask.name)
+                                Text(settings.currentTask.name)
                                     .opacity(0.5)
                                     .foregroundColor(.gray)
                             }

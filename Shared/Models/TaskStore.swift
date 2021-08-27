@@ -12,14 +12,9 @@ import OrderedCollections
 
 class TaskStore: ObservableObject {
     @Published var tasks = OrderedDictionary<UUID, Task>()
-    @Published var currentTaskId = Task.default.id
 
-    var policyArray: [Task] {
+    var taskArray: [Task] {
         Array(tasks.values)
-    }
-
-    var currentTask: Task {
-        task(for: currentTaskId)
     }
 
     func task(for id: UUID) -> Task {
@@ -33,7 +28,7 @@ class TaskStore: ObservableObject {
         )
     }
 
-    func insert(task: Task) {
+    func insert(_ task: Task) {
         tasks[task.id] = task
     }
 
@@ -42,6 +37,6 @@ class TaskStore: ObservableObject {
     }
 
     init() {
-        insert(task: .default)
+        insert(Task.default)
     }
 }

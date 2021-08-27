@@ -12,6 +12,15 @@ struct TasksView: View {
     @ObservedObject var taskStore = TaskStore()
     @State var inserting = false
     
+    func view(for task: Binding<Task>) -> some View {
+        VStack {
+            TextField("Name", text: task.name)
+                .font(.headline.bold())
+            
+            Toggle("Record history", isOn: task.record)
+        }
+    }
+    
     var body: some View {
         Group {
             if taskStore.tasks.isEmpty {
@@ -23,12 +32,13 @@ struct TasksView: View {
                     ForEach(taskStore.tasks.toArray()) { task in
                         let binding = taskStore.binding(for: task)
                         
-                        VStack {
-                            TextField("Name", text: binding.name)
-                                .font(.headline.bold())
-                            
-                            Toggle("Record history", isOn: binding.record)
+                        NavigationLink(
+                            destination: EditTaskView(task: binding).navigationTitle(task.name)
+                        ) {
+                            view(for: binding)
                         }
+                        .hidden()
+                        .background(view(for: binding))
                     }
                     .onDelete { indices in
                         for index in indices {
