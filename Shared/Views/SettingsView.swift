@@ -19,7 +19,7 @@ struct SettingsView: View {
             get: { settings.currentTaskId },
             set: { newId in
                 settings.currentTaskId = newId
-                settings.currentTaskInterval = taskStore.task(for: newId).interval
+                settings.currentTaskIntervalChanged(to: taskStore.task(for: newId).interval)
             }
         )
     }
