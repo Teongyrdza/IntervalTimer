@@ -10,7 +10,7 @@ import Foundation
 import Combine
 import OrderedCollections
 
-class TaskStore: ObservableObject {
+final class TaskStore: ObservableObject, Codable, DefaultConstructible {
     @Published var tasks = OrderedDictionary<UUID, Task>()
 
     var taskArray: [Task] {
@@ -35,8 +35,30 @@ class TaskStore: ObservableObject {
     func removeTask(at index: Int) {
         tasks.remove(at: index)
     }
-
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        try container.encode(tasks)
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        tasks = try container.decode(OrderedDictionary<UUID, Task>.self)
+    }
+    
     init() {
         insert(Task.default)
+    }
+}
+
+extension TaskStore {
+    private static let url = DataStore.tasksUrl
+    
+    static func load() -> Self {
+        DataStore.load(self, from: url)
+    }
+    
+    func save() {
+        DataStore.save(self, to: Self.url)
     }
 }

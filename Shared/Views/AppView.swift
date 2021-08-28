@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct AppView: View {
-    @StateObject var settings = TimerSettings()
+    @ObservedObject var settings = TimerSettings()
     @ObservedObject var historyStore = HistoryStore()
     @ObservedObject var taskStore = TaskStore()
+    @Environment(\.scenePhase) var scenePhase: ScenePhase
     @State var timerShowing = false
     
     var viewModelFactory: ViewModelFactory {
@@ -54,6 +55,13 @@ struct AppView: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .onChange(of: scenePhase) { newPhase in
+            if newPhase == .background {
+                settings.save()
+                historyStore.save()
+                taskStore.save()
+            }
+        }
     }
 }
 

@@ -18,11 +18,11 @@ extension AVPlayer {
     static let dingPlayer = AVPlayer(named: "ding")
 }
 
-struct Sound: Hashable, Identifiable, CustomStringConvertible {
-    let id = UUID()
+struct Sound: Hashable, Encodable, Identifiable, CustomStringConvertible {
+    var id = UUID()
     let name: String
     let description: String
-    let player: AVPlayer
+    @Ignored var player: AVPlayer
     
     static func == (lhs: Sound, rhs: Sound) -> Bool {
         lhs.name == rhs.name && lhs.description == rhs.description
@@ -32,6 +32,20 @@ struct Sound: Hashable, Identifiable, CustomStringConvertible {
         self.name = name
         self.description = description
         
+        player = .init(named: name)
+    }
+}
+
+extension Sound: Decodable {
+    enum CodingKeys: CodingKey {
+        case id, name, description
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(UUID.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        description = try container.decode(String.self, forKey: .description)
         player = .init(named: name)
     }
 }

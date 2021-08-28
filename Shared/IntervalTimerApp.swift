@@ -9,12 +9,13 @@ import SwiftUI
 
 @main
 struct IntervalTimerApp: App {
-    @StateObject var historyStore = HistoryStore()
-    @StateObject var taskStore = TaskStore()
+    @StateObject var settings = TimerSettings.load()
+    @StateObject var historyStore = HistoryStore.load()
+    @StateObject var taskStore = TaskStore.load()
     
     var body: some Scene {
         WindowGroup {
-            AppView(historyStore: historyStore, taskStore: taskStore)
+            AppView(settings: settings, historyStore: historyStore, taskStore: taskStore)
         }
     }
 }
