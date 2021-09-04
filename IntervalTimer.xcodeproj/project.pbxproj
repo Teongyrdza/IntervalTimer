@@ -50,6 +50,8 @@
 		F06AB72E26DCD0EA00753F64 /* TimeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB72C26DCD0EA00753F64 /* TimeField.swift */; };
 		F06AB73026E358F000753F64 /* AddHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB72F26E358EF00753F64 /* AddHistoryView.swift */; };
 		F06AB73126E358F000753F64 /* AddHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB72F26E358EF00753F64 /* AddHistoryView.swift */; };
+		F06AB73326E3632600753F64 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB73226E3632600753F64 /* Environment.swift */; };
+		F06AB73426E3632600753F64 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB73226E3632600753F64 /* Environment.swift */; };
 		F08E2BB42610D01900C897D4 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BB32610D01900C897D4 /* TimerViewModel.swift */; };
 		F08E2BB52610D01900C897D4 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BB32610D01900C897D4 /* TimerViewModel.swift */; };
 		F08E2BBB2610D4CD00C897D4 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BBA2610D4CD00C897D4 /* ViewModelFactory.swift */; };
@@ -69,8 +71,6 @@
 		F0E90F9725A73AFD0017EE68 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E90F9525A73AFD0017EE68 /* AppView.swift */; };
 		F0E90F9B25A745250017EE68 /* TimerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E90F9A25A745250017EE68 /* TimerSettings.swift */; };
 		F0E90F9C25A745250017EE68 /* TimerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E90F9A25A745250017EE68 /* TimerSettings.swift */; };
-		F0ECF66025A8CC46005B1235 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ECF65F25A8CC46005B1235 /* Environment.swift */; };
-		F0ECF66125A8CC46005B1235 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ECF65F25A8CC46005B1235 /* Environment.swift */; };
 		F0F6BEC32599D59D00C07D68 /* IntervalTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F6BEB02599D59A00C07D68 /* IntervalTimerApp.swift */; };
 		F0F6BEC42599D59D00C07D68 /* IntervalTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F6BEB02599D59A00C07D68 /* IntervalTimerApp.swift */; };
 		F0F6BEC52599D59D00C07D68 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F6BEB12599D59A00C07D68 /* TimerView.swift */; };
@@ -110,6 +110,7 @@
 		F06AB72926DCBE5900753F64 /* EditHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHistoryView.swift; sourceTree = "<group>"; };
 		F06AB72C26DCD0EA00753F64 /* TimeField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeField.swift; sourceTree = "<group>"; };
 		F06AB72F26E358EF00753F64 /* AddHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHistoryView.swift; sourceTree = "<group>"; };
+		F06AB73226E3632600753F64 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		F08E2BB32610D01900C897D4 /* TimerViewModel.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F08E2BBA2610D4CD00C897D4 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewModelFactory.swift; path = Shared/ViewModelFactory.swift; sourceTree = SOURCE_ROOT; };
 		F08E2BDB2612345100C897D4 /* IntervalTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntervalTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +121,6 @@
 		F0E90F8E25A5BF650017EE68 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F0E90F9525A73AFD0017EE68 /* AppView.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F0E90F9A25A745250017EE68 /* TimerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSettings.swift; sourceTree = "<group>"; };
-		F0ECF65F25A8CC46005B1235 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = Shared/Environment.swift; sourceTree = SOURCE_ROOT; };
 		F0F6BEB02599D59A00C07D68 /* IntervalTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimerApp.swift; sourceTree = "<group>"; };
 		F0F6BEB12599D59A00C07D68 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		F0F6BEB22599D59D00C07D68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -211,16 +211,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		F0E90F6D25A5ACC30017EE68 /* Extensions */ = {
+		F0E90F6D25A5ACC30017EE68 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				F0ECF65F25A8CC46005B1235 /* Environment.swift */,
+				F06AB73226E3632600753F64 /* Environment.swift */,
 				F0207E9D264275C400D727BA /* String.swift */,
 				F06AB6DD26D6552300753F64 /* TimeFormatter.swift */,
 				F06AB71726D7DC7900753F64 /* Dict->Array.swift */,
 				F06AB72326D90FDD00753F64 /* Ignored.swift */,
 			);
-			path = Extensions;
+			path = Support;
 			sourceTree = "<group>";
 		};
 		F0E90F7125A5AD0E0017EE68 /* Resources */ = {
@@ -247,7 +247,7 @@
 		F0F6BEAF2599D59A00C07D68 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				F0E90F6D25A5ACC30017EE68 /* Extensions */,
+				F0E90F6D25A5ACC30017EE68 /* Support */,
 				F0E90F6025A5A42A0017EE68 /* Models */,
 				F08E2BB22610CFA400C897D4 /* Views */,
 				F0E90F7125A5AD0E0017EE68 /* Resources */,
@@ -456,13 +456,13 @@
 				F06AB6D826D62A0A00753F64 /* HistoryView.swift in Sources */,
 				F06AB72D26DCD0EA00753F64 /* TimeField.swift in Sources */,
 				F08E2BBB2610D4CD00C897D4 /* ViewModelFactory.swift in Sources */,
+				F06AB73326E3632600753F64 /* Environment.swift in Sources */,
 				F08E2BF5261307F900C897D4 /* SoundPicker.swift in Sources */,
 				F0207E9E264275C400D727BA /* String.swift in Sources */,
 				F06AB72A26DCBE5900753F64 /* EditHistoryView.swift in Sources */,
 				F06AB70A26D7AE3900753F64 /* TasksView.swift in Sources */,
 				F06AB6D526D5544D00753F64 /* History.swift in Sources */,
 				F0F6BEC32599D59D00C07D68 /* IntervalTimerApp.swift in Sources */,
-				F0ECF66025A8CC46005B1235 /* Environment.swift in Sources */,
 				F06AB6DB26D62DBE00753F64 /* HistoryDetail.swift in Sources */,
 				F06AB70726D7A8A800753F64 /* TaskPicker.swift in Sources */,
 				F06AB73026E358F000753F64 /* AddHistoryView.swift in Sources */,
@@ -492,13 +492,13 @@
 				F06AB6D926D62A0A00753F64 /* HistoryView.swift in Sources */,
 				F06AB72E26DCD0EA00753F64 /* TimeField.swift in Sources */,
 				F08E2BBC2610D4CD00C897D4 /* ViewModelFactory.swift in Sources */,
+				F06AB73426E3632600753F64 /* Environment.swift in Sources */,
 				F08E2BF6261307F900C897D4 /* SoundPicker.swift in Sources */,
 				F0207E9F264275C400D727BA /* String.swift in Sources */,
 				F06AB72B26DCBE5900753F64 /* EditHistoryView.swift in Sources */,
 				F06AB70B26D7AE3900753F64 /* TasksView.swift in Sources */,
 				F06AB6D626D5544D00753F64 /* History.swift in Sources */,
 				F0E90F9725A73AFD0017EE68 /* AppView.swift in Sources */,
-				F0ECF66125A8CC46005B1235 /* Environment.swift in Sources */,
 				F06AB6DC26D62DBE00753F64 /* HistoryDetail.swift in Sources */,
 				F06AB70826D7A8A800753F64 /* TaskPicker.swift in Sources */,
 				F06AB73126E358F000753F64 /* AddHistoryView.swift in Sources */,
