@@ -10,6 +10,8 @@ import Foundation
 import Combine
 
 final class TimerSettings: ObservableObject, Codable, DefaultConstructible {
+    static let intervalRange = 1..<181
+    
     @Published var interval: TimeInterval = 30
     @Published var sound = sounds[1]
     @Published var currentTaskId = Task.default.id

@@ -11,8 +11,20 @@ import Combine
 import OrderedCollections
 
 final class HistoryStore: ObservableObject, Codable, DefaultConstructible {
-    @Published var histories = [History]()
+    @Published var histories = OrderedDictionary<UUID, History>()
     
+    func insert(_ history: History) {
+        histories[history.id] = history
+    }
+    
+    func binding(for history: History) -> Binding<History> {
+        .init(
+            get: { self.histories[history.id]! },
+            set: { self.histories[history.id] = $0 }
+        )
+    }
+    
+    // MARK: - Codable
     func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encode(histories)
@@ -20,7 +32,7 @@ final class HistoryStore: ObservableObject, Codable, DefaultConstructible {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
-        histories = try container.decode([History].self)
+        histories = try container.decode(OrderedDictionary<UUID, History>.self)
     }
     
     init() {}

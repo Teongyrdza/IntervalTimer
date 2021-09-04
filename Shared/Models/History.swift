@@ -11,17 +11,19 @@ struct History: Hashable, Codable, Identifiable {
     static let formatter = { () -> DateFormatter in
         let f = DateFormatter()
         f.dateStyle = .long
-        f.amSymbol = ""
-        f.pmSymbol = ""
         f.timeStyle = .short
         return f
     }()
     
     var id = UUID()
-    let name: String
+    var name: String
     var date = Date()
-    let cycles: Int
-    let duration: TimeInterval
+    var duration: TimeInterval
+    var cycleDuration: TimeInterval
+    
+    var cycles: Int {
+        Int(duration / cycleDuration)
+    }
     
     var dateString: String {
         Self.formatter.string(from: date)
@@ -29,6 +31,12 @@ struct History: Hashable, Codable, Identifiable {
 }
 
 extension History {
+    init(name: String, cycles: Int, duration: TimeInterval) {
+        self.name = name
+        self.cycleDuration = duration / Double(cycles)
+        self.duration = duration
+    }
+    
     static let exampleData: [Self] = [
         .init(name: "Розстелити ліжко", cycles: 10, duration: 150),
         .init(name: "Зарядка", cycles: 5, duration: 80),

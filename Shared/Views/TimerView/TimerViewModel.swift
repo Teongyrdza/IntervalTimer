@@ -21,7 +21,6 @@ final class TimerViewModel: ObservableObject {
     
     let timer: IntervalTimer
     var appeared = false
-    var cycles = 0
     var timePassed = 0.0
     var lastUpdateTime = 0.0
     var paused = false
@@ -34,7 +33,7 @@ final class TimerViewModel: ObservableObject {
     func recordHistory() {
         let task = taskStore.task(for: settings.currentTaskId)
         if task.record {
-            historyStore.histories.append(.init(name: task.name, cycles: cycles, duration: timePassed))
+            historyStore.insert(.init(name: task.name, duration: timePassed, cycleDuration: settings.interval))
         }
     }
     
@@ -87,8 +86,7 @@ final class TimerViewModel: ObservableObject {
             .store(in: &cancellables)
         
         timer.intervalPassed
-            .sink { [self] in
-                cycles += 1
+            .sink {
                 settings.sound.player.seek(to: .zero)
                 settings.sound.player.play()
             }

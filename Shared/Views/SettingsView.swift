@@ -34,7 +34,7 @@ struct SettingsView: View {
                     Text("Time interval")
                         .font(.system(size: 30))
                     
-                    SingleRowTimePicker(selection: $settings.interval, in: 1..<181)
+                    SingleRowTimePicker(selection: $settings.interval, in: TimerSettings.intervalRange)
                     
                     GroupBox {
                         HStack {

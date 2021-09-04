@@ -45,25 +45,57 @@ struct ListDataCell: View {
 }
 
 struct HistoryDetail: View {
-    let history: History
+    @Binding var history: History
+    @State var editing = false
+    @State var tempHistory = History.exampleData[0]
     
     var body: some View {
         List {
-            ListDataCell("Date:", history.dateString)
+            ListDataCell("Date", history.dateString)
             
-            ListDataCell("Cycles:", history.cycles)
+            ListDataCell("Cycles", history.cycles)
             
-            ListDataCell("Duration:", history.duration.formatted())
+            ListDataCell("Duration", history.duration.formatted())
         }
         .listStyle(InsetGroupedListStyle())
         .navigationTitle(history.name)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button("Edit") {
+                    tempHistory = history
+                    editing = true
+                }
+            }
+        }
+        .sheet(isPresented: $editing) {
+            NavigationView {
+                EditHistoryView(history: $tempHistory)
+                    .navigationTitle(tempHistory.name)
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            Button("Cancel") {
+                                editing = false
+                            }
+                        }
+                        
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Button("Done") {
+                                history = tempHistory
+                                editing = false
+                            }
+                        }
+                    }
+            }
+        }
     }
 }
 
 struct HistoryDetail_Previews: PreviewProvider {
+    @State static var history = History.exampleData[0]
+    
     static var previews: some View {
         NavigationView {
-            HistoryDetail(history: .exampleData[0])
+            HistoryDetail(history: $history)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }

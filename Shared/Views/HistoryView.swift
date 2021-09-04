@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HistoryView: View {
     @ObservedObject var store: HistoryStore
+    @State var inserting = false
     
     var body: some View {
         Group {
@@ -18,11 +19,13 @@ struct HistoryView: View {
             }
             else {
                 List {
-                    ForEach(store.histories.reversed()) { history in
-                        NavigationLink(destination: HistoryDetail(history: history)) {
+                    ForEach(store.histories.toArray().reversed()) { history in
+                        let historyBinding = store.binding(for: history)
+                        
+                        NavigationLink(destination: HistoryDetail(history: historyBinding)) {
                             VStack(alignment: .leading) {
-                                Text(history.name)
-                                    .fontWeight(.bold)
+                                TextField("Name", text: historyBinding.name)
+                                    .font(.body.bold())
                                 
                                 Spacer()
                                 
@@ -41,6 +44,18 @@ struct HistoryView: View {
             }
         }
         .navigationTitle("History")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    inserting = true
+                } label: {
+                    Image(systemName: "plus")
+                }
+            }
+        }
+        .sheet(isPresented: $inserting) {
+            AddHistoryView(isPresented: $inserting, store: store)
+        }
     }
 }
 
