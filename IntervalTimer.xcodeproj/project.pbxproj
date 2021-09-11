@@ -182,7 +182,6 @@
 				F06AB6DA26D62DBE00753F64 /* HistoryDetail.swift */,
 				F06AB72926DCBE5900753F64 /* EditHistoryView.swift */,
 				F06AB72F26E358EF00753F64 /* AddHistoryView.swift */,
-				F06AB72C26DCD0EA00753F64 /* TimeField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,6 +213,7 @@
 		F0E90F6D25A5ACC30017EE68 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				F06AB72C26DCD0EA00753F64 /* TimeField.swift */,
 				F06AB73226E3632600753F64 /* Environment.swift */,
 				F0207E9D264275C400D727BA /* String.swift */,
 				F06AB6DD26D6552300753F64 /* TimeFormatter.swift */,
