@@ -52,8 +52,10 @@ struct TasksView: View {
         .navigationTitle("Tasks")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button("Add") {
+                Button {
                     inserting = true
+                } label: {
+                    Image(systemName: "plus")
                 }
             }
         }
