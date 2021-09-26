@@ -35,6 +35,7 @@ struct SettingsView: View {
                         .font(.system(size: 30))
                     
                     SingleRowTimePicker(selection: $settings.interval, in: TimerSettings.intervalRange)
+                        .pickerStyle(WheelPickerStyle())
                     
                     GroupBox {
                         HStack {
@@ -90,9 +91,15 @@ struct SettingsView_Previews: PreviewProvider {
     @State static var time: TimeInterval = 30
     
     static var previews: some View {
-        NavigationView {
-            SettingsView()
-                .environmentObject(TimerSettings())
+        Group {
+            NavigationView {
+                SettingsView()
+                    .environmentObject(TimerSettings())
+            }
+            NavigationView {
+                SettingsView()
+                    .environmentObject(TimerSettings())
+            }
         }
     }
 }
