@@ -13,7 +13,7 @@ struct TimerShowingKey: EnvironmentKey {
 
 extension EnvironmentValues {
     var timerShowing: Binding<Bool> {
-        get { return self[TimerShowingKey] }
-        set { self[TimerShowingKey] = newValue }
+        get { return self[TimerShowingKey.self] }
+        set { self[TimerShowingKey.self] = newValue }
     }
 }
