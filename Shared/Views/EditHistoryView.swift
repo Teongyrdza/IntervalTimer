@@ -19,7 +19,7 @@ struct EditHistoryView: View {
             
             Section(header: Text("Date")) {
                 DatePicker("", selection: $history.date)
-                    .datePickerStyle(.graphical)
+                    .datePickerStyle(.wheel)
             }
             
             ListDataCell("Cycles", history.cycles)
