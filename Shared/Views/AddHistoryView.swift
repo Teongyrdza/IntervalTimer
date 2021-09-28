@@ -31,7 +31,7 @@ struct AddHistoryView: View {
                     }
                 }
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .navigationViewStyle(.stack)
     }
 }
 

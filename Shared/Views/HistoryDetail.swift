@@ -57,7 +57,7 @@ struct HistoryDetail: View {
             
             ListDataCell("Duration", history.duration.formatted())
         }
-        .listStyle(InsetGroupedListStyle())
+        .listStyle(.insetGrouped)
         .navigationTitle(history.name)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
@@ -97,6 +97,6 @@ struct HistoryDetail_Previews: PreviewProvider {
         NavigationView {
             HistoryDetail(history: $history)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .navigationViewStyle(.stack)
     }
 }

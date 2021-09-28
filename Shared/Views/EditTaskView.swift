@@ -62,13 +62,13 @@ struct EditTaskView: View {
                         Text("Time interval:")
                         
                         SingleRowTimePicker(selection: intervalBinding, in: TimerSettings.intervalRange)
-                            .pickerStyle(WheelPickerStyle())
+                            .pickerStyle(.wheel)
                     }
                 }
             }
-            .listStyle(GroupedListStyle())
+            .listStyle(.grouped)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .navigationViewStyle(.stack)
     }
 }
 

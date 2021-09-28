@@ -46,7 +46,7 @@ struct TasksView: View {
                         }
                     }
                 }
-                .listStyle(GroupedListStyle())
+                .listStyle(.grouped)
             }
         }
         .navigationTitle("Tasks")
@@ -70,6 +70,6 @@ struct TasksView_Previews: PreviewProvider {
         NavigationView {
             TasksView()
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .navigationViewStyle(.stack)
     }
 }

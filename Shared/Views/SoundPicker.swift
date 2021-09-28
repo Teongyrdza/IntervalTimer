@@ -39,7 +39,7 @@ struct SoundPicker: View {
                     .endif()
             }
         }
-        .listStyle(GroupedListStyle())
+        .listStyle(.grouped)
     }
 }
 

@@ -19,7 +19,7 @@ struct EditHistoryView: View {
             
             Section(header: Text("Date")) {
                 DatePicker("", selection: $history.date)
-                    .datePickerStyle(GraphicalDatePickerStyle())
+                    .datePickerStyle(.graphical)
             }
             
             ListDataCell("Cycles", history.cycles)
@@ -30,10 +30,10 @@ struct EditHistoryView: View {
             
             Section(header: Text("Cycle duration")) {
                 SingleRowTimePicker(selection: $history.cycleDuration, in: TimerSettings.intervalRange)
-                    .pickerStyle(WheelPickerStyle())
+                    .pickerStyle(.wheel)
             }
         }
-        .listStyle(InsetGroupedListStyle())
+        .listStyle(.insetGrouped)
     }
 }
 

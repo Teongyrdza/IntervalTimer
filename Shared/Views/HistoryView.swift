@@ -40,7 +40,7 @@ struct HistoryView: View {
                         }
                     }
                 }
-                .listStyle(InsetGroupedListStyle())
+                .listStyle(.insetGrouped)
             }
         }
         .navigationTitle("History")
@@ -64,6 +64,6 @@ struct HistoryView_Previews: PreviewProvider {
         NavigationView {
             HistoryView(store: .init())
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .navigationViewStyle(.stack)
     }
 }

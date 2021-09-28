@@ -31,7 +31,7 @@ struct AddTaskView: View {
                     }
                 }
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .navigationViewStyle(.stack)
     }
 }
 

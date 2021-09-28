@@ -54,7 +54,7 @@ struct AppView: View {
                 Text("Tasks")
             }
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .navigationViewStyle(.stack)
         .onChange(of: scenePhase) { newPhase in
             if newPhase == .background {
                 settings.save()

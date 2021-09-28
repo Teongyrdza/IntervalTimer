@@ -24,7 +24,7 @@ struct TaskPicker: View {
                     .endif()
             }
         }
-        .listStyle(GroupedListStyle())
+        .listStyle(.grouped)
     }
 }
 
