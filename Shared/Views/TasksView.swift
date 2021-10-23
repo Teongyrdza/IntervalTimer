@@ -37,8 +37,8 @@ struct TasksView: View {
                         ) {
                             view(for: binding)
                         }
-                        .hidden()
-                        .background(view(for: binding))
+                        //.hidden()
+                        //.background(view(for: binding))
                     }
                     .onDelete { indices in
                         for index in indices {

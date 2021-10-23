@@ -8,41 +8,31 @@
 import SwiftUI
 import StarUI
 
+extension Binding {
+    func propagatingOptional<T>() -> Binding<T>? where Value == T? {
+        if let wrappedValue = wrappedValue {
+            return .init(
+                get: { wrappedValue },
+                set: { self.wrappedValue = $0 }
+            )
+        }
+        return nil
+    }
+}
+
 struct EditTaskView: View {
     @Binding var task: Task
     @State var interval = 5.0
     
-    var intervalBinding: Binding<TimeInterval> {
-        .init(
-            get: {
-                switch task.interval {
-                    case .setValue(let interval):
-                        return interval
-                    case .asBefore:
-                        return self.interval
-                }
-            },
-            set: { newValue in
-                interval = newValue
-                task.interval = .setValue(newValue)
-            }
-        )
-    }
-    
     var alterIntervalBinding: Binding<Bool> {
         .init(
-            get: {
-                if case .setValue(_) = task.interval {
-                    return true
-                }
-                return false
-            },
+            get: { task.interval != nil },
             set: { newValue in
                 if newValue {
-                    task.interval = .setValue(interval)
+                    task.interval = interval
                 }
                 else {
-                    task.interval = .asBefore
+                    task.interval = nil
                 }
             }
         )
@@ -57,11 +47,11 @@ struct EditTaskView: View {
                 
                 Toggle("Alter time interval", isOn: alterIntervalBinding)
                 
-                if alterIntervalBinding.wrappedValue {
+                if let $taskInterval = $task.interval.propagatingOptional() {
                     VStack(alignment: .leading) {
                         Text("Time interval:")
                         
-                        SingleRowTimePicker(selection: intervalBinding, in: TimerSettings.intervalRange)
+                        SingleRowTimePicker(selection: $taskInterval, in: TimerSettings.intervalRange)
                             .pickerStyle(.wheel)
                     }
                 }

@@ -16,8 +16,8 @@ final class TimerSettings: ObservableObject, Codable, DefaultConstructible {
     @Published var sound = sounds[1]
     @Published var currentTaskId = Task.default.id
     
-    func currentTaskIntervalChanged(to newInterval: Task.Interval) {
-        if case let .setValue(newInterval) = newInterval {
+    func currentTaskIntervalChanged(to newInterval: TimeInterval?) {
+        if let newInterval = newInterval {
             interval = newInterval
         }
     }
