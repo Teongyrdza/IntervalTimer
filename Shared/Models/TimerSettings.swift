@@ -14,13 +14,19 @@ final class TimerSettings: ObservableObject, Codable, DefaultConstructible {
     
     @Published var interval: TimeInterval = 30
     @Published var sound = sounds[1]
-    @Published var currentTaskId = Task.default.id
-    
-    func currentTaskIntervalChanged(to newInterval: TimeInterval?) {
-        if let newInterval = newInterval {
-            interval = newInterval
+    @Published var currentTaskId = Task.default.id {
+        didSet {
+            if let newInterval = currentTask?.interval {
+                interval = newInterval
+            }
         }
     }
+    
+    var currentTask: Task? {
+        taskStore?.task(for: currentTaskId)
+    }
+    
+    var taskStore: TaskStore?
     
     enum CodingKeys: CodingKey {
         case interval, sound, currentTaskId

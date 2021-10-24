@@ -33,7 +33,7 @@ struct TasksView: View {
                         let binding = taskStore.binding(for: task)
                         
                         NavigationLink(
-                            destination: EditTaskView(task: binding).navigationTitle(task.name)
+                            destination: EditTaskView(taskStore: taskStore, task: binding).navigationTitle(task.name)
                         ) {
                             view(for: binding)
                         }

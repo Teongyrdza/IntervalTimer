@@ -21,6 +21,7 @@ extension Binding {
 }
 
 struct EditTaskView: View {
+    @ObservedObject var taskStore = TaskStore()
     @Binding var task: Task
     @State var interval = 5.0
     
@@ -39,26 +40,29 @@ struct EditTaskView: View {
     }
     
     var body: some View {
-        NavigationView {
-            List {
-                TextField("Name", text: $task.name)
-                
-                Toggle("Record history", isOn: $task.record)
-                
-                Toggle("Alter time interval", isOn: alterIntervalBinding)
-                
-                if let $taskInterval = $task.interval.propagatingOptional() {
-                    VStack(alignment: .leading) {
-                        Text("Time interval:")
-                        
-                        SingleRowTimePicker(selection: $taskInterval, in: TimerSettings.intervalRange)
-                            .pickerStyle(.wheel)
-                    }
+        List {
+            TextField("Name", text: $task.name)
+            
+            Toggle("Record history", isOn: $task.record)
+            
+            Toggle("Alter time interval", isOn: alterIntervalBinding)
+            
+            if let $taskInterval = $task.interval.propagatingOptional() {
+                VStack(alignment: .leading) {
+                    Text("Time interval:")
+                    
+                    SingleRowTimePicker(selection: $taskInterval, in: TimerSettings.intervalRange)
+                        .pickerStyle(.wheel)
                 }
             }
-            .listStyle(.grouped)
+            
+            NavigationLink {
+                TaskPicker(store: taskStore, selection: $task.nextTaskId.replacingNilWith(task.id))
+            } label: {
+                Text("Next task")
+            }
         }
-        .navigationViewStyle(.stack)
+        .listStyle(.grouped)
     }
 }
 

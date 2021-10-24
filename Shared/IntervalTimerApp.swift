@@ -19,6 +19,8 @@ struct IntervalTimerApp: App {
         WindowGroup {
             AppView(settings: settings, historyStore: historyStore, taskStore: taskStore)
                 .onAppear {
+                    settings.taskStore = taskStore
+                    
                     let now = Date().timeIntervalSince1970
                     let elapsed = now - startTime
                     print("Startup took \(elapsed, specifier: "%.2f") seconds")

@@ -14,16 +14,6 @@ struct SettingsView: View {
     @ObservedObject var taskStore = TaskStore()
     @Environment(\.timerShowing) var timerShowing
     
-    var taskIdBinding: Binding<UUID> {
-        .init(
-            get: { settings.currentTaskId },
-            set: { newId in
-                settings.currentTaskId = newId
-                settings.currentTaskIntervalChanged(to: taskStore.task(for: newId).interval)
-            }
-        )
-    }
-    
     var body: some View {
         ScrollView {
             VStack {
@@ -57,12 +47,12 @@ struct SettingsView: View {
                             
                             Spacer()
                             
-                            NavigationLink(
-                                destination: TaskPicker(
+                            NavigationLink {
+                                TaskPicker (
                                     store: taskStore,
-                                    selection: taskIdBinding
+                                    selection: $settings.currentTaskId
                                 )
-                            ) {
+                            } label: {
                                 Text(taskStore.task(for: settings.currentTaskId).name)
                                     .opacity(0.5)
                                     .foregroundColor(.gray)
@@ -71,12 +61,24 @@ struct SettingsView: View {
                     }
                 }
                 
-                Button("Start") {
-                    timerShowing.wrappedValue = true
+                Group {
+                    Button("Start") {
+                        timerShowing.wrappedValue = true
+                    }
+                    .frame(width: 150)
+                    
+                    Button("Next") {
+                        if let nextTaskId = settings.currentTask?.nextTaskId {
+                            settings.currentTaskId = nextTaskId
+                        }
+                        timerShowing.wrappedValue = true
+                    }
+                    .frame(width: 150)
                 }
-                .buttonStyle(RoundedCornersButtonStyle(lineWidth: 7.5, cornerRadius: 10))
-                .frame(width: 150, height: 50)
+                .buttonStyle(.roundedCorners(lineWidth: 7.5, cornerRadius: 10))
                 .accentColor(.green)
+                .frame(height: 50)
+                .padding(.horizontal, 20)
                 .padding(.top)
             }
             
@@ -91,15 +93,9 @@ struct SettingsView_Previews: PreviewProvider {
     @State static var time: TimeInterval = 30
     
     static var previews: some View {
-        Group {
-            NavigationView {
-                SettingsView()
-                    .environmentObject(TimerSettings())
-            }
-            NavigationView {
-                SettingsView()
-                    .environmentObject(TimerSettings())
-            }
+        NavigationView {
+            SettingsView()
+                .environmentObject(TimerSettings())
         }
     }
 }
