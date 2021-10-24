@@ -2,11 +2,29 @@
   "object": {
     "pins": [
       {
+        "package": "Reactor",
+        "repositoryURL": "https://github.com/Teongyrdza/Reactor",
+        "state": {
+          "branch": "main",
+          "revision": "5a755ffee4c71a71670fcfe154c26811d6d0ac38",
+          "version": null
+        }
+      },
+      {
+        "package": "Runtime",
+        "repositoryURL": "https://github.com/wickwirew/Runtime.git",
+        "state": {
+          "branch": null,
+          "revision": "a848b81e1a0100801f572e5273ffe4352fd54088",
+          "version": "2.2.2"
+        }
+      },
+      {
         "package": "StarUI",
         "repositoryURL": "https://github.com/Teongyrdza/StarUI.git",
         "state": {
           "branch": "main",
-          "revision": "fe834c4453316cbc30df086c5d6336fb3aac1654",
+          "revision": "ab9165ea69268d183119c4b808ce087c1c37586c",
           "version": null
         }
       },

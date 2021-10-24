@@ -12,6 +12,8 @@ import OrderedCollections
 
 final class TaskStore: ObservableObject, Codable, DefaultConstructible {
     @Published var tasks = OrderedDictionary<UUID, Task>()
+    
+    private var cancellables = Set<AnyCancellable>()
 
     var taskArray: [Task] {
         Array(tasks.values)
@@ -30,6 +32,10 @@ final class TaskStore: ObservableObject, Codable, DefaultConstructible {
 
     func insert(_ task: Task) {
         tasks[task.id] = task
+        
+        task.objectWillChange
+            .pipe(to: objectWillChange)
+            .store(in: &cancellables)
     }
 
     func removeTask(at index: Int) {
@@ -43,7 +49,10 @@ final class TaskStore: ObservableObject, Codable, DefaultConstructible {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
-        tasks = try container.decode(OrderedDictionary<UUID, Task>.self)
+        let tasks = try container.decode(OrderedDictionary<UUID, Task>.self)
+        for task in tasks.values {
+            insert(task)
+        }
     }
     
     init() {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F0207E9E264275C400D727BA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0207E9D264275C400D727BA /* String.swift */; };
 		F0207E9F264275C400D727BA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0207E9D264275C400D727BA /* String.swift */; };
+		F031CFB527245AB100BE3D1D /* Reactor in Frameworks */ = {isa = PBXBuildFile; productRef = F031CFB427245AB100BE3D1D /* Reactor */; };
 		F03236A22663AA340079376E /* StarUI in Frameworks */ = {isa = PBXBuildFile; productRef = F03236A12663AA340079376E /* StarUI */; };
 		F0323731266DED210079376E /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0323730266DED210079376E /* Sound.swift */; };
 		F0323732266DED210079376E /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0323730266DED210079376E /* Sound.swift */; };
@@ -52,6 +53,7 @@
 		F06AB73126E358F000753F64 /* AddHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB72F26E358EF00753F64 /* AddHistoryView.swift */; };
 		F06AB73326E3632600753F64 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB73226E3632600753F64 /* Environment.swift */; };
 		F06AB73426E3632600753F64 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB73226E3632600753F64 /* Environment.swift */; };
+		F06BD6642721937C00470818 /* Reactor in Frameworks */ = {isa = PBXBuildFile; productRef = F06BD6632721937C00470818 /* Reactor */; };
 		F08E2BB42610D01900C897D4 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BB32610D01900C897D4 /* TimerViewModel.swift */; };
 		F08E2BB52610D01900C897D4 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BB32610D01900C897D4 /* TimerViewModel.swift */; };
 		F08E2BBB2610D4CD00C897D4 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BBA2610D4CD00C897D4 /* ViewModelFactory.swift */; };
@@ -125,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F06BD6642721937C00470818 /* Reactor in Frameworks */,
 				F06AB70E26D7BD3A00753F64 /* Collections in Frameworks */,
 				F0E087192663A49E0094BAA1 /* StarUI in Frameworks */,
 			);
@@ -134,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F031CFB527245AB100BE3D1D /* Reactor in Frameworks */,
 				F06AB71026D7BD4600753F64 /* Collections in Frameworks */,
 				F03236A22663AA340079376E /* StarUI in Frameworks */,
 			);
@@ -142,6 +146,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F031CFB62724662800BE3D1D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F06AB72C26DCD0EA00753F64 /* TimeField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F031CFB72724664000BE3D1D /* Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				F06AB72326D90FDD00753F64 /* Ignored.swift */,
+			);
+			path = Wrappers;
+			sourceTree = "<group>";
+		};
 		F03236A02663AA340079376E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,12 +215,12 @@
 		F0E90F6D25A5ACC30017EE68 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				F06AB72C26DCD0EA00753F64 /* TimeField.swift */,
+				F031CFB62724662800BE3D1D /* Views */,
+				F031CFB72724664000BE3D1D /* Wrappers */,
 				F06AB73226E3632600753F64 /* Environment.swift */,
 				F0207E9D264275C400D727BA /* String.swift */,
 				F06AB6DD26D6552300753F64 /* TimeFormatter.swift */,
 				F06AB71726D7DC7900753F64 /* Dict->Array.swift */,
-				F06AB72326D90FDD00753F64 /* Ignored.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -285,6 +305,7 @@
 			packageProductDependencies = (
 				F0E087182663A49E0094BAA1 /* StarUI */,
 				F06AB70D26D7BD3A00753F64 /* Collections */,
+				F06BD6632721937C00470818 /* Reactor */,
 			);
 			productName = "IntervalTimer (iOS)";
 			productReference = F0F6BEB72599D59D00C07D68 /* IntervalTimer.app */;
@@ -306,6 +327,7 @@
 			packageProductDependencies = (
 				F03236A12663AA340079376E /* StarUI */,
 				F06AB70F26D7BD4600753F64 /* Collections */,
+				F031CFB427245AB100BE3D1D /* Reactor */,
 			);
 			productName = "IntervalTimer (macOS)";
 			productReference = F0F6BEBF2599D59D00C07D68 /* IntervalTimer.app */;
@@ -340,6 +362,7 @@
 			packageReferences = (
 				F0E087172663A49D0094BAA1 /* XCRemoteSwiftPackageReference "StarUI" */,
 				F06AB70C26D7BD3A00753F64 /* XCRemoteSwiftPackageReference "swift-collections" */,
+				F06BD6622721937C00470818 /* XCRemoteSwiftPackageReference "Reactor" */,
 			);
 			productRefGroup = F0F6BEB82599D59D00C07D68 /* Products */;
 			projectDirPath = "";
@@ -699,6 +722,14 @@
 				minimumVersion = 0.0.7;
 			};
 		};
+		F06BD6622721937C00470818 /* XCRemoteSwiftPackageReference "Reactor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Teongyrdza/Reactor";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		F0E087172663A49D0094BAA1 /* XCRemoteSwiftPackageReference "StarUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Teongyrdza/StarUI.git";
@@ -710,6 +741,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F031CFB427245AB100BE3D1D /* Reactor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F06BD6622721937C00470818 /* XCRemoteSwiftPackageReference "Reactor" */;
+			productName = Reactor;
+		};
 		F03236A12663AA340079376E /* StarUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F0E087172663A49D0094BAA1 /* XCRemoteSwiftPackageReference "StarUI" */;
@@ -724,6 +760,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F06AB70C26D7BD3A00753F64 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = Collections;
+		};
+		F06BD6632721937C00470818 /* Reactor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F06BD6622721937C00470818 /* XCRemoteSwiftPackageReference "Reactor" */;
+			productName = Reactor;
 		};
 		F0E087182663A49E0094BAA1 /* StarUI */ = {
 			isa = XCSwiftPackageProductDependency;
