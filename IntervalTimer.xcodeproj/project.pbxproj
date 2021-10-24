@@ -41,8 +41,6 @@
 		F06AB71926D7DC7900753F64 /* Dict->Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB71726D7DC7900753F64 /* Dict->Array.swift */; };
 		F06AB71B26D8CB3D00753F64 /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB71A26D8CB3D00753F64 /* EditTaskView.swift */; };
 		F06AB71C26D8CB3D00753F64 /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB71A26D8CB3D00753F64 /* EditTaskView.swift */; };
-		F06AB72426D90FDD00753F64 /* Ignored.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB72326D90FDD00753F64 /* Ignored.swift */; };
-		F06AB72526D90FDD00753F64 /* Ignored.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB72326D90FDD00753F64 /* Ignored.swift */; };
 		F06AB72726D9532200753F64 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB72626D9532200753F64 /* DataStore.swift */; };
 		F06AB72826D9532200753F64 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB72626D9532200753F64 /* DataStore.swift */; };
 		F06AB72A26DCBE5900753F64 /* EditHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB72926DCBE5900753F64 /* EditHistoryView.swift */; };
@@ -97,7 +95,6 @@
 		F06AB71426D7DB1900753F64 /* TaskStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStore.swift; sourceTree = "<group>"; };
 		F06AB71726D7DC7900753F64 /* Dict->Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dict->Array.swift"; sourceTree = "<group>"; };
 		F06AB71A26D8CB3D00753F64 /* EditTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskView.swift; sourceTree = "<group>"; };
-		F06AB72326D90FDD00753F64 /* Ignored.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ignored.swift; sourceTree = "<group>"; };
 		F06AB72626D9532200753F64 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		F06AB72926DCBE5900753F64 /* EditHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHistoryView.swift; sourceTree = "<group>"; };
 		F06AB72C26DCD0EA00753F64 /* TimeField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeField.swift; sourceTree = "<group>"; };
@@ -154,14 +151,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		F031CFB72724664000BE3D1D /* Wrappers */ = {
-			isa = PBXGroup;
-			children = (
-				F06AB72326D90FDD00753F64 /* Ignored.swift */,
-			);
-			path = Wrappers;
-			sourceTree = "<group>";
-		};
 		F03236A02663AA340079376E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,7 +205,6 @@
 			isa = PBXGroup;
 			children = (
 				F031CFB62724662800BE3D1D /* Views */,
-				F031CFB72724664000BE3D1D /* Wrappers */,
 				F06AB73226E3632600753F64 /* Environment.swift */,
 				F0207E9D264275C400D727BA /* String.swift */,
 				F06AB6DD26D6552300753F64 /* TimeFormatter.swift */,
@@ -415,7 +403,6 @@
 				F06AB71526D7DB1900753F64 /* TaskStore.swift in Sources */,
 				F0F6BEC52599D59D00C07D68 /* TimerView.swift in Sources */,
 				F06AB71B26D8CB3D00753F64 /* EditTaskView.swift in Sources */,
-				F06AB72426D90FDD00753F64 /* Ignored.swift in Sources */,
 				F06AB70426D7A45400753F64 /* Task.swift in Sources */,
 				F0E90F9625A73AFD0017EE68 /* AppView.swift in Sources */,
 				F08E2BB42610D01900C897D4 /* TimerViewModel.swift in Sources */,
@@ -451,7 +438,6 @@
 				F06AB71626D7DB1900753F64 /* TaskStore.swift in Sources */,
 				F0F6BEC42599D59D00C07D68 /* IntervalTimerApp.swift in Sources */,
 				F06AB71C26D8CB3D00753F64 /* EditTaskView.swift in Sources */,
-				F06AB72526D90FDD00753F64 /* Ignored.swift in Sources */,
 				F06AB70526D7A45400753F64 /* Task.swift in Sources */,
 				F0E90F6325A5A44D0017EE68 /* IntervalTimer.swift in Sources */,
 				F08E2BB52610D01900C897D4 /* TimerViewModel.swift in Sources */,

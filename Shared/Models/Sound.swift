@@ -6,6 +6,7 @@
 //
 
 import AVFoundation
+import Reactor
 
 extension AVPlayer {
     convenience init(named name: String, withExtension `extension`: String = "mp3") {
