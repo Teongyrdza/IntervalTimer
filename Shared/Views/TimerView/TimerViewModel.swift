@@ -96,9 +96,7 @@ final class TimerViewModel: ObservableObject {
 
 // MARK: - State
 extension TimerViewModel {
-    class State: CustomStringConvertible {
-        var description: String { "state" }
-        
+    class State {
         func enter(_ viewModel: TimerViewModel) {}
         func exit(_ viewModel: TimerViewModel) {}
         
@@ -107,8 +105,6 @@ extension TimerViewModel {
         static let hidden = Hidden()
          
         class Running: State {
-            override var description: String { "running" }
-            
             override func enter(_ viewModel: TimerViewModel) {
                 viewModel.leftButtonColor = .init("AccentColor")
                 viewModel.leftButtonText = "Pause"
@@ -122,8 +118,6 @@ extension TimerViewModel {
         }
         
         class Stopped: State {
-            override var description: String { "stopped" }
-            
             override func enter(_ viewModel: TimerViewModel) {
                 viewModel.leftButtonColor = .green
                 viewModel.leftButtonText = "Resume"
@@ -137,8 +131,6 @@ extension TimerViewModel {
         }
         
         class Hidden: State {
-            override var description: String { "hidden" }
-            
             override func enter(_ viewModel: TimerViewModel) {
                 if viewModel.appeared {
                     viewModel.recordHistory()
