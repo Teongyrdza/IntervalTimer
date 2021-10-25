@@ -57,7 +57,7 @@ final class TimerViewModel: ObservableObject {
     }
     
     var leftButtonColor = Color.accentColor
-    var leftButtonText = ""
+    var leftButtonText = LocalizedStringKey("")
     
     // MARK: - Event handlers
     func leftButtonTapped() {

@@ -14,7 +14,7 @@ struct EditHistoryView: View {
     var body: some View {
         List {
             Section(header: Text("Name")) {
-                TextField("Name", text: $history.name)
+                TextField("Name".localized(), text: $history.name)
             }
             
             Section(header: Text("Date")) {

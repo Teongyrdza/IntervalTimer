@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  IntervalTimer
+
+  Created by Ostap on 25.10.2021.
+  
+*/
+
+"Settings" = "Settings";
+"Time interval" = "Time interval";
+"When interval ends" = "When interval ends";
+"Task" = "Task";
+"Start" = "Start";
+"Next" = "Next";
+"Pause" = "Pause";
+"Resume" = "Resume";
+"Cancel" = "Cancel";
+"Interval Timer" = "Interval Timer";
+"Timer" = "Timer";
+"History" = "History";
+"Tasks" = "Tasks";
+
+"Edit" = "Edit";
+"Done" = "Done";
+
+"Add history" = "Add history";
+"Add task" = "Add task";
+
+"Name" = "Name";
+"Date" = "Date";
+"Cycles" = "Cycles";
+"Duration" = "Duration";
+"Cycle duration" = "Cycle duration";
+
+"Record history" = "Record history";
+"Alter time interval" = "Alter time interval";
+"Next task" = "Next task";

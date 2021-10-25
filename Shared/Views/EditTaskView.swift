@@ -41,7 +41,7 @@ struct EditTaskView: View {
     
     var body: some View {
         List {
-            TextField("Name", text: $task.name)
+            TextField("Name".localized(), text: $task.name)
             
             Toggle("Record history", isOn: $task.record)
             
@@ -49,7 +49,7 @@ struct EditTaskView: View {
             
             if let $taskInterval = $task.interval.propagatingOptional() {
                 VStack(alignment: .leading) {
-                    Text("Time interval:")
+                    Text("Time interval")
                     
                     SingleRowTimePicker(selection: $taskInterval, in: TimerSettings.intervalRange)
                         .pickerStyle(.wheel)

@@ -14,7 +14,7 @@ struct TasksView: View {
     
     func view(for task: Binding<Task>) -> some View {
         VStack {
-            TextField("Name", text: task.name)
+            TextField("Name".localized(), text: task.name)
                 .font(.headline.bold())
             
             Toggle("Record history", isOn: task.record)

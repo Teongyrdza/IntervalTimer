@@ -29,7 +29,7 @@ struct DataCell: View {
 }
 
 struct ListDataCell: View {
-    let label: String
+    let label: LocalizedStringKey
     let content: String
     
     var body: some View {
@@ -38,7 +38,7 @@ struct ListDataCell: View {
         }
     }
     
-    init(_ label: String, _ content: CustomStringConvertible) {
+    init(_ label: LocalizedStringKey, _ content: CustomStringConvertible) {
         self.label = label
         self.content = "\(content)"
     }

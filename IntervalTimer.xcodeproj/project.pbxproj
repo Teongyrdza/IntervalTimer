@@ -10,6 +10,12 @@
 		F0207E9E264275C400D727BA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0207E9D264275C400D727BA /* String.swift */; };
 		F0207E9F264275C400D727BA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0207E9D264275C400D727BA /* String.swift */; };
 		F031CFB527245AB100BE3D1D /* Reactor in Frameworks */ = {isa = PBXBuildFile; productRef = F031CFB427245AB100BE3D1D /* Reactor */; };
+		F031D0842726CE0400BE3D1D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F031D0872726CE0400BE3D1D /* Localizable.strings */; };
+		F031D0852726CE0400BE3D1D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F031D0872726CE0400BE3D1D /* Localizable.strings */; };
+		F031D08C2726D26B00BE3D1D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F031D08F2726D26B00BE3D1D /* InfoPlist.strings */; };
+		F031D08D2726D26B00BE3D1D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F031D08F2726D26B00BE3D1D /* InfoPlist.strings */; };
+		F031D095272704A300BE3D1D /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = F031D094272704A300BE3D1D /* Localized.swift */; };
+		F031D096272704A300BE3D1D /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = F031D094272704A300BE3D1D /* Localized.swift */; };
 		F03236A22663AA340079376E /* StarUI in Frameworks */ = {isa = PBXBuildFile; productRef = F03236A12663AA340079376E /* StarUI */; };
 		F0323731266DED210079376E /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0323730266DED210079376E /* Sound.swift */; };
 		F0323732266DED210079376E /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0323730266DED210079376E /* Sound.swift */; };
@@ -81,6 +87,11 @@
 
 /* Begin PBXFileReference section */
 		F0207E9D264275C400D727BA /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		F031D0862726CE0400BE3D1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F031D0882726CE0800BE3D1D /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F031D08E2726D26B00BE3D1D /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F031D093272700AF00BE3D1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F031D094272704A300BE3D1D /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		F0323730266DED210079376E /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		F0323733266DEE080079376E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F06AB6D426D5544D00753F64 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
@@ -209,6 +220,7 @@
 				F0207E9D264275C400D727BA /* String.swift */,
 				F06AB6DD26D6552300753F64 /* TimeFormatter.swift */,
 				F06AB71726D7DC7900753F64 /* Dict->Array.swift */,
+				F031D094272704A300BE3D1D /* Localized.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -244,6 +256,8 @@
 				F0F6BEB02599D59A00C07D68 /* IntervalTimerApp.swift */,
 				F08E2BBA2610D4CD00C897D4 /* ViewModelFactory.swift */,
 				F0F6BEB22599D59D00C07D68 /* Assets.xcassets */,
+				F031D0872726CE0400BE3D1D /* Localizable.strings */,
+				F031D08F2726D26B00BE3D1D /* InfoPlist.strings */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -345,6 +359,7 @@
 			knownRegions = (
 				en,
 				Base,
+				uk,
 			);
 			mainGroup = F0F6BEAA2599D59A00C07D68;
 			packageReferences = (
@@ -367,6 +382,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F031D0842726CE0400BE3D1D /* Localizable.strings in Resources */,
+				F031D08C2726D26B00BE3D1D /* InfoPlist.strings in Resources */,
 				F0E90F8625A5BD220017EE68 /* meditationBell.mp3 in Resources */,
 				F094138E260DE18C007E75C9 /* ding.mp3 in Resources */,
 				F0323734266DEE090079376E /* README.md in Resources */,
@@ -378,6 +395,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F031D0852726CE0400BE3D1D /* Localizable.strings in Resources */,
+				F031D08D2726D26B00BE3D1D /* InfoPlist.strings in Resources */,
 				F0B0491D2601F371000E8392 /* ding.mp3 in Resources */,
 				F0E90F8725A5BD220017EE68 /* meditationBell.mp3 in Resources */,
 				F0323735266DEE090079376E /* README.md in Resources */,
@@ -403,6 +422,7 @@
 				F06AB71526D7DB1900753F64 /* TaskStore.swift in Sources */,
 				F0F6BEC52599D59D00C07D68 /* TimerView.swift in Sources */,
 				F06AB71B26D8CB3D00753F64 /* EditTaskView.swift in Sources */,
+				F031D095272704A300BE3D1D /* Localized.swift in Sources */,
 				F06AB70426D7A45400753F64 /* Task.swift in Sources */,
 				F0E90F9625A73AFD0017EE68 /* AppView.swift in Sources */,
 				F08E2BB42610D01900C897D4 /* TimerViewModel.swift in Sources */,
@@ -438,6 +458,7 @@
 				F06AB71626D7DB1900753F64 /* TaskStore.swift in Sources */,
 				F0F6BEC42599D59D00C07D68 /* IntervalTimerApp.swift in Sources */,
 				F06AB71C26D8CB3D00753F64 /* EditTaskView.swift in Sources */,
+				F031D096272704A300BE3D1D /* Localized.swift in Sources */,
 				F06AB70526D7A45400753F64 /* Task.swift in Sources */,
 				F0E90F6325A5A44D0017EE68 /* IntervalTimer.swift in Sources */,
 				F08E2BB52610D01900C897D4 /* TimerViewModel.swift in Sources */,
@@ -459,6 +480,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F031D0872726CE0400BE3D1D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F031D0862726CE0400BE3D1D /* en */,
+				F031D0882726CE0800BE3D1D /* uk */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		F031D08F2726D26B00BE3D1D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F031D093272700AF00BE3D1D /* en */,
+				F031D08E2726D26B00BE3D1D /* uk */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F0F6BEC92599D59D00C07D68 /* Debug */ = {

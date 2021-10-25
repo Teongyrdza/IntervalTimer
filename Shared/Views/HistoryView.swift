@@ -24,7 +24,7 @@ struct HistoryView: View {
                         
                         NavigationLink(destination: HistoryDetail(history: historyBinding)) {
                             VStack(alignment: .leading) {
-                                TextField("Name", text: historyBinding.name)
+                                TextField("Name".localized(), text: historyBinding.name)
                                     .font(.body.bold())
                                 
                                 Spacer()
