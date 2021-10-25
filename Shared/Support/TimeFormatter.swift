@@ -12,27 +12,27 @@ extension TimeInterval {
         Int(self) % 60
     }
     
-    var secondsMetric: String {
-        seconds == 1 ? "second" : "seconds"
+    var secondsLabel: String {
+        seconds == 1 ? "1 second" : "\(seconds) seconds"
     }
     
     var minutes: Int {
         Int(self) / 60
     }
     
-    var minutesMetric: String {
-        minutes == 1 ? "minute" : "minutes"
+    var minutesLabel: String {
+        minutes == 1 ? "1 minute" : "\(minutes) minutes"
     }
     
     func formatted() -> String {
-        if self < 60 {
-            return "\(seconds) \(secondsMetric)"
+        if minutes == 0 {
+            return secondsLabel
         }
         else if seconds == 0 {
-            return "\(minutes) \(minutesMetric)"
+            return minutesLabel
         }
         else {
-            return "\(minutes) \(minutesMetric) \(seconds) \(secondsMetric)"
+            return "\(minutesLabel) \(secondsLabel)"
         }
     }
 }
