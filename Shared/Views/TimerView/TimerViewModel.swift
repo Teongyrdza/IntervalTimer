@@ -53,7 +53,17 @@ final class TimerViewModel: ObservableObject {
     
     var timeRemaining: CGFloat { CGFloat(timer.timeRemaining / timer.refreshTime) }
     var alarmText: String {
-        "Alarm in \(timer.timeRemaining.formatted())"
+        let timeLeftString: String
+        if timer.timeRemaining.minutes == 0 {
+            let timeLeftFormatString = NSLocalizedString("SecondsLeft", comment: "")
+            timeLeftString = String.localizedStringWithFormat(timeLeftFormatString, timer.timeRemaining.seconds)
+        }
+        else {
+            let timeLeftFormatString = NSLocalizedString("MinutesLeft", comment: "")
+            timeLeftString = String.localizedStringWithFormat(timeLeftFormatString, timer.timeRemaining.minutes)
+        }
+        let formatString = NSLocalizedString("Time left %@ %@", comment: "")
+        return String(format: formatString, timer.timeRemaining.formatted(), timeLeftString)
     }
     
     var leftButtonColor = Color.accentColor

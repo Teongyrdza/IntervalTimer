@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>MinutesLeft</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@minutesLeft@</string>
+		<key>minutesLeft</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>i</string>
+			<key>one</key>
+			<string>Залишилась</string>
+			<key>other</key>
+			<string>Залишилось</string>
+		</dict>
+	</dict>
+	<key>SecondsLeft</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@secondsLeft@</string>
+		<key>secondsLeft</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>i</string>
+			<key>one</key>
+			<string>Залишилась</string>
+			<key>other</key>
+			<string>Залишилось</string>
+		</dict>
+	</dict>
+	<key>MinuteCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@minutes@</string>
+		<key>minutes</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>i</string>
+			<key>one</key>
+			<string>%i хвилина</string>
+			<key>few</key>
+			<string>%i хвилини</string>
+			<key>other</key>
+			<string>%i хвилин</string>
+		</dict>
+	</dict>
+	<key>SecondCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@seconds@</string>
+		<key>seconds</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>i</string>
+			<key>one</key>
+			<string>%i секунда</string>
+			<key>few</key>
+			<string>%i секунди</string>
+			<key>other</key>
+			<string>%i секунд</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

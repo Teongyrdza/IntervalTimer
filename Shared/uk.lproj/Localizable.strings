@@ -15,6 +15,7 @@
 "Pause" = "Пауза";
 "Resume" = "Продовжити";
 "Cancel" = "Скасувати";
+"Time left %@ %@" = "%2$@ %1$@"; // Time left in interval, the first parameter is time, the second is the time left text
 "Interval Timer" = "Інтервальний таймер";
 "Timer" = "Таймер";
 "History" = "Історія";

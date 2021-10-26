@@ -8,20 +8,22 @@
 import Foundation
 
 extension TimeInterval {
-    var seconds: Int {
-        Int(self) % 60
-    }
-    
-    var secondsLabel: String {
-        seconds == 1 ? "1 second" : "\(seconds) seconds"
-    }
-    
     var minutes: Int {
         Int(self) / 60
     }
     
     var minutesLabel: String {
-        minutes == 1 ? "1 minute" : "\(minutes) minutes"
+        let formatString = NSLocalizedString("MinuteCount", comment: "")
+        return String.localizedStringWithFormat(formatString, minutes)
+    }
+    
+    var seconds: Int {
+        Int(self) % 60
+    }
+    
+    var secondsLabel: String {
+        let formatString = NSLocalizedString("SecondCount", comment: "")
+        return String.localizedStringWithFormat(formatString, seconds)
     }
     
     func formatted() -> String {

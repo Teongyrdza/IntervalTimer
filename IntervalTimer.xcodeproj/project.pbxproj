@@ -16,6 +16,8 @@
 		F031D08D2726D26B00BE3D1D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F031D08F2726D26B00BE3D1D /* InfoPlist.strings */; };
 		F031D095272704A300BE3D1D /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = F031D094272704A300BE3D1D /* Localized.swift */; };
 		F031D096272704A300BE3D1D /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = F031D094272704A300BE3D1D /* Localized.swift */; };
+		F031D09A2727151600BE3D1D /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = F031D09D2727151600BE3D1D /* Localizable.stringsdict */; };
+		F031D09B2727151600BE3D1D /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = F031D09D2727151600BE3D1D /* Localizable.stringsdict */; };
 		F03236A22663AA340079376E /* StarUI in Frameworks */ = {isa = PBXBuildFile; productRef = F03236A12663AA340079376E /* StarUI */; };
 		F0323731266DED210079376E /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0323730266DED210079376E /* Sound.swift */; };
 		F0323732266DED210079376E /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0323730266DED210079376E /* Sound.swift */; };
@@ -92,6 +94,8 @@
 		F031D08E2726D26B00BE3D1D /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F031D093272700AF00BE3D1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F031D094272704A300BE3D1D /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
+		F031D09C2727151600BE3D1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		F031D09E2727151800BE3D1D /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = uk; path = uk.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		F0323730266DED210079376E /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		F0323733266DEE080079376E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F06AB6D426D5544D00753F64 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
@@ -258,6 +262,7 @@
 				F0F6BEB22599D59D00C07D68 /* Assets.xcassets */,
 				F031D0872726CE0400BE3D1D /* Localizable.strings */,
 				F031D08F2726D26B00BE3D1D /* InfoPlist.strings */,
+				F031D09D2727151600BE3D1D /* Localizable.stringsdict */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -388,6 +393,7 @@
 				F094138E260DE18C007E75C9 /* ding.mp3 in Resources */,
 				F0323734266DEE090079376E /* README.md in Resources */,
 				F0F6BEC72599D59D00C07D68 /* Assets.xcassets in Resources */,
+				F031D09A2727151600BE3D1D /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +407,7 @@
 				F0E90F8725A5BD220017EE68 /* meditationBell.mp3 in Resources */,
 				F0323735266DEE090079376E /* README.md in Resources */,
 				F0F6BEC82599D59D00C07D68 /* Assets.xcassets in Resources */,
+				F031D09B2727151600BE3D1D /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +505,15 @@
 				F031D08E2726D26B00BE3D1D /* uk */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F031D09D2727151600BE3D1D /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F031D09C2727151600BE3D1D /* en */,
+				F031D09E2727151800BE3D1D /* uk */,
+			);
+			name = Localizable.stringsdict;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

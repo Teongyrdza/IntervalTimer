@@ -15,6 +15,7 @@
 "Pause" = "Pause";
 "Resume" = "Resume";
 "Cancel" = "Cancel";
+"Time left %@ %@" = "%1$@ %2$@"; // Time left in interval, the first parameter is time, the second is the time left text
 "Interval Timer" = "Interval Timer";
 "Timer" = "Timer";
 "History" = "History";
