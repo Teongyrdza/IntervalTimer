@@ -24,7 +24,9 @@
 "Edit" = "Edit";
 "Done" = "Done";
 
+"The history is empty" = "The history is empty";
 "Add history" = "Add history";
+"There are no tasks" = "There are no tasks";
 "Add task" = "Add task";
 
 "Name" = "Name";

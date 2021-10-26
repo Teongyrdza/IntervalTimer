@@ -24,7 +24,9 @@
 "Edit" = "Редагувати";
 "Done" = "Готово";
 
+"The history is empty" = "Історія порожня";
 "Add history" = "Додати історію";
+"There are no tasks" = "Немає завдань";
 "Add task" = "Додати завдання";
 
 "Name" = "Назва";
