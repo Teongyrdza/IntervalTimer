@@ -25,6 +25,13 @@ final class TimerViewModel: ObservableObject {
     var lastUpdateTime = 0.0
     var paused = false
     
+    private var player: AVAudioPlayer?
+    
+    private func play() {
+        player?.currentTime = .zero
+        player?.play()
+    }
+    
     func startTimer() {
         timer.startCycle()
         lastUpdateTime = timer.lastUpdateTime
@@ -96,9 +103,22 @@ final class TimerViewModel: ObservableObject {
             .store(in: &cancellables)
         
         timer.intervalPassed
-            .sink {
-                settings.sound.player.seek(to: .zero)
-                settings.sound.player.play()
+            .sink { [self] in
+                if player != nil {
+                    play()
+                }
+                switch settings.sound {
+                    case .builtin(let sound):
+                        player = sound.player() ?? .meditationBell
+                        play()
+                    case .userCreated(let sound):
+                        _Concurrency.Task {
+                            if player == nil {
+                                player = await sound.player() ?? .meditationBell
+                            }
+                            play()
+                        }
+                }
             }
             .store(in: &cancellables)
     }
@@ -124,6 +144,7 @@ extension TimerViewModel {
             
             override func exit(_ viewModel: TimerViewModel) {
                 viewModel.timer.stopCycle()
+                viewModel.player?.stop()
             }
         }
         

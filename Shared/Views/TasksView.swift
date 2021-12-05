@@ -7,6 +7,7 @@
 
 import SwiftUI
 import StarUI
+import Introspect
 
 struct TasksView: View {
     @ObservedObject var taskStore = TaskStore()
@@ -49,6 +50,9 @@ struct TasksView: View {
                     }
                 }
                 .listStyle(.grouped)
+                .introspectTableViewCell { cell in
+                    cell.accessoryType = .none
+                }
             }
         }
         .navigationTitle("Tasks")

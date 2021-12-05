@@ -38,3 +38,10 @@
 "Record history" = "Записувати історію";
 "Alter time interval" = "Змінювати інтервал";
 "Next task" = "Наступне завдання";
+
+"Sounds" = "Звуки";
+"URL" = "Посилання";
+"New sound" = "Додати звук";
+"There are no sounds" = "Немає звуків";
+"Builtin sounds" = "Вбудовані звуки";
+"Custom sounds" = "Ваші звуки";

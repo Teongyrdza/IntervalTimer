@@ -20,6 +20,15 @@
         }
       },
       {
+        "package": "SoundKit",
+        "repositoryURL": "https://github.com/Teongyrdza/SoundKit",
+        "state": {
+          "branch": "main",
+          "revision": "7f47af4905ab8b36115327ccbe810bed1f553355",
+          "version": null
+        }
+      },
+      {
         "package": "StarUI",
         "repositoryURL": "https://github.com/Teongyrdza/StarUI.git",
         "state": {
@@ -35,6 +44,15 @@
           "branch": null,
           "revision": "9d8719c8bebdc79740b6969c912ac706eb721d7a",
           "version": "0.0.7"
+        }
+      },
+      {
+        "package": "Introspect",
+        "repositoryURL": "https://github.com/siteline/SwiftUI-Introspect",
+        "state": {
+          "branch": null,
+          "revision": "2e09be8af614401bc9f87d40093ec19ce56ccaf2",
+          "version": "0.1.3"
         }
       }
     ]

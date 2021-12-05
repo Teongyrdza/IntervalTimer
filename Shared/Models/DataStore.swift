@@ -35,6 +35,8 @@ enum DataStore {
     
     static var tasksUrl = documentsFolder.appendingPathComponent("tasks.json")
     
+    static var soundsUrl = documentsFolder.appendingPathComponent("sounds.json")
+    
     static func load<T: Decodable & DefaultConstructible>(_ type: T.Type, from url: URL) -> T {
         guard let data = try? Data(contentsOf: url) else {
             print("Data loading failed")

@@ -17,7 +17,7 @@ struct TimeField: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        context.coordinator.update(textField: uiView, with: Int(time))
+        context.coordinator.update(textField: uiView, with: time)
     }
     
     func makeCoordinator() -> Coordinator {
@@ -28,9 +28,9 @@ struct TimeField: UIViewRepresentable {
         let parent: TimeField
         var didEdit = false
         
-        func update(textField: UITextField, with time: Int) {
+        func update(textField: UITextField, with time: TimeInterval) {
             if (!didEdit) {
-                textField.text = "\(time / 60) minutes \(time % 60) seconds"
+                textField.text = "\(time.minutesLabel) \(time.secondsLabel)"
             }
             else {
                 didEdit = false
@@ -42,12 +42,10 @@ struct TimeField: UIViewRepresentable {
             let scanner = Scanner(string: string)
             scanner.charactersToBeSkipped = .whitespaces
             
-            didEdit = true
-            
             var minutes = scanner.scanInt() ?? 0
             
-            guard scanner.scanString("minutes") != nil else {
-                didEdit = false
+            let minutesLabel = parent.time.minutesLabel
+            guard scanner.scanString(minutesLabel) != nil else {
                 return false
             }
             
@@ -58,8 +56,8 @@ struct TimeField: UIViewRepresentable {
                 seconds -= 60
             }
             
-            guard scanner.scanString("seconds") != nil else {
-                didEdit = false
+            let secondsLabel = parent.time.secondsLabel
+            guard scanner.scanString(secondsLabel) != nil else {
                 return false
             }
             

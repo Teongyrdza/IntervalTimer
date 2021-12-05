@@ -6,18 +6,20 @@
 //
 
 import SwiftUI
+import SoundKit
 
 @main
 struct IntervalTimerApp: App {
     @StateObject var settings = TimerSettings.load()
     @StateObject var historyStore = HistoryStore.load()
     @StateObject var taskStore = TaskStore.load()
+    @StateObject var soundStore = SoundStore.load()
     
     let startTime = Date().timeIntervalSince1970
     
     var body: some Scene {
         WindowGroup {
-            AppView(settings: settings, historyStore: historyStore, taskStore: taskStore)
+            AppView(settings: settings, historyStore: historyStore, taskStore: taskStore, soundStore: soundStore)
                 .onAppear {
                     settings.taskStore = taskStore
                     

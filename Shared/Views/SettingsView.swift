@@ -7,11 +7,12 @@
 
 import SwiftUI
 import StarUI
-import Foundation
+import SoundKit
 
 struct SettingsView: View {
     @ObservedObject var settings = TimerSettings()
     @ObservedObject var taskStore = TaskStore()
+    @ObservedObject var soundStore = SoundStore()
     @Environment(\.timerShowing) var timerShowing
     
     var body: some View {
@@ -33,8 +34,16 @@ struct SettingsView: View {
                             
                             Spacer()
                             
-                            NavigationLink(destination: SoundPicker(selection: $settings.sound)) {
-                                Text(settings.sound.description)
+                            NavigationLink(
+                                destination:
+                                    SoundPicker(
+                                        selection: $settings.sound,
+                                        sounds: soundStore.sounds,
+                                        builtinSounds: sounds
+                                    )
+                                    .listStyle(.grouped)
+                            ) {
+                                Text(settings.sound.name)
                                     .opacity(0.5)
                                     .foregroundColor(.gray)
                             }
@@ -77,7 +86,7 @@ struct SettingsView: View {
                 }
                 .buttonStyle(.roundedCorners(lineWidth: 7.5, cornerRadius: 10))
                 .accentColor(.green)
-                .frame(height: 50)
+                .frame(height: 60)
                 .padding(.horizontal, 20)
                 .padding(.top)
             }

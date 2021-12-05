@@ -25,7 +25,7 @@ struct TimerView: View {
                 Button(viewModel.leftButtonText) {
                     viewModel.leftButtonTapped()
                 }
-                .frame(width: 75)
+                .frame(width: 95)
                 .accentColor(viewModel.leftButtonColor)
                 
                 Spacer()
@@ -33,7 +33,7 @@ struct TimerView: View {
                 Button("Cancel") {
                     viewModel.rightButtonTapped()
                 }
-                .frame(width: 75)
+                .frame(width: 95)
                 .accentColor(.gray)
             }
             .buttonStyle(RoundedCornersButtonStyle(lineWidth: 7.5, cornerRadius: 10))

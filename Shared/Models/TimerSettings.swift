@@ -8,12 +8,13 @@
 import AVFoundation
 import Foundation
 import Combine
+import SoundKit
 
 final class TimerSettings: ObservableObject, Codable, DefaultConstructible {
     static let intervalRange = 1..<181
     
     @Published var interval: TimeInterval = 30
-    @Published var sound = sounds[1]
+    @Published var sound = SoundUnion.builtin(sounds[0])
     @Published var currentTaskId = Task.default.id {
         didSet {
             if let newInterval = currentTask?.interval {
@@ -42,7 +43,7 @@ final class TimerSettings: ObservableObject, Codable, DefaultConstructible {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         interval = try container.decode(TimeInterval.self, forKey: .interval)
-        sound = try container.decode(Sound.self, forKey: .sound)
+        sound = try container.decode(SoundUnion.self, forKey: .sound)
         currentTaskId = try container.decode(UUID.self, forKey: .currentTaskId)
     }
     

@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import SoundKit
 
 struct AppView: View {
     @ObservedObject var settings = TimerSettings()
     @ObservedObject var historyStore = HistoryStore()
     @ObservedObject var taskStore = TaskStore()
+    @ObservedObject var soundStore = SoundStore()
     @Environment(\.scenePhase) var scenePhase: ScenePhase
     @State var timerShowing = false
     
@@ -29,7 +31,11 @@ struct AppView: View {
                     )
                 }
                 else {
-                    SettingsView(settings: settings, taskStore: taskStore)
+                    SettingsView(
+                        settings: settings,
+                        taskStore: taskStore,
+                        soundStore: soundStore
+                    )
                 }
             }
             .environment(\.timerShowing, $timerShowing)
@@ -53,6 +59,14 @@ struct AppView: View {
                 Image(systemName: "list.bullet")
                 Text("Tasks")
             }
+            
+            NavigationView {
+                SoundList(store: soundStore)
+            }
+            .tabItem {
+                Image(systemName: "music.note.list")
+                Text("Sounds")
+            }
         }
         .navigationViewStyle(.stack)
         .onChange(of: scenePhase) { newPhase in
@@ -60,6 +74,7 @@ struct AppView: View {
                 settings.save()
                 historyStore.save()
                 taskStore.save()
+                soundStore.save()
             }
         }
     }
