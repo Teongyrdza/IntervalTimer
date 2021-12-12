@@ -50,9 +50,6 @@ struct TasksView: View {
                     }
                 }
                 .listStyle(.grouped)
-                .introspectTableViewCell { cell in
-                    cell.accessoryType = .none
-                }
             }
         }
         .navigationTitle("Tasks")
