@@ -7,21 +7,26 @@
 
 import SwiftUI
 import SoundKit
+import ItDepends
+
+extension ModelStore {
+    static func `default`() -> Self {
+        .init(TimerSettings.self, HistoryStore.self, TaskStore.self, SoundStore.self)
+    }
+}
 
 @main
 struct IntervalTimerApp: App {
-    @StateObject var settings = TimerSettings.load()
-    @StateObject var historyStore = HistoryStore.load()
-    @StateObject var taskStore = TaskStore.load()
-    @StateObject var soundStore = SoundStore.load()
+    @StateObject var modelStore = ModelStore.default()
     
     let startTime = Date().timeIntervalSince1970
     
     var body: some Scene {
         WindowGroup {
-            AppView(settings: settings, historyStore: historyStore, taskStore: taskStore, soundStore: soundStore)
+            AppView()
+                .withDependencies(from: modelStore)
                 .onAppear {
-                    settings.taskStore = taskStore
+                    print(FileManager.documentsFolder)
                     
                     let now = Date().timeIntervalSince1970
                     let elapsed = now - startTime

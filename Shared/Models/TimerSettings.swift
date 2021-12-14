@@ -9,25 +9,30 @@ import AVFoundation
 import Foundation
 import Combine
 import SoundKit
+import ItDepends
 
-final class TimerSettings: ObservableObject, Codable, DefaultConstructible {
+final class TimerSettings: ObservableObject, Codable, JSONModel {
+    static let url = FileManager.documentsFolder.appendingPathComponent("settings.json")
+    
     static let intervalRange = 1..<181
     
     @Published var interval: TimeInterval = 30
     @Published var sound = SoundUnion.builtin(sounds[0])
     @Published var currentTaskId = Task.default.id {
         didSet {
-            if let newInterval = currentTask?.interval {
+            if inited, let newInterval = currentTask.interval {
                 interval = newInterval
             }
         }
     }
     
-    var currentTask: Task? {
-        taskStore?.task(for: currentTaskId)
+    var currentTask: Task {
+        taskStore.task(for: currentTaskId)
     }
     
-    var taskStore: TaskStore?
+    @Dependency private var taskStore: TaskStore
+    
+    private var inited = false
     
     enum CodingKeys: CodingKey {
         case interval, sound, currentTaskId
@@ -45,19 +50,10 @@ final class TimerSettings: ObservableObject, Codable, DefaultConstructible {
         interval = try container.decode(TimeInterval.self, forKey: .interval)
         sound = try container.decode(SoundUnion.self, forKey: .sound)
         currentTaskId = try container.decode(UUID.self, forKey: .currentTaskId)
+        inited = true
     }
     
-    init() {}
-}
-
-extension TimerSettings {
-    private static let url = DataStore.settingsURL
-    
-    static func load() -> Self {
-        DataStore.load(self, from: url)
-    }
-    
-    func save() {
-        DataStore.save(self, to: Self.url)
+    init() {
+        inited = true
     }
 }

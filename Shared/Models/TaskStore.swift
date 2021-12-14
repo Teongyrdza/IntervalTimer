@@ -9,8 +9,11 @@ import SwiftUI
 import Foundation
 import Combine
 import OrderedCollections
+import ItDepends
 
-final class TaskStore: ObservableObject, Codable, DefaultConstructible {
+final class TaskStore: ObservableObject, Codable, JSONModel {
+    static let url = FileManager.documentsFolder.appendingPathComponent("tasks.json")
+    
     @Published var tasks = OrderedDictionary<UUID, Task>()
     
     private var cancellables = Set<AnyCancellable>()
@@ -57,17 +60,5 @@ final class TaskStore: ObservableObject, Codable, DefaultConstructible {
     
     init() {
         insert(Task.default)
-    }
-}
-
-extension TaskStore {
-    private static let url = DataStore.tasksUrl
-    
-    static func load() -> Self {
-        DataStore.load(self, from: url)
-    }
-    
-    func save() {
-        DataStore.save(self, to: Self.url)
     }
 }

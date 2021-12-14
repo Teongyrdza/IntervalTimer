@@ -9,8 +9,11 @@ import SwiftUI
 import Foundation
 import Combine
 import OrderedCollections
+import ItDepends
 
-final class HistoryStore: ObservableObject, Codable, DefaultConstructible {
+final class HistoryStore: ObservableObject, Codable, JSONModel {
+    static let url = FileManager.documentsFolder.appendingPathComponent("history.json")
+    
     @Published var histories = OrderedDictionary<UUID, History>()
     
     func insert(_ history: History) {
@@ -36,16 +39,4 @@ final class HistoryStore: ObservableObject, Codable, DefaultConstructible {
     }
     
     init() {}
-}
-
-extension HistoryStore {
-    private static let url = DataStore.historyUrl
-    
-    static func load() -> Self {
-        DataStore.load(self, from: url)
-    }
-    
-    func save() {
-        DataStore.save(self, to: Self.url)
-    }
 }

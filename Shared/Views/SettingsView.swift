@@ -8,12 +8,13 @@
 import SwiftUI
 import StarUI
 import SoundKit
+import ItDepends
 
-struct SettingsView: View {
-    @ObservedObject var settings = TimerSettings()
-    @ObservedObject var taskStore = TaskStore()
-    @ObservedObject var soundStore = SoundStore()
-    @Environment(\.timerShowing) var timerShowing
+struct SettingsView: View, Depender {
+    @ObservedDependency var settings: TimerSettings
+    @ObservedDependency var taskStore: TaskStore
+    @ObservedDependency var soundStore: SoundStore
+    @Binding var timerShowing: Bool
     
     var body: some View {
         ScrollView {
@@ -72,15 +73,15 @@ struct SettingsView: View {
                 
                 Group {
                     Button("Start") {
-                        timerShowing.wrappedValue = true
+                        timerShowing = true
                     }
                     .frame(width: 150)
                     
                     Button("Next") {
-                        if let nextTaskId = settings.currentTask?.nextTaskId {
+                        if let nextTaskId = settings.currentTask.nextTaskId {
                             settings.currentTaskId = nextTaskId
                         }
-                        timerShowing.wrappedValue = true
+                        timerShowing = true
                     }
                     .frame(width: 150)
                 }
@@ -103,8 +104,8 @@ struct SettingsView_Previews: PreviewProvider {
     
     static var previews: some View {
         NavigationView {
-            SettingsView()
-                .environmentObject(TimerSettings())
+            SettingsView(timerShowing: .constant(false))
+                .withDependencies(from: ModelStore.default())
         }
     }
 }

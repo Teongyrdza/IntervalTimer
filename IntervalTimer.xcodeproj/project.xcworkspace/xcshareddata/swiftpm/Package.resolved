@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "ItDepends",
+        "repositoryURL": "https://github.com/Teongyrdza/ItDepends",
+        "state": {
+          "branch": "main",
+          "revision": "e33e2ca4cb10fad13f9c236a43b6912ebe4dcb72",
+          "version": null
+        }
+      },
+      {
         "package": "Reactor",
         "repositoryURL": "https://github.com/Teongyrdza/Reactor",
         "state": {

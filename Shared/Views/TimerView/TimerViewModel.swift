@@ -8,19 +8,21 @@
 import SwiftUI
 import AVFoundation
 import Combine
+import ItDepends
 
-final class TimerViewModel: ObservableObject {
+final class TimerViewModel: ObservableObject, Depender {
     // MARK: - Private
     private var cancellables = Set<AnyCancellable>()
     
-    let settings: TimerSettings
-    let historyStore: HistoryStore
-    let taskStore: TaskStore
+    @Dependency var settings: TimerSettings
+    @Dependency var historyStore: HistoryStore
+    @Dependency var taskStore: TaskStore
     
     @Binding var showing: Bool
     
     let timer: IntervalTimer
     var appeared = false
+    var inited = false
     var timePassed = 0.0
     var lastUpdateTime = 0.0
     var paused = false
@@ -85,12 +87,8 @@ final class TimerViewModel: ObservableObject {
         state = .hidden
     }
     
-    init(settings: TimerSettings = .init(), historyStore: HistoryStore = .init(), taskStore: TaskStore = .init(), showing: Binding<Bool>) {
-        let adj: IntervalTimer.Frequency = (settings.interval - 1) / 1440
-        self.timer = IntervalTimer(every: settings.interval, frequency: .default + adj)
-        self.settings = settings
-        self.historyStore = historyStore
-        self.taskStore = taskStore
+    init(showing: Binding<Bool>) {
+        self.timer = IntervalTimer()
         self._showing = showing
         self.state = .hidden
         
@@ -139,6 +137,12 @@ extension TimerViewModel {
                 viewModel.leftButtonColor = .init("AccentColor")
                 viewModel.leftButtonText = "Pause"
                 
+                if !viewModel.inited {
+                    viewModel.timer.refreshTime = viewModel.settings.interval
+                    let adj: IntervalTimer.Frequency = (viewModel.settings.interval - 1) / 1440
+                    viewModel.timer.frequency = .default + adj
+                    viewModel.inited = true
+                }
                 viewModel.startTimer()
             }
             

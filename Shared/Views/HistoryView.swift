@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import ItDepends
 
-struct HistoryView: View {
-    @ObservedObject var store: HistoryStore
+struct HistoryView: View, Depender {
+    @ObservedDependency var store: HistoryStore
     @State var inserting = false
     
     var body: some View {
@@ -62,7 +63,8 @@ struct HistoryView: View {
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            HistoryView(store: .init())
+            HistoryView()
+                .withDependencies(from: ModelStore.default())
         }
         .navigationViewStyle(.stack)
     }

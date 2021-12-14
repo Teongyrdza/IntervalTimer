@@ -7,10 +7,10 @@
 
 import SwiftUI
 import StarUI
-import Introspect
+import ItDepends
 
-struct TasksView: View {
-    @ObservedObject var taskStore = TaskStore()
+struct TasksView: View, Depender {
+    @ObservedDependency var taskStore: TaskStore
     @State var inserting = false
     
     func view(for task: Binding<Task>) -> some View {
@@ -72,6 +72,7 @@ struct TasksView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             TasksView()
+                .withDependencies(from: ModelStore.default())
         }
         .navigationViewStyle(.stack)
     }

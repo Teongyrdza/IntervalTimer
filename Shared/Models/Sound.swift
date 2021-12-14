@@ -7,6 +7,7 @@
 
 import AVFoundation
 import SoundKit
+import ItDepends
 
 extension AVAudioPlayer {
     convenience init(named name: String, withExtension `extension`: String = "mp3") {
@@ -24,16 +25,6 @@ let sounds = [
     BuiltinSound(name: "Meditation Bell", fileName: "meditationBell.mp3")
 ]
 
-extension SoundStore: DefaultConstructible {}
-
-extension SoundStore {
-    private static let url = DataStore.soundsUrl
-    
-    static func load() -> Self {
-        DataStore.load(Self.self, from: url)
-    }
-    
-    func save() {
-        DataStore.save(self, to: Self.url)
-    }
+extension SoundStore: JSONModel {
+    public static let url = FileManager.documentsFolder.appendingPathComponent("sounds.json")
 }

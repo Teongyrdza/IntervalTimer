@@ -7,7 +7,7 @@
 
 import SwiftUI
 import StarUI
-import AVFoundation
+import ItDepends
 
 struct TimerView: View {
     @StateObject var viewModel: TimerViewModel
@@ -51,7 +51,10 @@ struct TimerView: View {
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            TimerView(viewModel: .init(showing: .constant(true)))
+            TimerView(
+                viewModel: .init(showing: .constant(true))
+                    .withDependencies(from: ModelStore.default())
+            )
         }
     }
 }

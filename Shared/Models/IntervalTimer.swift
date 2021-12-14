@@ -16,7 +16,7 @@ final class IntervalTimer: ObservableObject {
     @Published var timeRemaining: TimeInterval
     
     var intervalPassed = PassthroughSubject<Void, Never>()
-    let frequency: TimeInterval
+    var frequency: TimeInterval
     var lastUpdateTime = 0.0
     
     private var timer: Timer?
@@ -56,7 +56,7 @@ final class IntervalTimer: ObservableObject {
         timer = nil
     }
     
-    init(every interval: TimeInterval, frequency: Frequency) {
+    init(every interval: TimeInterval = 15, frequency: Frequency = .default) {
         refreshTime = interval
         timeRemaining = interval
         self.frequency = frequency

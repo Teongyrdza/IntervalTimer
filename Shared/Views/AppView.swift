@@ -7,45 +7,37 @@
 
 import SwiftUI
 import SoundKit
+import ItDepends
 
-struct AppView: View {
-    @ObservedObject var settings = TimerSettings()
-    @ObservedObject var historyStore = HistoryStore()
-    @ObservedObject var taskStore = TaskStore()
-    @ObservedObject var soundStore = SoundStore()
+struct AppView: View, Depender {
+    @Dependency var modelStore: ModelStore
     @Environment(\.scenePhase) var scenePhase: ScenePhase
     @State var timerShowing = false
     
-    var viewModelFactory: ViewModelFactory {
-        ViewModelFactory(
-            timerSettings: settings, historyStore: historyStore, taskStore: taskStore
-        )
-    }
+    var soundStore: SoundStore { modelStore.model(ofType: SoundStore.self)! }
     
     var body: some View {
         TabView {
             NavigationView {
                 if timerShowing {
                     TimerView(
-                        viewModel: viewModelFactory.makeTimerViewModel(showing: $timerShowing)
+                        viewModel: TimerViewModel(showing: $timerShowing)
+                            .withDependencies(from: modelStore)
                     )
                 }
                 else {
-                    SettingsView(
-                        settings: settings,
-                        taskStore: taskStore,
-                        soundStore: soundStore
-                    )
+                    SettingsView(timerShowing: $timerShowing)
+                        .withDependencies(from: modelStore)
                 }
             }
-            .environment(\.timerShowing, $timerShowing)
             .tabItem {
                 Image(systemName: "timer")
                 Text("Timer")
             }
             
             NavigationView {
-                HistoryView(store: historyStore)
+                HistoryView()
+                    .withDependencies(from: modelStore)
             }
             .tabItem {
                 Image(systemName: "books.vertical")
@@ -53,7 +45,8 @@ struct AppView: View {
             }
             
             NavigationView {
-                TasksView(taskStore: taskStore)
+                TasksView()
+                    .withDependencies(from: modelStore)
             }
             .tabItem {
                 Image(systemName: "list.bullet")
@@ -70,12 +63,7 @@ struct AppView: View {
         }
         .navigationViewStyle(.stack)
         .onChange(of: scenePhase) { newPhase in
-            if newPhase == .background {
-                settings.save()
-                historyStore.save()
-                taskStore.save()
-                soundStore.save()
-            }
+            modelStore.save()
         }
     }
 }
@@ -84,6 +72,7 @@ struct AppView: View {
 struct AppView_Previews: PreviewProvider {
     static var previews: some View {
         AppView()
+            .withDependencies(from: ModelStore.default())
     }
 }
 #endif

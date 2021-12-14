@@ -49,25 +49,23 @@
 		F06AB71926D7DC7900753F64 /* Dict->Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB71726D7DC7900753F64 /* Dict->Array.swift */; };
 		F06AB71B26D8CB3D00753F64 /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB71A26D8CB3D00753F64 /* EditTaskView.swift */; };
 		F06AB71C26D8CB3D00753F64 /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB71A26D8CB3D00753F64 /* EditTaskView.swift */; };
-		F06AB72726D9532200753F64 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB72626D9532200753F64 /* DataStore.swift */; };
-		F06AB72826D9532200753F64 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB72626D9532200753F64 /* DataStore.swift */; };
 		F06AB72A26DCBE5900753F64 /* EditHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB72926DCBE5900753F64 /* EditHistoryView.swift */; };
 		F06AB72B26DCBE5900753F64 /* EditHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB72926DCBE5900753F64 /* EditHistoryView.swift */; };
 		F06AB72D26DCD0EA00753F64 /* TimeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB72C26DCD0EA00753F64 /* TimeField.swift */; };
 		F06AB72E26DCD0EA00753F64 /* TimeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB72C26DCD0EA00753F64 /* TimeField.swift */; };
 		F06AB73026E358F000753F64 /* AddHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB72F26E358EF00753F64 /* AddHistoryView.swift */; };
 		F06AB73126E358F000753F64 /* AddHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB72F26E358EF00753F64 /* AddHistoryView.swift */; };
-		F06AB73326E3632600753F64 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB73226E3632600753F64 /* Environment.swift */; };
-		F06AB73426E3632600753F64 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06AB73226E3632600753F64 /* Environment.swift */; };
 		F06BD6642721937C00470818 /* Reactor in Frameworks */ = {isa = PBXBuildFile; productRef = F06BD6632721937C00470818 /* Reactor */; };
 		F084B0D1275BB16700DA7512 /* SoundKit in Frameworks */ = {isa = PBXBuildFile; productRef = F084B0D0275BB16700DA7512 /* SoundKit */; };
 		F084B0D3275BB17300DA7512 /* SoundKit in Frameworks */ = {isa = PBXBuildFile; productRef = F084B0D2275BB17300DA7512 /* SoundKit */; };
 		F08E2BB42610D01900C897D4 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BB32610D01900C897D4 /* TimerViewModel.swift */; };
 		F08E2BB52610D01900C897D4 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BB32610D01900C897D4 /* TimerViewModel.swift */; };
-		F08E2BBB2610D4CD00C897D4 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BBA2610D4CD00C897D4 /* ViewModelFactory.swift */; };
-		F08E2BBC2610D4CD00C897D4 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BBA2610D4CD00C897D4 /* ViewModelFactory.swift */; };
 		F094138E260DE18C007E75C9 /* ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F0B0491B2601F371000E8392 /* ding.mp3 */; };
 		F0B0491D2601F371000E8392 /* ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F0B0491B2601F371000E8392 /* ding.mp3 */; };
+		F0D5C9F627665A04007610E4 /* ItDepends in Frameworks */ = {isa = PBXBuildFile; productRef = F0D5C9F527665A04007610E4 /* ItDepends */; };
+		F0D5C9F827665A13007610E4 /* ItDepends in Frameworks */ = {isa = PBXBuildFile; productRef = F0D5C9F727665A13007610E4 /* ItDepends */; };
+		F0D5C9FA276663CE007610E4 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D5C9F9276663CE007610E4 /* FileManager.swift */; };
+		F0D5C9FB276663CE007610E4 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D5C9F9276663CE007610E4 /* FileManager.swift */; };
 		F0E087192663A49E0094BAA1 /* StarUI in Frameworks */ = {isa = PBXBuildFile; productRef = F0E087182663A49E0094BAA1 /* StarUI */; };
 		F0E90F6225A5A44D0017EE68 /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E90F6125A5A44D0017EE68 /* IntervalTimer.swift */; };
 		F0E90F6325A5A44D0017EE68 /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E90F6125A5A44D0017EE68 /* IntervalTimer.swift */; };
@@ -110,14 +108,12 @@
 		F06AB71426D7DB1900753F64 /* TaskStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStore.swift; sourceTree = "<group>"; };
 		F06AB71726D7DC7900753F64 /* Dict->Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dict->Array.swift"; sourceTree = "<group>"; };
 		F06AB71A26D8CB3D00753F64 /* EditTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskView.swift; sourceTree = "<group>"; };
-		F06AB72626D9532200753F64 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		F06AB72926DCBE5900753F64 /* EditHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHistoryView.swift; sourceTree = "<group>"; };
 		F06AB72C26DCD0EA00753F64 /* TimeField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeField.swift; sourceTree = "<group>"; };
 		F06AB72F26E358EF00753F64 /* AddHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHistoryView.swift; sourceTree = "<group>"; };
-		F06AB73226E3632600753F64 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		F08E2BB32610D01900C897D4 /* TimerViewModel.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; wrapsLines = 0; };
-		F08E2BBA2610D4CD00C897D4 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewModelFactory.swift; path = Shared/ViewModelFactory.swift; sourceTree = SOURCE_ROOT; };
 		F0B0491B2601F371000E8392 /* ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ding.mp3; sourceTree = "<group>"; };
+		F0D5C9F9276663CE007610E4 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		F0E90F6125A5A44D0017EE68 /* IntervalTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimer.swift; sourceTree = "<group>"; };
 		F0E90F8525A5BD220017EE68 /* meditationBell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meditationBell.mp3; sourceTree = "<group>"; };
 		F0E90F8E25A5BF650017EE68 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; wrapsLines = 0; };
@@ -139,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F06BD6642721937C00470818 /* Reactor in Frameworks */,
+				F0D5C9F627665A04007610E4 /* ItDepends in Frameworks */,
 				F084B0D1275BB16700DA7512 /* SoundKit in Frameworks */,
 				F06AB70E26D7BD3A00753F64 /* Collections in Frameworks */,
 				F0E087192663A49E0094BAA1 /* StarUI in Frameworks */,
@@ -150,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F031CFB527245AB100BE3D1D /* Reactor in Frameworks */,
+				F0D5C9F827665A13007610E4 /* ItDepends in Frameworks */,
 				F084B0D3275BB17300DA7512 /* SoundKit in Frameworks */,
 				F06AB71026D7BD4600753F64 /* Collections in Frameworks */,
 				F03236A22663AA340079376E /* StarUI in Frameworks */,
@@ -204,14 +202,13 @@
 		F0E90F6025A5A42A0017EE68 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F0323730266DED210079376E /* Sound.swift */,
 				F0E90F6125A5A44D0017EE68 /* IntervalTimer.swift */,
+				F0323730266DED210079376E /* Sound.swift */,
 				F0E90F9A25A745250017EE68 /* TimerSettings.swift */,
 				F06AB6D426D5544D00753F64 /* History.swift */,
 				F06AB6E026D658D300753F64 /* HistoryStore.swift */,
 				F06AB70326D7A45400753F64 /* Task.swift */,
 				F06AB71426D7DB1900753F64 /* TaskStore.swift */,
-				F06AB72626D9532200753F64 /* DataStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -220,11 +217,11 @@
 			isa = PBXGroup;
 			children = (
 				F031CFB62724662800BE3D1D /* Views */,
-				F06AB73226E3632600753F64 /* Environment.swift */,
 				F0207E9D264275C400D727BA /* String.swift */,
 				F06AB6DD26D6552300753F64 /* TimeFormatter.swift */,
 				F06AB71726D7DC7900753F64 /* Dict->Array.swift */,
 				F031D094272704A300BE3D1D /* Localized.swift */,
+				F0D5C9F9276663CE007610E4 /* FileManager.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -258,7 +255,6 @@
 				F08E2BB22610CFA400C897D4 /* Views */,
 				F0E90F7125A5AD0E0017EE68 /* Resources */,
 				F0F6BEB02599D59A00C07D68 /* IntervalTimerApp.swift */,
-				F08E2BBA2610D4CD00C897D4 /* ViewModelFactory.swift */,
 				F0F6BEB22599D59D00C07D68 /* Assets.xcassets */,
 				F031D0872726CE0400BE3D1D /* Localizable.strings */,
 				F031D08F2726D26B00BE3D1D /* InfoPlist.strings */,
@@ -314,6 +310,7 @@
 				F06AB70D26D7BD3A00753F64 /* Collections */,
 				F06BD6632721937C00470818 /* Reactor */,
 				F084B0D0275BB16700DA7512 /* SoundKit */,
+				F0D5C9F527665A04007610E4 /* ItDepends */,
 			);
 			productName = "IntervalTimer (iOS)";
 			productReference = F0F6BEB72599D59D00C07D68 /* IntervalTimer.app */;
@@ -337,6 +334,7 @@
 				F06AB70F26D7BD4600753F64 /* Collections */,
 				F031CFB427245AB100BE3D1D /* Reactor */,
 				F084B0D2275BB17300DA7512 /* SoundKit */,
+				F0D5C9F727665A13007610E4 /* ItDepends */,
 			);
 			productName = "IntervalTimer (macOS)";
 			productReference = F0F6BEBF2599D59D00C07D68 /* IntervalTimer.app */;
@@ -374,6 +372,7 @@
 				F06AB70C26D7BD3A00753F64 /* XCRemoteSwiftPackageReference "swift-collections" */,
 				F06BD6622721937C00470818 /* XCRemoteSwiftPackageReference "Reactor" */,
 				F084B0CF275BB16700DA7512 /* XCRemoteSwiftPackageReference "SoundKit" */,
+				F0D5C9F427665A04007610E4 /* XCRemoteSwiftPackageReference "ItDepends" */,
 			);
 			productRefGroup = F0F6BEB82599D59D00C07D68 /* Products */;
 			projectDirPath = "";
@@ -424,7 +423,6 @@
 				F06AB71826D7DC7900753F64 /* Dict->Array.swift in Sources */,
 				F0323731266DED210079376E /* Sound.swift in Sources */,
 				F06AB6DE26D6552300753F64 /* TimeFormatter.swift in Sources */,
-				F06AB72726D9532200753F64 /* DataStore.swift in Sources */,
 				F0E90F9B25A745250017EE68 /* TimerSettings.swift in Sources */,
 				F0E90F8F25A5BF650017EE68 /* SettingsView.swift in Sources */,
 				F0E90F6225A5A44D0017EE68 /* IntervalTimer.swift in Sources */,
@@ -432,6 +430,7 @@
 				F06AB71526D7DB1900753F64 /* TaskStore.swift in Sources */,
 				F0F6BEC52599D59D00C07D68 /* TimerView.swift in Sources */,
 				F06AB71B26D8CB3D00753F64 /* EditTaskView.swift in Sources */,
+				F0D5C9FA276663CE007610E4 /* FileManager.swift in Sources */,
 				F031D095272704A300BE3D1D /* Localized.swift in Sources */,
 				F06AB70426D7A45400753F64 /* Task.swift in Sources */,
 				F0E90F9625A73AFD0017EE68 /* AppView.swift in Sources */,
@@ -439,8 +438,6 @@
 				F06AB6E126D658D300753F64 /* HistoryStore.swift in Sources */,
 				F06AB6D826D62A0A00753F64 /* HistoryView.swift in Sources */,
 				F06AB72D26DCD0EA00753F64 /* TimeField.swift in Sources */,
-				F08E2BBB2610D4CD00C897D4 /* ViewModelFactory.swift in Sources */,
-				F06AB73326E3632600753F64 /* Environment.swift in Sources */,
 				F0207E9E264275C400D727BA /* String.swift in Sources */,
 				F06AB72A26DCBE5900753F64 /* EditHistoryView.swift in Sources */,
 				F06AB70A26D7AE3900753F64 /* TasksView.swift in Sources */,
@@ -459,7 +456,6 @@
 				F06AB71926D7DC7900753F64 /* Dict->Array.swift in Sources */,
 				F0323732266DED210079376E /* Sound.swift in Sources */,
 				F06AB6DF26D6552300753F64 /* TimeFormatter.swift in Sources */,
-				F06AB72826D9532200753F64 /* DataStore.swift in Sources */,
 				F0E90F9C25A745250017EE68 /* TimerSettings.swift in Sources */,
 				F0E90F9025A5BF650017EE68 /* SettingsView.swift in Sources */,
 				F0F6BEC62599D59D00C07D68 /* TimerView.swift in Sources */,
@@ -467,6 +463,7 @@
 				F06AB71626D7DB1900753F64 /* TaskStore.swift in Sources */,
 				F0F6BEC42599D59D00C07D68 /* IntervalTimerApp.swift in Sources */,
 				F06AB71C26D8CB3D00753F64 /* EditTaskView.swift in Sources */,
+				F0D5C9FB276663CE007610E4 /* FileManager.swift in Sources */,
 				F031D096272704A300BE3D1D /* Localized.swift in Sources */,
 				F06AB70526D7A45400753F64 /* Task.swift in Sources */,
 				F0E90F6325A5A44D0017EE68 /* IntervalTimer.swift in Sources */,
@@ -474,8 +471,6 @@
 				F06AB6E226D658D300753F64 /* HistoryStore.swift in Sources */,
 				F06AB6D926D62A0A00753F64 /* HistoryView.swift in Sources */,
 				F06AB72E26DCD0EA00753F64 /* TimeField.swift in Sources */,
-				F08E2BBC2610D4CD00C897D4 /* ViewModelFactory.swift in Sources */,
-				F06AB73426E3632600753F64 /* Environment.swift in Sources */,
 				F0207E9F264275C400D727BA /* String.swift in Sources */,
 				F06AB72B26DCBE5900753F64 /* EditHistoryView.swift in Sources */,
 				F06AB70B26D7AE3900753F64 /* TasksView.swift in Sources */,
@@ -783,6 +778,14 @@
 				kind = branch;
 			};
 		};
+		F0D5C9F427665A04007610E4 /* XCRemoteSwiftPackageReference "ItDepends" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Teongyrdza/ItDepends";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		F0E087172663A49D0094BAA1 /* XCRemoteSwiftPackageReference "StarUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Teongyrdza/StarUI.git";
@@ -828,6 +831,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F084B0CF275BB16700DA7512 /* XCRemoteSwiftPackageReference "SoundKit" */;
 			productName = SoundKit;
+		};
+		F0D5C9F527665A04007610E4 /* ItDepends */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F0D5C9F427665A04007610E4 /* XCRemoteSwiftPackageReference "ItDepends" */;
+			productName = ItDepends;
+		};
+		F0D5C9F727665A13007610E4 /* ItDepends */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F0D5C9F427665A04007610E4 /* XCRemoteSwiftPackageReference "ItDepends" */;
+			productName = ItDepends;
 		};
 		F0E087182663A49E0094BAA1 /* StarUI */ = {
 			isa = XCSwiftPackageProductDependency;
