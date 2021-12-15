@@ -38,10 +38,6 @@ struct TasksView: View, Depender {
                         ) {
                             view(for: binding)
                         }
-                        #if !targetEnvironment(simulator)
-                        .hidden()
-                        .background(view(for: binding))
-                        #endif
                     }
                     .onDelete { indices in
                         for index in indices {
