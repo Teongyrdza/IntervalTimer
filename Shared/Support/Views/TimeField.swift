@@ -30,7 +30,7 @@ struct TimeField: UIViewRepresentable {
         
         func update(textField: UITextField, with time: TimeInterval) {
             if (!didEdit) {
-                textField.text = "\(time.minutesLabel) \(time.secondsLabel)"
+                textField.text = "\(time.minutesString) \(time.secondsString)"
             }
             else {
                 didEdit = false

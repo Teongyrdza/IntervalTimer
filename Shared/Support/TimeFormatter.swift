@@ -13,8 +13,12 @@ extension TimeInterval {
     }
     
     var minutesLabel: String {
-        let formatString = NSLocalizedString("MinuteCount", comment: "")
+        let formatString = NSLocalizedString("MinutesLabel", comment: "")
         return String.localizedStringWithFormat(formatString, minutes)
+    }
+    
+    var minutesString: String {
+        "\(minutes) \(minutesLabel)"
     }
     
     var seconds: Int {
@@ -22,19 +26,23 @@ extension TimeInterval {
     }
     
     var secondsLabel: String {
-        let formatString = NSLocalizedString("SecondCount", comment: "")
+        let formatString = NSLocalizedString("SecondsLabel", comment: "")
         return String.localizedStringWithFormat(formatString, seconds)
+    }
+    
+    var secondsString: String {
+        "\(seconds) \(secondsLabel)"
     }
     
     func formatted() -> String {
         if minutes == 0 {
-            return secondsLabel
+            return secondsString
         }
         else if seconds == 0 {
-            return minutesLabel
+            return minutesString
         }
         else {
-            return "\(minutesLabel) \(secondsLabel)"
+            return "\(minutesString) \(secondsString)"
         }
     }
 }

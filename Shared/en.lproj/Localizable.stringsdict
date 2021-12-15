@@ -30,7 +30,7 @@
 			<string>left</string>
 		</dict>
 	</dict>
-	<key>MinuteCount</key>
+	<key>MinutesLabel</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
 		<string>%#@minutes@</string>
@@ -41,12 +41,12 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>i</string>
 			<key>one</key>
-			<string>1 minute</string>
+			<string>minute</string>
 			<key>other</key>
-			<string>%i minutes</string>
+			<string>minutes</string>
 		</dict>
 	</dict>
-	<key>SecondCount</key>
+	<key>SecondsLabel</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
 		<string>%#@seconds@</string>
@@ -57,9 +57,9 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>i</string>
 			<key>one</key>
-			<string>1 second</string>
+			<string>second</string>
 			<key>other</key>
-			<string>%i seconds</string>
+			<string>seconds</string>
 		</dict>
 	</dict>
 </dict>

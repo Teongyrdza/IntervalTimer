@@ -34,7 +34,7 @@
 			<string>Залишилось</string>
 		</dict>
 	</dict>
-	<key>MinuteCount</key>
+	<key>MinutesLabel</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
 		<string>%#@minutes@</string>
@@ -45,14 +45,14 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>i</string>
 			<key>one</key>
-			<string>%i хвилина</string>
+			<string>хвилина</string>
 			<key>few</key>
-			<string>%i хвилини</string>
+			<string>хвилини</string>
 			<key>other</key>
-			<string>%i хвилин</string>
+			<string>хвилин</string>
 		</dict>
 	</dict>
-	<key>SecondCount</key>
+	<key>SecondsLabel</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
 		<string>%#@seconds@</string>
@@ -63,11 +63,11 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>i</string>
 			<key>one</key>
-			<string>%i секунда</string>
+			<string>секунда</string>
 			<key>few</key>
-			<string>%i секунди</string>
+			<string>секунди</string>
 			<key>other</key>
-			<string>%i секунд</string>
+			<string>секунд</string>
 		</dict>
 	</dict>
 </dict>
