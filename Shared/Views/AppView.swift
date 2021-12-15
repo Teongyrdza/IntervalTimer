@@ -10,55 +10,30 @@ import SoundKit
 import ItDepends
 
 struct AppView: View, Depender {
+    static let screens = [
+        Screen("Timer", icon: "timer", content: TimerContainer.init),
+        Screen("History", icon: "books.vertical", content: HistoryView.init),
+        Screen("Tasks", icon: "list.bullet", content: TasksView.init),
+        Screen("Sounds", icon: "music.note.list") { modelStore in
+            SoundList(store: modelStore.model(ofType: SoundStore.self)!)
+        }
+    ]
+    
     @Dependency var modelStore: ModelStore
     @Environment(\.scenePhase) var scenePhase: ScenePhase
-    @State var timerShowing = false
-    
-    var soundStore: SoundStore { modelStore.model(ofType: SoundStore.self)! }
     
     var body: some View {
         TabView {
-            NavigationView {
-                if timerShowing {
-                    TimerView(
-                        viewModel: TimerViewModel(showing: $timerShowing)
-                            .withDependencies(from: modelStore)
-                    )
+            ForEach(Self.screens) { screen in
+                NavigationView {
+                    screen.content(modelStore)
                 }
-                else {
-                    SettingsView(timerShowing: $timerShowing)
-                        .withDependencies(from: modelStore)
+                .tabItem {
+                    Text(screen.label)
+                    if let icon = screen.icon {
+                        Image(systemName: icon)
+                    }
                 }
-            }
-            .tabItem {
-                Image(systemName: "timer")
-                Text("Timer")
-            }
-            
-            NavigationView {
-                HistoryView()
-                    .withDependencies(from: modelStore)
-            }
-            .tabItem {
-                Image(systemName: "books.vertical")
-                Text("History")
-            }
-            
-            NavigationView {
-                TasksView()
-                    .withDependencies(from: modelStore)
-            }
-            .tabItem {
-                Image(systemName: "list.bullet")
-                Text("Tasks")
-            }
-            
-            NavigationView {
-                SoundList(store: soundStore)
-            }
-            .tabItem {
-                Image(systemName: "music.note.list")
-                Text("Sounds")
             }
         }
         .navigationViewStyle(.stack)
