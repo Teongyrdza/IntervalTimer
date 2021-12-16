@@ -29,8 +29,10 @@ struct EditHistoryView: View {
             }
             
             Section(header: Text("Cycle duration")) {
-                SingleRowTimePicker(selection: $history.cycleDuration, in: TimerSettings.intervalRange)
-                    .pickerStyle(.wheel)
+                SingleRowTimePicker(selection: $history.cycleDuration, in: TimerSettings.intervalRange) { (time: TimeInterval) in
+                    time.formatted()
+                }
+                .pickerStyle(.wheel)
             }
         }
         .listStyle(.insetGrouped)

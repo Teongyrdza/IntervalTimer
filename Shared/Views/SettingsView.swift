@@ -26,8 +26,10 @@ struct SettingsView: View, Depender {
                     Text("Time interval")
                         .font(.system(size: 30))
                     
-                    SingleRowTimePicker(selection: $settings.interval, in: TimerSettings.intervalRange)
-                        .pickerStyle(.wheel)
+                    SingleRowTimePicker(selection: $settings.interval, in: TimerSettings.intervalRange) { (time: TimeInterval) in
+                        time.formatted()
+                    }
+                    .pickerStyle(.wheel)
                     
                     GroupBox {
                         HStack {

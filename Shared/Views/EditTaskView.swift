@@ -51,8 +51,10 @@ struct EditTaskView: View {
                 VStack(alignment: .leading) {
                     Text("Time interval")
                     
-                    SingleRowTimePicker(selection: $taskInterval, in: TimerSettings.intervalRange)
-                        .pickerStyle(.wheel)
+                    SingleRowTimePicker(selection: $taskInterval, in: TimerSettings.intervalRange) { (time: TimeInterval) in
+                        time.formatted()
+                    }
+                    .pickerStyle(.wheel)
                 }
             }
             
