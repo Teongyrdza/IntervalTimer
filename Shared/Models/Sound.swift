@@ -22,7 +22,7 @@ extension AVAudioPlayer {
 
 let sounds = [
     BuiltinSound(name: "Ding", fileName: "ding.mp3"),
-    BuiltinSound(name: "Meditation Bell", fileName: "meditationBell.mp3")
+    BuiltinSound(name: "Meditation bell", fileName: "meditationBell.mp3")
 ]
 
 extension SoundStore: JSONModel {
