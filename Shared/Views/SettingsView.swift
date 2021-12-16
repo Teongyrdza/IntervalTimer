@@ -70,12 +70,13 @@ struct SettingsView: View, Depender {
                         }
                     }
                 }
+                .padding(.bottom, 30)
                 
                 Group {
                     Button("Start") {
                         timerShowing = true
                     }
-                    .frame(width: 150)
+                    .padding(.bottom, 50)
                     
                     Button("Next") {
                         if let nextTaskId = settings.currentTask.nextTaskId {
@@ -83,13 +84,15 @@ struct SettingsView: View, Depender {
                         }
                         timerShowing = true
                     }
-                    .frame(width: 150)
                 }
-                .buttonStyle(.roundedCorners(lineWidth: 7.5, cornerRadius: 10))
+                .buttonStyle(
+                    .roundedCorners(
+                        lineWidth: 7.5,
+                        cornerRadius: 10,
+                        insets: .init(horizontal: 50, vertical: 30)
+                    )
+                )
                 .accentColor(.green)
-                .frame(height: 60)
-                .padding(.horizontal, 20)
-                .padding(.top)
             }
             
         }
