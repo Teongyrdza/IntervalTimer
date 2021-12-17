@@ -14,8 +14,8 @@ struct TasksView: View, Depender {
     @State var inserting = false
     
     func view(for task: Binding<Task>) -> some View {
-        VStack {
-            TextField("Name".localized(), text: task.name)
+        VStack(alignment: .leading) {
+            Text(task.wrappedValue.name)
                 .font(.headline.bold())
             
             Toggle("Record history", isOn: task.record)
