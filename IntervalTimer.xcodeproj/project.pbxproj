@@ -58,6 +58,8 @@
 		F06BD6642721937C00470818 /* Reactor in Frameworks */ = {isa = PBXBuildFile; productRef = F06BD6632721937C00470818 /* Reactor */; };
 		F084B0D1275BB16700DA7512 /* SoundKit in Frameworks */ = {isa = PBXBuildFile; productRef = F084B0D0275BB16700DA7512 /* SoundKit */; };
 		F084B0D3275BB17300DA7512 /* SoundKit in Frameworks */ = {isa = PBXBuildFile; productRef = F084B0D2275BB17300DA7512 /* SoundKit */; };
+		F08CA92A2775E500004DE257 /* BoxPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08CA9292775E500004DE257 /* BoxPicker.swift */; };
+		F08CA92B2775E500004DE257 /* BoxPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08CA9292775E500004DE257 /* BoxPicker.swift */; };
 		F08E2BB42610D01900C897D4 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BB32610D01900C897D4 /* TimerViewModel.swift */; };
 		F08E2BB52610D01900C897D4 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BB32610D01900C897D4 /* TimerViewModel.swift */; };
 		F094138E260DE18C007E75C9 /* ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F0B0491B2601F371000E8392 /* ding.mp3 */; };
@@ -115,6 +117,7 @@
 		F06AB72926DCBE5900753F64 /* EditHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHistoryView.swift; sourceTree = "<group>"; };
 		F06AB72C26DCD0EA00753F64 /* TimeField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeField.swift; sourceTree = "<group>"; };
 		F06AB72F26E358EF00753F64 /* AddHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHistoryView.swift; sourceTree = "<group>"; };
+		F08CA9292775E500004DE257 /* BoxPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxPicker.swift; sourceTree = "<group>"; };
 		F08E2BB32610D01900C897D4 /* TimerViewModel.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F0B0491B2601F371000E8392 /* ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ding.mp3; sourceTree = "<group>"; };
 		F0D5C9F9276663CE007610E4 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
@@ -184,6 +187,7 @@
 				F08E2BBF2610E1B700C897D4 /* TimerView */,
 				F0E90F9525A73AFD0017EE68 /* AppView.swift */,
 				F0E90F8E25A5BF650017EE68 /* SettingsView.swift */,
+				F08CA9292775E500004DE257 /* BoxPicker.swift */,
 				F0D5C9FF276A48F7007610E4 /* TimerContainer.swift */,
 				F06AB70626D7A8A800753F64 /* TaskPicker.swift */,
 				F06AB70926D7AE3900753F64 /* TasksView.swift */,
@@ -430,6 +434,7 @@
 			files = (
 				F06AB71826D7DC7900753F64 /* Dict->Array.swift in Sources */,
 				F0323731266DED210079376E /* Sound.swift in Sources */,
+				F08CA92A2775E500004DE257 /* BoxPicker.swift in Sources */,
 				F06AB6DE26D6552300753F64 /* TimeFormatter.swift in Sources */,
 				F0E90F9B25A745250017EE68 /* TimerSettings.swift in Sources */,
 				F0E90F8F25A5BF650017EE68 /* SettingsView.swift in Sources */,
@@ -465,6 +470,7 @@
 			files = (
 				F06AB71926D7DC7900753F64 /* Dict->Array.swift in Sources */,
 				F0323732266DED210079376E /* Sound.swift in Sources */,
+				F08CA92B2775E500004DE257 /* BoxPicker.swift in Sources */,
 				F06AB6DF26D6552300753F64 /* TimeFormatter.swift in Sources */,
 				F0E90F9C25A745250017EE68 /* TimerSettings.swift in Sources */,
 				F0E90F9025A5BF650017EE68 /* SettingsView.swift in Sources */,

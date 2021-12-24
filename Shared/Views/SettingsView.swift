@@ -31,46 +31,19 @@ struct SettingsView: View, Depender {
                     }
                     .pickerStyle(.wheel)
                     
-                    GroupBox {
-                        HStack {
-                            Text("When interval ends")
-                            
-                            Spacer()
-                            
-                            NavigationLink {
-                                SoundPicker(
-                                    selection: $settings.sound,
-                                    sounds: soundStore.sounds,
-                                    builtinSounds: sounds
-                                )
-                                .listStyle(.grouped)
-                                .navigationTitle("When interval ends")
-                            } label: {
-                                Text(settings.sound.name)
-                                    .opacity(0.5)
-                                    .foregroundColor(.gray)
-                            }
-                        }
+                    BoxPicker("When interval ends", label: settings.sound.name) {
+                        SoundPicker(
+                            selection: $settings.sound,
+                            sounds: soundStore.sounds,
+                            builtinSounds: sounds
+                        )
+                        .listStyle(.grouped)
+                        .navigationTitle("When interval ends")
                     }
                     
-                    GroupBox {
-                        HStack {
-                            Text("Task")
-                            
-                            Spacer()
-                            
-                            NavigationLink {
-                                TaskPicker (
-                                    store: taskStore,
-                                    selection: $settings.currentTaskId
-                                )
-                                .navigationTitle("Task")
-                            } label: {
-                                Text(taskStore.task(for: settings.currentTaskId).name)
-                                    .opacity(0.5)
-                                    .foregroundColor(.gray)
-                            }
-                        }
+                    BoxPicker("Task", label: settings.currentTask.name) {
+                        TaskPicker(store: taskStore, selection: $settings.currentTaskId)
+                            .navigationTitle("Task")
                     }
                 }
                 .padding(.bottom, 10)
