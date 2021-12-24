@@ -72,13 +72,13 @@ struct SettingsView: View, Depender {
                         }
                     }
                 }
-                .padding(.bottom, 30)
+                .padding(.bottom, 10)
                 
                 Group {
                     Button("Start") {
                         timerShowing = true
                     }
-                    .padding(.bottom, 50)
+                    .padding(.bottom, 10)
                     
                     Button("Next") {
                         if let nextTaskId = settings.currentTask.nextTaskId {
@@ -86,6 +86,7 @@ struct SettingsView: View, Depender {
                         }
                         timerShowing = true
                     }
+                    .padding(.bottom, 5)
                 }
                 .buttonStyle(
                     .roundedCorners(

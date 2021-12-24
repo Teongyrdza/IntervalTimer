@@ -16,7 +16,7 @@ struct TimerView: View {
         VStack {
             ZStack {
                 ProgressView(value: viewModel.timeRemaining)
-                    .progressViewStyle(CircularProgressViewStyle(thickness: 30))
+                    .progressViewStyle(.circular(thickness: 30))
                 
                 Text(viewModel.alarmText)
             }
@@ -34,8 +34,9 @@ struct TimerView: View {
                 }
                 .accentColor(.gray)
             }
-            .buttonStyle(RoundedCornersButtonStyle(lineWidth: 7.5, cornerRadius: 10))
-            .frame(height: 50)
+            .buttonStyle(
+                .roundedCorners(lineWidth: 7.5, cornerRadius: 10, insets: .init(vertical: 30))
+            )
             .padding(.bottom)
             .padding(.horizontal)
         }
