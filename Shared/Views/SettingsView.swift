@@ -37,15 +37,15 @@ struct SettingsView: View, Depender {
                             
                             Spacer()
                             
-                            NavigationLink(
-                                destination:
-                                    SoundPicker(
-                                        selection: $settings.sound,
-                                        sounds: soundStore.sounds,
-                                        builtinSounds: sounds
-                                    )
-                                    .listStyle(.grouped)
-                            ) {
+                            NavigationLink {
+                                SoundPicker(
+                                    selection: $settings.sound,
+                                    sounds: soundStore.sounds,
+                                    builtinSounds: sounds
+                                )
+                                .listStyle(.grouped)
+                                .navigationTitle("When interval ends")
+                            } label: {
                                 Text(settings.sound.name)
                                     .opacity(0.5)
                                     .foregroundColor(.gray)
@@ -64,6 +64,7 @@ struct SettingsView: View, Depender {
                                     store: taskStore,
                                     selection: $settings.currentTaskId
                                 )
+                                .navigationTitle("Task")
                             } label: {
                                 Text(taskStore.task(for: settings.currentTaskId).name)
                                     .opacity(0.5)
