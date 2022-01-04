@@ -71,7 +71,6 @@ struct SettingsView: View, Depender {
                 )
                 .accentColor(.green)
             }
-            
         }
         .navigationTitle("Settings")
         .padding()
