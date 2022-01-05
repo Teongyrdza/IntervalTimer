@@ -10,7 +10,7 @@ import Combine
 import Reactor
 
 struct Task: ObservableStruct, Hashable, Identifiable {
-    static let `default` = Self("Default", record: false)
+    static let `default` = Self(NSLocalizedString("Default", comment: ""), record: false)
     
     @Ignored var objectWillChange: PassthroughSubject<Void, Never> = .init()
     
