@@ -41,7 +41,7 @@ struct TimerView: View {
             .padding(.horizontal)
         }
         .padding(.horizontal)
-        .navigationTitle("Interval Timer")
+        .navigationTitle("Time Guardian")
         .onAppear { viewModel.state = .running }
     }
 }

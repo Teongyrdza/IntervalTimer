@@ -72,7 +72,7 @@ struct SettingsView: View, Depender {
                 .accentColor(.green)
             }
         }
-        .navigationTitle("Settings")
+        .navigationTitle("Time Guardian")
         .padding()
     }
 }

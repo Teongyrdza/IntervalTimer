@@ -12,8 +12,6 @@
 		F031CFB527245AB100BE3D1D /* Reactor in Frameworks */ = {isa = PBXBuildFile; productRef = F031CFB427245AB100BE3D1D /* Reactor */; };
 		F031D0842726CE0400BE3D1D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F031D0872726CE0400BE3D1D /* Localizable.strings */; };
 		F031D0852726CE0400BE3D1D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F031D0872726CE0400BE3D1D /* Localizable.strings */; };
-		F031D08C2726D26B00BE3D1D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F031D08F2726D26B00BE3D1D /* InfoPlist.strings */; };
-		F031D08D2726D26B00BE3D1D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F031D08F2726D26B00BE3D1D /* InfoPlist.strings */; };
 		F031D095272704A300BE3D1D /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = F031D094272704A300BE3D1D /* Localized.swift */; };
 		F031D096272704A300BE3D1D /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = F031D094272704A300BE3D1D /* Localized.swift */; };
 		F031D09A2727151600BE3D1D /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = F031D09D2727151600BE3D1D /* Localizable.stringsdict */; };
@@ -95,8 +93,6 @@
 		F0207E9D264275C400D727BA /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F031D0862726CE0400BE3D1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F031D0882726CE0800BE3D1D /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
-		F031D08E2726D26B00BE3D1D /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F031D093272700AF00BE3D1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F031D094272704A300BE3D1D /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		F031D09C2727151600BE3D1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		F031D09E2727151800BE3D1D /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = uk; path = uk.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
@@ -269,7 +265,6 @@
 				F0F6BEB02599D59A00C07D68 /* IntervalTimerApp.swift */,
 				F0F6BEB22599D59D00C07D68 /* Assets.xcassets */,
 				F031D0872726CE0400BE3D1D /* Localizable.strings */,
-				F031D08F2726D26B00BE3D1D /* InfoPlist.strings */,
 				F031D09D2727151600BE3D1D /* Localizable.stringsdict */,
 			);
 			path = Shared;
@@ -402,7 +397,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F031D0842726CE0400BE3D1D /* Localizable.strings in Resources */,
-				F031D08C2726D26B00BE3D1D /* InfoPlist.strings in Resources */,
 				F0E90F8625A5BD220017EE68 /* meditationBell.mp3 in Resources */,
 				F094138E260DE18C007E75C9 /* ding.mp3 in Resources */,
 				F0323734266DEE090079376E /* README.md in Resources */,
@@ -416,7 +410,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F031D0852726CE0400BE3D1D /* Localizable.strings in Resources */,
-				F031D08D2726D26B00BE3D1D /* InfoPlist.strings in Resources */,
 				F0B0491D2601F371000E8392 /* ding.mp3 in Resources */,
 				F0E90F8725A5BD220017EE68 /* meditationBell.mp3 in Resources */,
 				F0323735266DEE090079376E /* README.md in Resources */,
@@ -510,15 +503,6 @@
 				F031D0882726CE0800BE3D1D /* uk */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		F031D08F2726D26B00BE3D1D /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F031D093272700AF00BE3D1D /* en */,
-				F031D08E2726D26B00BE3D1D /* uk */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		F031D09D2727151600BE3D1D /* Localizable.stringsdict */ = {
