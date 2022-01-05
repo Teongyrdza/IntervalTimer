@@ -24,7 +24,7 @@ struct AddTaskView: View {
                     }
                     
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("Done") {
+                        Button("Add") {
                             taskStore.insert(task)
                             isPresented = false
                         }

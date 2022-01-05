@@ -23,11 +23,12 @@
 
 "Edit" = "Редагувати";
 "Done" = "Готово";
+"Add" = "Додати";
 
 "The history is empty" = "Історія порожня";
 "Add history" = "Додати історію";
 "There are no tasks" = "Немає завдань";
-"Add task" = "Додати завдання";
+"New task" = "Додати завдання";
 
 "Name" = "Назва";
 "Date" = "Дата";
@@ -42,7 +43,7 @@
 
 "Sounds" = "Звуки";
 "URL" = "Посилання";
-"New sound" = "Додати звук";
+"New sound" = "Новий звук";
 "There are no sounds" = "Немає звуків";
 "Builtin sounds" = "Вбудовані звуки";
 "Custom sounds" = "Ваші звуки";

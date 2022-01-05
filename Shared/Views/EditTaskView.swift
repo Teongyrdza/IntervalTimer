@@ -60,6 +60,7 @@ struct EditTaskView: View {
             
             NavigationLink {
                 TaskPicker(store: taskStore, selection: $task.nextTaskId.replacingNilWith(task.id))
+                    .navigationTitle("Next task")
             } label: {
                 Text("Next task")
             }
