@@ -15,7 +15,7 @@ struct AddTaskView: View {
     var body: some View {
         NavigationView {
             EditTaskView(taskStore: taskStore, task: $task)
-                .navigationTitle("Add task")
+                .navigationTitle("New task")
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button("Cancel") {
