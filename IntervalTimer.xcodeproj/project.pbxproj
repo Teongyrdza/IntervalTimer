@@ -666,6 +666,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ostaphnatenko.apps.IntervalTimer;
 				PRODUCT_NAME = IntervalTimer;
 				SDKROOT = iphoneos;
