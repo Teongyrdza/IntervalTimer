@@ -9,6 +9,7 @@ import SwiftUI
 import AVFoundation
 import Combine
 import ItDepends
+import BackgroundTask
 
 final class TimerViewModel: ObservableObject, Depender {
     // MARK: - Private
@@ -33,6 +34,8 @@ final class TimerViewModel: ObservableObject, Depender {
         player?.currentTime = .zero
         player?.play()
     }
+    
+    let backgroundTask = BackgroundTask()
     
     func startTimer() {
         timer.startCycle()
@@ -137,6 +140,7 @@ extension TimerViewModel {
                 viewModel.leftButtonColor = .init("AccentColor")
                 viewModel.leftButtonText = "Pause"
                 
+                viewModel.backgroundTask.start()
                 if !viewModel.inited {
                     viewModel.timer.refreshTime = viewModel.settings.interval
                     let adj: IntervalTimer.Frequency = (viewModel.settings.interval - 1) / 1440
@@ -149,6 +153,7 @@ extension TimerViewModel {
             override func exit(_ viewModel: TimerViewModel) {
                 viewModel.timer.stopCycle()
                 viewModel.player?.stop()
+                viewModel.backgroundTask.stop()
             }
         }
         

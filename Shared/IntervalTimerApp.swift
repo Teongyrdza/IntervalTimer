@@ -8,6 +8,7 @@
 import SwiftUI
 import SoundKit
 import ItDepends
+import AVFAudio
 
 extension ModelStore {
     static func `default`() -> Self {
@@ -26,6 +27,13 @@ struct IntervalTimerApp: App {
             AppView()
                 .withDependencies(from: modelStore)
                 .onAppear {
+                    do {
+                        try AVAudioSession.sharedInstance().setCategory(.playback)
+                        try AVAudioSession.sharedInstance().setActive(true)
+                    } catch {
+                        print("Error configuring audio session")
+                    }
+                    
                     print(FileManager.documentsFolder)
                     
                     let now = Date().timeIntervalSince1970

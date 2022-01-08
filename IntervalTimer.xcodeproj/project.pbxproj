@@ -61,6 +61,8 @@
 		F08E2BB42610D01900C897D4 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BB32610D01900C897D4 /* TimerViewModel.swift */; };
 		F08E2BB52610D01900C897D4 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E2BB32610D01900C897D4 /* TimerViewModel.swift */; };
 		F094138E260DE18C007E75C9 /* ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F0B0491B2601F371000E8392 /* ding.mp3 */; };
+		F0AD4BB427898DE7002A9896 /* BackgroundTask in Frameworks */ = {isa = PBXBuildFile; productRef = F0AD4BB327898DE7002A9896 /* BackgroundTask */; };
+		F0AD4BB627898DF1002A9896 /* BackgroundTask in Frameworks */ = {isa = PBXBuildFile; productRef = F0AD4BB527898DF1002A9896 /* BackgroundTask */; };
 		F0B0491D2601F371000E8392 /* ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F0B0491B2601F371000E8392 /* ding.mp3 */; };
 		F0D5C9F627665A04007610E4 /* ItDepends in Frameworks */ = {isa = PBXBuildFile; productRef = F0D5C9F527665A04007610E4 /* ItDepends */; };
 		F0D5C9F827665A13007610E4 /* ItDepends in Frameworks */ = {isa = PBXBuildFile; productRef = F0D5C9F727665A13007610E4 /* ItDepends */; };
@@ -142,6 +144,7 @@
 				F06BD6642721937C00470818 /* Reactor in Frameworks */,
 				F0D5C9F627665A04007610E4 /* ItDepends in Frameworks */,
 				F084B0D1275BB16700DA7512 /* SoundKit in Frameworks */,
+				F0AD4BB427898DE7002A9896 /* BackgroundTask in Frameworks */,
 				F06AB70E26D7BD3A00753F64 /* Collections in Frameworks */,
 				F0E087192663A49E0094BAA1 /* StarUI in Frameworks */,
 			);
@@ -154,6 +157,7 @@
 				F031CFB527245AB100BE3D1D /* Reactor in Frameworks */,
 				F0D5C9F827665A13007610E4 /* ItDepends in Frameworks */,
 				F084B0D3275BB17300DA7512 /* SoundKit in Frameworks */,
+				F0AD4BB627898DF1002A9896 /* BackgroundTask in Frameworks */,
 				F06AB71026D7BD4600753F64 /* Collections in Frameworks */,
 				F03236A22663AA340079376E /* StarUI in Frameworks */,
 			);
@@ -318,6 +322,7 @@
 				F06BD6632721937C00470818 /* Reactor */,
 				F084B0D0275BB16700DA7512 /* SoundKit */,
 				F0D5C9F527665A04007610E4 /* ItDepends */,
+				F0AD4BB327898DE7002A9896 /* BackgroundTask */,
 			);
 			productName = "IntervalTimer (iOS)";
 			productReference = F0F6BEB72599D59D00C07D68 /* IntervalTimer.app */;
@@ -342,6 +347,7 @@
 				F031CFB427245AB100BE3D1D /* Reactor */,
 				F084B0D2275BB17300DA7512 /* SoundKit */,
 				F0D5C9F727665A13007610E4 /* ItDepends */,
+				F0AD4BB527898DF1002A9896 /* BackgroundTask */,
 			);
 			productName = "IntervalTimer (macOS)";
 			productReference = F0F6BEBF2599D59D00C07D68 /* IntervalTimer.app */;
@@ -380,6 +386,7 @@
 				F06BD6622721937C00470818 /* XCRemoteSwiftPackageReference "Reactor" */,
 				F084B0CF275BB16700DA7512 /* XCRemoteSwiftPackageReference "SoundKit" */,
 				F0D5C9F427665A04007610E4 /* XCRemoteSwiftPackageReference "ItDepends" */,
+				F0AD4BB227898DE7002A9896 /* XCRemoteSwiftPackageReference "BackgroundTask" */,
 			);
 			productRefGroup = F0F6BEB82599D59D00C07D68 /* Products */;
 			projectDirPath = "";
@@ -783,6 +790,14 @@
 				kind = branch;
 			};
 		};
+		F0AD4BB227898DE7002A9896 /* XCRemoteSwiftPackageReference "BackgroundTask" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Teongyrdza/BackgroundTask";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		F0D5C9F427665A04007610E4 /* XCRemoteSwiftPackageReference "ItDepends" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Teongyrdza/ItDepends";
@@ -836,6 +851,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F084B0CF275BB16700DA7512 /* XCRemoteSwiftPackageReference "SoundKit" */;
 			productName = SoundKit;
+		};
+		F0AD4BB327898DE7002A9896 /* BackgroundTask */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F0AD4BB227898DE7002A9896 /* XCRemoteSwiftPackageReference "BackgroundTask" */;
+			productName = BackgroundTask;
+		};
+		F0AD4BB527898DF1002A9896 /* BackgroundTask */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F0AD4BB227898DE7002A9896 /* XCRemoteSwiftPackageReference "BackgroundTask" */;
+			productName = BackgroundTask;
 		};
 		F0D5C9F527665A04007610E4 /* ItDepends */ = {
 			isa = XCSwiftPackageProductDependency;
