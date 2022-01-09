@@ -37,6 +37,11 @@ struct TimeField: UIViewRepresentable {
             }
         }
         
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            textField.resignFirstResponder()
+            return true
+        }
+        
         func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString: String) -> Bool {
             let string = (textField.text! as NSString).replacingCharacters(in: range, with: replacementString)
             let scanner = Scanner(string: string)
