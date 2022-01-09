@@ -18,7 +18,13 @@ struct History: Hashable, Codable, Identifiable {
     
     var id = UUID()
     var name: String
-    var task: Task?
+    var task: Task? {
+        didSet {
+            if let newName = task?.name {
+                name = newName
+            }
+        }
+    }
     var date = Date()
     var duration: TimeInterval
     var cycleDuration: TimeInterval

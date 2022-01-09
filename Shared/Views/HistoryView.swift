@@ -9,6 +9,7 @@ import SwiftUI
 import ItDepends
 
 struct HistoryView: View, Depender {
+    @Dependency var modelStore: ModelStore
     @ObservedDependency var store: HistoryStore
     @State var inserting = false
     
@@ -23,7 +24,10 @@ struct HistoryView: View, Depender {
                     ForEach(store.histories.toArray().reversed()) { history in
                         let historyBinding = store.binding(for: history)
                         
-                        NavigationLink(destination: HistoryDetail(history: historyBinding)) {
+                        NavigationLink {
+                            HistoryDetail(history: historyBinding)
+                                .withDependencies(from: modelStore)
+                        } label: {
                             VStack(alignment: .leading) {
                                 Text(history.name)
                                     .font(.body.bold())
@@ -56,7 +60,8 @@ struct HistoryView: View, Depender {
             }
         }
         .sheet(isPresented: $inserting) {
-            AddHistoryView(isPresented: $inserting, store: store)
+            AddHistoryView(isPresented: $inserting)
+                .withDependencies(from: modelStore)
         }
     }
 }

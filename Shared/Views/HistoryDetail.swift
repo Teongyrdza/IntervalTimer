@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ItDepends
 
 struct DataCell: View {
     let label: String
@@ -44,7 +45,8 @@ struct ListDataCell: View {
     }
 }
 
-struct HistoryDetail: View {
+struct HistoryDetail: View, Depender {
+    @Dependency var modelStore: ModelStore
     @Binding var history: History
     @State var editing = false
     @State var tempHistory = History.exampleData[0]
@@ -70,6 +72,7 @@ struct HistoryDetail: View {
         .sheet(isPresented: $editing) {
             NavigationView {
                 EditHistoryView(history: $tempHistory)
+                    .withDependencies(from: modelStore)
                     .navigationTitle(tempHistory.name)
                     .toolbar {
                         ToolbarItem(placement: .navigationBarLeading) {
@@ -96,6 +99,7 @@ struct HistoryDetail_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             HistoryDetail(history: $history)
+                .withDependencies(from: .default())
         }
         .navigationViewStyle(.stack)
     }

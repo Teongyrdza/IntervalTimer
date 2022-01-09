@@ -7,14 +7,42 @@
 
 import SwiftUI
 import StarUI
+import ItDepends
 
-struct EditHistoryView: View {
+struct EditHistoryView: View, Depender {
+    @ObservedDependency var taskStore: TaskStore
     @Binding var history: History
+    
+    func id(for task: Binding<Task>) -> Binding<UUID> {
+        .init(
+            get: { task.wrappedValue.id },
+            set: {
+                task.wrappedValue = taskStore.task(for: $0)
+            }
+        )
+    }
     
     var body: some View {
         List {
             Section(header: Text("Name")) {
                 TextField("Name".localized(), text: $history.name)
+            }
+            
+            Section(header: Text("Task")) {
+                if let $task = $history.task.propagatingOptional() {
+                    NavigationLink {
+                        TaskPicker(store: taskStore, selection: id(for: $task))
+                    } label: {
+                        Text($task.wrappedValue.name)
+                    }
+                }
+                else {
+                    Text("None")
+                        .foregroundColor(.secondary)
+                        .onTapGesture {
+                            history.task = .default
+                        }
+                }
             }
             
             Section(header: Text("Date")) {
@@ -44,5 +72,6 @@ struct EditHistoryView_Previews: PreviewProvider {
     
     static var previews: some View {
         EditHistoryView(history: $history)
+            .withDependencies(from: .default())
     }
 }

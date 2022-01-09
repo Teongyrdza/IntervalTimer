@@ -31,6 +31,7 @@
 "Add task" = "Add task";
 
 "Name" = "Name";
+"None" = "None";
 "Date" = "Date";
 "Cycles" = "Cycles";
 "Duration" = "Duration";
