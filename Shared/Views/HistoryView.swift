@@ -33,6 +33,7 @@ struct HistoryView: View, Depender {
                                 Text(history.dateString)
                             }
                         }
+                        .listRowBackground(history.color)
                     }
                     .onDelete { indices in
                         // Remove from the start, because indices are reversed

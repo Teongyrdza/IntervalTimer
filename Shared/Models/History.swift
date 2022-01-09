@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct History: Hashable, Codable, Identifiable {
     static let formatter = { () -> DateFormatter in
@@ -17,6 +18,7 @@ struct History: Hashable, Codable, Identifiable {
     
     var id = UUID()
     var name: String
+    var task: Task?
     var date = Date()
     var duration: TimeInterval
     var cycleDuration: TimeInterval
@@ -27,6 +29,18 @@ struct History: Hashable, Codable, Identifiable {
     
     var dateString: String {
         Self.formatter.string(from: date)
+    }
+    
+    var color: Color? {
+        if let recommendedDuration = task?.recommendedDuration {
+            if duration <= recommendedDuration {
+                return .green
+            }
+            else {
+                return .red
+            }
+        }
+        return nil
     }
 }
 

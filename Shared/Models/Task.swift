@@ -18,6 +18,7 @@ struct Task: ObservableStruct, Hashable, Identifiable {
     @StructPublished var name: String
     @StructPublished var record: Bool
     @StructPublished var interval: TimeInterval?
+    @StructPublished var recommendedDuration: TimeInterval?
     @StructPublished var nextTaskId: UUID?
     
     init(_ name: String, record: Bool, interval: TimeInterval? = nil) {
@@ -31,7 +32,7 @@ struct Task: ObservableStruct, Hashable, Identifiable {
 
 extension Task: Codable {
     enum CodingKeys: CodingKey {
-        case id, name, record, interval, nextTaskId
+        case id, name, record, interval, recommendedDuration, nextTaskId
     }
     
     func encode(to encoder: Encoder) throws {
@@ -40,6 +41,7 @@ extension Task: Codable {
         try container.encode(name, forKey: .name)
         try container.encode(record, forKey: .record)
         try container.encode(interval, forKey: .interval)
+        try container.encode(recommendedDuration, forKey: .recommendedDuration)
         try container.encode(nextTaskId, forKey: .nextTaskId)
     }
     
@@ -49,6 +51,7 @@ extension Task: Codable {
         name = try container.decode(String.self, forKey: .name)
         record = try container.decode(Bool.self, forKey: .record)
         interval = try container.decodeIfPresent(TimeInterval.self, forKey: .interval)
+        recommendedDuration = try container.decodeIfPresent(TimeInterval.self, forKey: .recommendedDuration)
         nextTaskId = try container.decodeIfPresent(UUID.self, forKey: .nextTaskId)
         
         registerSubscriptions()

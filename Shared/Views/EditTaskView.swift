@@ -24,6 +24,7 @@ struct EditTaskView: View {
     @ObservedObject var taskStore = TaskStore()
     @Binding var task: Task
     @State var interval = 5.0
+    @State var recommendedDuration: TimeInterval = 5 * 60
     
     var alterIntervalBinding: Binding<Bool> {
         .init(
@@ -34,6 +35,20 @@ struct EditTaskView: View {
                 }
                 else {
                     task.interval = nil
+                }
+            }
+        )
+    }
+    
+    var recommendDuration: Binding<Bool> {
+        .init(
+            get: { task.recommendedDuration != nil },
+            set: { newValue in
+                if newValue {
+                    task.recommendedDuration = recommendedDuration
+                }
+                else {
+                    task.recommendedDuration = nil
                 }
             }
         )
@@ -55,6 +70,14 @@ struct EditTaskView: View {
                         time.formatted()
                     }
                     .pickerStyle(.wheel)
+                }
+            }
+            
+            VStack(alignment: .leading) {
+                Toggle("Recommended duration", isOn: recommendDuration)
+                
+                if let $recommendedDuration = $task.recommendedDuration.propagatingOptional() {
+                    TimeField(time: $recommendedDuration)
                 }
             }
             
