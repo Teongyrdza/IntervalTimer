@@ -19,32 +19,34 @@ struct SettingsView: View, Depender {
     var body: some View {
         ScrollView {
             VStack {
-                VStack(alignment: .leading) {
-                    Divider()
-                        .padding(.bottom)
-                    
-                    Text("Time interval")
+                Divider()
+                    .padding(.bottom)
+                
+                HStack {
+                    Text("Interval")
                         .font(.system(size: 30))
-                    
-                    SingleRowTimePicker(selection: $settings.interval, in: TimerSettings.intervalRange) { (time: TimeInterval) in
-                        time.formatted()
-                    }
-                    .pickerStyle(.wheel)
-                    
-                    BoxPicker("When interval ends", label: settings.sound.name) {
-                        SoundPicker(
-                            selection: $settings.sound,
-                            sounds: soundStore.sounds,
-                            builtinSounds: sounds
-                        )
-                        .listStyle(.grouped)
-                        .navigationTitle("When interval ends")
-                    }
-                    
-                    BoxPicker("Task", label: settings.currentTask.name) {
-                        TaskPicker(store: taskStore, selection: $settings.currentTaskId)
-                            .navigationTitle("Task")
-                    }
+                
+                    Spacer()
+                }
+                
+                SingleRowTimePicker(selection: $settings.interval, in: TimerSettings.intervalRange) { (time: TimeInterval) in
+                    time.formatted()
+                }
+                .pickerStyle(.wheel)
+                
+                BoxPicker("When interval ends", label: settings.sound.name) {
+                    SoundPicker(
+                        selection: $settings.sound,
+                        sounds: soundStore.sounds,
+                        builtinSounds: sounds
+                    )
+                    .listStyle(.grouped)
+                    .navigationTitle("When interval ends")
+                }
+                
+                BoxPicker("Task", label: settings.currentTask.name) {
+                    TaskPicker(store: taskStore, selection: $settings.currentTaskId)
+                        .navigationTitle("Task")
                 }
                 .padding(.bottom, 10)
                 
