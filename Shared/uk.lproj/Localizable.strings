@@ -7,7 +7,7 @@
 */
 
 "Settings" = "Налаштування";
-"Time interval" = "Інтервал";
+"Interval" = "Інтервал";
 "When interval ends" = "В кінці інтервалу";
 "Task" = "Завдання";
 "Start" = "Запустити";
