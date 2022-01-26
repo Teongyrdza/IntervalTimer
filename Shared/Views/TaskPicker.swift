@@ -15,13 +15,15 @@ struct TaskPicker: View {
     var body: some View {
         List {
             ForEach(store.tasks.toArray()) { task in
-                Text(task.name)
-                    .onTapGesture {
-                        selection = task.id
-                    }
-                    .if(selection == task.id)
-                    .listRowBackground(Color.accentColor)
-                    .endif()
+                Button {
+                    selection = task.id
+                } label: {
+                    Text(task.name)
+                        .foregroundColor(.primary)
+                }
+                .if(selection == task.id)
+                .listRowBackground(Color.accentColor)
+                .endif()
             }
         }
         .listStyle(.grouped)
