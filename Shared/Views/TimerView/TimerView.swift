@@ -29,7 +29,7 @@ struct TimerView: View {
                 
                 Spacer()
                 
-                Button("Cancel") {
+                Button("Done") {
                     viewModel.rightButtonTapped()
                 }
                 .accentColor(.gray)
