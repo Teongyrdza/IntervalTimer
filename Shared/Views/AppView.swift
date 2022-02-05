@@ -38,7 +38,9 @@ struct AppView: View, Depender {
         }
         .navigationViewStyle(.stack)
         .onChange(of: scenePhase) { newPhase in
-            modelStore.save()
+            if newPhase != .active {
+                modelStore.save()
+            }
         }
     }
 }
