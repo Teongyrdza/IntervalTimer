@@ -70,8 +70,6 @@
 		F0D5C9FB276663CE007610E4 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D5C9F9276663CE007610E4 /* FileManager.swift */; };
 		F0D5C9FD276A4099007610E4 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D5C9FC276A4099007610E4 /* Screen.swift */; };
 		F0D5C9FE276A4099007610E4 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D5C9FC276A4099007610E4 /* Screen.swift */; };
-		F0D5CA00276A48F7007610E4 /* TimerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D5C9FF276A48F7007610E4 /* TimerContainer.swift */; };
-		F0D5CA01276A48F7007610E4 /* TimerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D5C9FF276A48F7007610E4 /* TimerContainer.swift */; };
 		F0E087192663A49E0094BAA1 /* StarUI in Frameworks */ = {isa = PBXBuildFile; productRef = F0E087182663A49E0094BAA1 /* StarUI */; };
 		F0E90F6225A5A44D0017EE68 /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E90F6125A5A44D0017EE68 /* IntervalTimer.swift */; };
 		F0E90F6325A5A44D0017EE68 /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E90F6125A5A44D0017EE68 /* IntervalTimer.swift */; };
@@ -120,7 +118,6 @@
 		F0B0491B2601F371000E8392 /* ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ding.mp3; sourceTree = "<group>"; };
 		F0D5C9F9276663CE007610E4 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		F0D5C9FC276A4099007610E4 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
-		F0D5C9FF276A48F7007610E4 /* TimerContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerContainer.swift; sourceTree = "<group>"; };
 		F0E90F6125A5A44D0017EE68 /* IntervalTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimer.swift; sourceTree = "<group>"; };
 		F0E90F8525A5BD220017EE68 /* meditationBell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meditationBell.mp3; sourceTree = "<group>"; };
 		F0E90F8E25A5BF650017EE68 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; wrapsLines = 0; };
@@ -188,7 +185,6 @@
 				F0E90F9525A73AFD0017EE68 /* AppView.swift */,
 				F0E90F8E25A5BF650017EE68 /* SettingsView.swift */,
 				F08CA9292775E500004DE257 /* BoxPicker.swift */,
-				F0D5C9FF276A48F7007610E4 /* TimerContainer.swift */,
 				F06AB70626D7A8A800753F64 /* TaskPicker.swift */,
 				F06AB70926D7AE3900753F64 /* TasksView.swift */,
 				F06AB71126D7C77200753F64 /* AddTaskView.swift */,
@@ -460,7 +456,6 @@
 				F06AB6DB26D62DBE00753F64 /* HistoryDetail.swift in Sources */,
 				F06AB70726D7A8A800753F64 /* TaskPicker.swift in Sources */,
 				F06AB73026E358F000753F64 /* AddHistoryView.swift in Sources */,
-				F0D5CA00276A48F7007610E4 /* TimerContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,7 +491,6 @@
 				F06AB6DC26D62DBE00753F64 /* HistoryDetail.swift in Sources */,
 				F06AB70826D7A8A800753F64 /* TaskPicker.swift in Sources */,
 				F06AB73126E358F000753F64 /* AddHistoryView.swift in Sources */,
-				F0D5CA01276A48F7007610E4 /* TimerContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

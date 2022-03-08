@@ -11,7 +11,7 @@ import ItDepends
 
 struct AppView: View, Depender {
     static let screens = [
-        Screen("Timer", icon: "timer", content: TimerContainer.init),
+        Screen("Timer", icon: "timer", content: SettingsView.init),
         Screen("History", icon: "books.vertical", content: HistoryView.init),
         Screen("Tasks", icon: "list.bullet", content: TasksView.init),
         Screen("Sounds", icon: "music.note.list") { modelStore in

@@ -14,7 +14,8 @@ struct SettingsView: View, Depender {
     @ObservedDependency var settings: TimerSettings
     @ObservedDependency var taskStore: TaskStore
     @ObservedDependency var soundStore: SoundStore
-    @Binding var timerShowing: Bool
+    @Dependency var modelStore: ModelStore
+    @State var timerShowing = false
     
     var body: some View {
         ScrollView {
@@ -76,6 +77,13 @@ struct SettingsView: View, Depender {
         }
         .navigationTitle("Time Guardian")
         .padding()
+        .fullScreenCover(isPresented: $timerShowing) {
+            NavigationView {
+                TimerView(viewModel: .init(showing: $timerShowing).withDependencies(from: modelStore))
+                    .navigationTitle("Time Guardian")
+            }
+            .navigationViewStyle(.stack)
+        }
     }
 }
 
@@ -85,7 +93,7 @@ struct SettingsView_Previews: PreviewProvider {
     
     static var previews: some View {
         NavigationView {
-            SettingsView(timerShowing: .constant(false))
+            SettingsView()
                 .withDependencies(from: ModelStore.default())
         }
     }
